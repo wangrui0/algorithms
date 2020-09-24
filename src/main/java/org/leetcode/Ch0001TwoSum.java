@@ -23,7 +23,7 @@ public class Ch0001TwoSum {
   public static void main(String[] args) {
     int[] nums = {2, 11, 7};
     int target = 9;
-    int[] twoSum = twoSum3(nums, target);
+    int[] twoSum = twoSum2(nums, target);
     if (twoSum != null) {
       System.out.println(twoSum[0]);
       System.out.println(twoSum[1]);
@@ -32,6 +32,7 @@ public class Ch0001TwoSum {
 
   /**
    * 自己
+   *
    * <p>
    * 复杂度分析：
    * <p>
@@ -43,7 +44,7 @@ public class Ch0001TwoSum {
    * @param target
    * @return
    */
-  public static int[] twoSum1(int[] nums, int target) {
+  public static int[] twoSum(int[] nums, int target) {
     for (int i = 0; i < nums.length; i++) {
       for (int j = i + 1; j < nums.length; j++) {
         if (nums[i] + nums[j] == target) {
@@ -68,7 +69,7 @@ public class Ch0001TwoSum {
    * @param target
    * @return
    */
-  public static int[] twoSum2(int[] nums, int target) {
+  public static int[] twoSum1(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
 
     for (int i = 0; i < nums.length; i++) {
@@ -101,7 +102,7 @@ public class Ch0001TwoSum {
    * @param target
    * @return
    */
-  public static int[] twoSum3(int[] nums, int target) {
+  public static int[] twoSum2(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
 
     for (int i = 0; i < nums.length; i++) {
