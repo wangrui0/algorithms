@@ -12,3 +12,7 @@ W
 ,src/main/java/org/leetcode/Ch0001TwoSum.java,b\a\ba0ddcc32ba6ce070ebae9fbc125d241dcaca08d
 c
 3src/main/java/org/leetcode/Ch0002AddTwoNumbers.java,1\5\1535de2b9539ea8b40d85dee0ea6ee1c9ef08db9
+n
+>src/main/java/org/leetcode/Ch0003LengthOfLongestSubstring.java,4\c\4c4053ec443e291a0cb8336c8b732fca45cc79a7
+l
+<src/main/java/org/leetcode/Ch0004FindMedianSortedArrays.java,c\2\c22a6265f50f99f9ece67a75fbaa354dd02c1dcf
