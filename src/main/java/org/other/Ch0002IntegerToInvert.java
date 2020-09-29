@@ -14,10 +14,12 @@ public class Ch0002IntegerToInvert {
 
   public static void main(String[] args) {
 //    Integer num = 1234567;
-    Integer num = 0;
-//    Integer num=-1234567;
-    Integer result = IntegerToInvert(num);
-    System.out.println(result);
+//    Integer num = 0;
+////    Integer num=-1234567;
+//    Integer result = IntegerToInvert(num);
+//    System.out.println(result);
+
+
   }
 
   /**
