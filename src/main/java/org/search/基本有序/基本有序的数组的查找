@@ -1,0 +1,44 @@
+一个数组中的元素是基本有序的，意思就是说当遇到次序打乱的元素的时候，它与自己有序的正确位置只能是前后相邻的位置，比如数组：
+
+arr=[1,2,3,4,5,7,6,8,9,10]
+这个数组6前面相邻的7调换一下就称为一个有序的数组。
+
+如果一个数组完全有序，那么我们可以用二分查找法很快找到指定的元素，但是现在是基本有序，那还能不能用二分查找法呢，答案是可以的，不过得稍稍改一下。
+
+我们已经直到了一个数组基本有序的意思是讲，即使出现乱序的情况，只要在前后相邻位置做恰当地调整，就能够调为有序，也就是说局部无序的元素长度不超过2，有了这个条件那就简单多了，我们仍然用二分查找法，无非不过是需要多一个比对一下相邻元素的情况这一步骤罢了：
+
+public class SearchAlmost {
+    // A recursive binary search based function. It returns index of x in given array arr[l..r] is present, otherwise -1
+    public static int binarySearch(int arr[], int l, int r, int x) {
+        if (r >= l) {
+            int mid = l + (r - l) / 2;
+
+            // If the element is present at one of the middle 3 positions
+            if (arr[mid] == x) return mid;
+            if (mid > l && arr[mid - 1] == x) return (mid - 1);
+            if (mid < r && arr[mid + 1] == x) return (mid + 1);
+
+            // If element is smaller than mid, then it can only be present in left subarray
+            if (arr[mid] > x) return binarySearch(arr, l, mid - 2, x);
+
+            // Else the element can only be present in right subarray
+            return binarySearch(arr, mid + 2, r, x);
+        }
+
+        // We reach here when element is not present in array
+        return -1;
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {3, 2, 10, 4, 40};
+        int n = arr.length;
+        int x = 4;
+        int result = binarySearch(arr, 0, n - 1, x);
+        if (result == -1)
+            System.out.println("Element is not present in array");
+        else
+            System.out.println("Element is present at index " + result);
+    }
+}
+
+该算法的时间复杂度仍为O(logn)，这比横向扫描一遍的时间复杂度O(n)强点

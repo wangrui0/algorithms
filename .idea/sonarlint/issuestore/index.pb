@@ -20,3 +20,11 @@ b
 2src/main/java/org/other/Ch0002IntegerToInvert.java,a\7\a7f5b2876c7199e4c29e7b5b66517e2b5a77f429
 Q
 !src/main/java/org/other/Test.java,3\3\3328c10e0369b3dd70aceb8f490fc1438d18b8e4
+i
+9src/main/java/org/other/一万个数查找两个重复数,8\1\81a1349a969515bb2d3395cdabe2c00375560952
+S
+#src/main/java/org/sort/排序算法,3\b\3beed7cd11d7f0a8e9ec7b11b46e32dbad69cfd4
+\
+,src/main/java/org/sort/Ch0001BubbleSort.java,7\9\796cce510fb7be0c00778201abf5b43bcf58d5a5
+_
+/src/main/java/org/sort/Ch0002SelectionSort.java,7\3\7378a783af091651f21d39f190281232b05550bc

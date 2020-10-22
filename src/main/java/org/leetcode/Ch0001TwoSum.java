@@ -1,5 +1,6 @@
 package org.leetcode;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +18,6 @@ import java.util.Map;
  * 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/two-sum 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * <p>
  * https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-by-leetcode-2/
- *
  */
 public class Ch0001TwoSum {
 
@@ -25,10 +25,7 @@ public class Ch0001TwoSum {
     int[] nums = {2, 11, 7};
     int target = 9;
     int[] twoSum = twoSum2(nums, target);
-    if (twoSum != null) {
-      System.out.println(twoSum[0]);
-      System.out.println(twoSum[1]);
-    }
+    System.out.println(Arrays.toString(twoSum));
   }
 
   /**

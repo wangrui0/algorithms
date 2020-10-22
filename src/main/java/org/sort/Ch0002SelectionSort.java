@@ -15,4 +15,13 @@ package org.sort;
  */
 public class Ch0002SelectionSort {
 
+  public static void main(String[] args) {
+
+  }
+
+  public static int[] selectionSort(int[] array) {
+    return null;
+  }
+
+
 }

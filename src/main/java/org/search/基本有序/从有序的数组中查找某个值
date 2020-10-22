@@ -1,0 +1,95 @@
+二分查找又称折半查找，它是一种效率较高的查找方法。
+
+1、折半查找的算法思想是将数列按有序化(递增或递减)排序，查找过程采用跳跃方式查找，即先以有序数列的中点位置为比较对象，如果要找的元素值小于该中点元素，则将待查序列缩小为左半部分，否则为右半部分。通过一次比较，将查找空间缩小一半。他可以明显缩小比较次数，提高查找效率。但是折半查找的先决条件是查找表中的数据元素必须有序。
+
+
+
+  折半查找的优点是：比较次数少，查找速度快，平均性能好；
+
+                    缺点是：要求待查表为有序表，且插入困难。
+
+                   因此，折半查找方法适用于不经常变动而查找频繁的有序列表。
+
+2、二分法步骤描述
+
+①首先确定整个查找区间的中间位置mid=（left+right）/2
+
+②用待查关键字值key与中间位置的关键字值进行比较;
+
+        若相等，则查找成功;
+
+        若大于，则在右半个区域继续进行折半查找;
+
+        若小于，则在左半个区域继续进行折半查找;
+
+③对确定的缩小区域再折半查找，重复上述步骤。
+
+最后，得到结果：要么查找成功，要么查找失败。
+
+折半查找的存储结构采用一维数组存放。
+
+3、二分查找算法讨论
+
+优点：ASL<log2n，即每经过一次查找，查找范围就缩小一半。经过log2n次比较就可以完成查找过程。
+
+缺点：因要求有序，所以要求查找数列必须有序，而对所有数据元素按照大小排序是非常费时的操作。
+
+            另外，顺序存储结构的插入、删除操作不便利。
+
+
+
+package searching;
+/**
+ * 二分查找算法
+ * @param a 有序数组
+ * @param key 查找的元素
+ * @return key的数组下标，没找到返回-1
+ */
+public class BinarySearch {
+
+	public static void main(String[] args) {
+		int[] a={3,5,11,17,21,23,28,30,32,50,64,78,81,95,101};
+		System.out.println(binSearch(a,0,a.length-1,81));
+		System.out.println(binSearch(a,81));
+	}
+
+	//二分查找 普通循环实现
+	private static int binSearch(int[] a, int key) {
+		// TODO Auto-generated method stub
+		int mid=a.length/2;
+		if (key==a[mid]) {
+			return mid;
+		}
+		int start=0;
+		int end=a.length-1;
+		while(start<=end){
+			mid=start+(end-start)/2;
+			if (key==a[mid]) {
+				return mid;
+			}else if (key>a[mid]) {
+				start=mid+1;
+			}else {
+				end=mid-1;
+			}
+		}
+		return -1;
+	}
+
+	//二分查找递归实现
+	private static int binSearch(int[] a, int start, int end, int key) {
+		// TODO Auto-generated method stub
+		int mid=start+(end-start)/2;
+		if (a[mid]==key) {
+			return mid;
+		}
+		if (start>=end) {
+			return -1;
+		}else if (key>a[mid]) {
+			return binSearch(a, mid+1, end, key);
+		}else if(key<a[mid]){
+			return binSearch(a, start, mid-1, key);
+		}
+		return -1;
+	}
+
+}
