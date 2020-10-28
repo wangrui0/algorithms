@@ -64,19 +64,97 @@ package org.leetcode;
  */
 public class Ch0004FindMedianSortedArrays {
 
+  /**
+   * toList ,toSet ,toMap,groupBy,joining
+   * @param args
+   */
   public static void main(String[] args) {
-    int[] num1 = {1,2,3};
-    int[] num2 = {2,4,8};
+    int[] num1 = {1, 2, 3};
+    int[] num2 = {2, 4, 8};
+    //1 2 2 3 4 8
     double result = findMedianSortedArrays(num1, num2);
     System.out.println(result);
   }
 
   /**
+   * <p>
+   * l1
+   * <p>
+   * 1,2,3,4,4,5,6            ------------->7
+   * <p>
+   * l2
+   * <p>
+   * 2,3,4,4,5,5,8,9          ------------->8
+   * <p>
+   * (7+8)/2=8
+   *
    * @param nums1
    * @param nums2
    * @return
    */
   public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-    return 1.0;
+    int leftMid = -1;
+    int rightMid = -1;
+    if (nums1.length == 0) {
+      if (nums2.length % 2 == 0) {
+        leftMid = nums2.length / 2;
+        rightMid = nums2.length / 2 + 1;
+      } else {
+        leftMid = nums2.length / 2 - 1;
+        rightMid = leftMid;
+      }
+      return (Double.valueOf(nums2[leftMid] + nums2[rightMid])) / 2;
+    }
+    if (nums2.length == 0) {
+      if (nums1.length % 2 == 0) {
+        leftMid = nums1.length / 2 - 1;
+        rightMid = nums1.length / 2;
+      } else {
+        leftMid = nums1.length / 2;
+        rightMid = leftMid;
+      }
+      return (Double.valueOf(nums1[leftMid - 1] + nums1[rightMid - 1])) / 2;
+    }
+    int sum = nums1.length + nums2.length;
+    if (sum % 2 == 0) {
+      leftMid = sum / 2;
+      rightMid = sum / 2 + 1;
+    } else {
+      leftMid = sum / 2 + 1;
+      rightMid = leftMid;
+    }
+    int num1Index = 1;
+    int num2Index = 1;
+    int left = -1;
+    int right = -1;
+    while (num1Index <= nums1.length - 1 && num2Index <= nums2.length - 1 && num1Index + num2Index < leftMid) {
+      if (nums1[num1Index - 1] < nums2[num2Index - 1]) {
+        num1Index++;
+      } else {
+        num2Index++;
+      }
+    }
+    if (num1Index + num2Index == leftMid) {
+      left = nums1[num1Index - 1] < nums2[num2Index - 1] ? nums1[num1Index - 1] : nums2[num2Index - 1];
+      right =
+          nums1[num1Index - 1] < nums2[num2Index - 1] ? nums2[num2Index - 1] < nums1[num1Index] ? nums2[num2Index - 1]
+              : nums1[num1Index] : nums1[num1Index - 1] < nums2[num2Index] ? nums1[num1Index - 1] : nums2[num2Index];
+      return (Double.valueOf(left + right)) / 2;
+    }
+    while (num1Index <= nums1.length - 1 && num1Index + num2Index < leftMid) {
+      if (num1Index + num2Index == leftMid) {
+        left = nums1[num1Index - 1];
+        right = nums1[num1Index];
+      }
+      num1Index++;
+    }
+    while (num2Index <= nums2.length - 1 && num1Index + num2Index < rightMid) {
+      if (num1Index + num2Index == leftMid) {
+        left = nums2[num2Index - 1];
+        right = nums2[num2Index];
+      }
+      num2Index++;
+    }
+    return (Double.valueOf(left + right)) / 2;
   }
 }
