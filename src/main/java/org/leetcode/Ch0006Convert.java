@@ -6,4 +6,8 @@ package org.leetcode;
  */
 public class Ch0006Convert {
 
+  public static void main(String[] args) {
+
+  }
+
 }
