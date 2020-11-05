@@ -66,6 +66,7 @@ public class Ch0004FindMedianSortedArrays {
 
   /**
    * toList ,toSet ,toMap,groupBy,joining
+   *
    * @param args
    */
   public static void main(String[] args) {
@@ -77,6 +78,7 @@ public class Ch0004FindMedianSortedArrays {
   }
 
   /**
+   * 错了啊，错了。不会做这个
    * <p>
    * l1
    * <p>
@@ -141,6 +143,7 @@ public class Ch0004FindMedianSortedArrays {
               : nums1[num1Index] : nums1[num1Index - 1] < nums2[num2Index] ? nums1[num1Index - 1] : nums2[num2Index];
       return (Double.valueOf(left + right)) / 2;
     }
+
     while (num1Index <= nums1.length - 1 && num1Index + num2Index < leftMid) {
       if (num1Index + num2Index == leftMid) {
         left = nums1[num1Index - 1];
@@ -157,4 +160,17 @@ public class Ch0004FindMedianSortedArrays {
     }
     return (Double.valueOf(left + right)) / 2;
   }
+
+  /**
+   *
+   * 官方：
+   *
+   * @param nums1
+   * @param nums2
+   * @return
+   */
+  public static double findMedianSortedArrays2(int[] nums1, int[] nums2) {
+    return -1;
+  }
+
 }
