@@ -1,6 +1,8 @@
 package org.leetcode;
 
 /**
+ * 罗马数字转整数
+ * <p>
  * 罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
  * <p>
  * 字符          数值
@@ -114,7 +116,7 @@ public class Ch0013RomanToInt {
       } else {
         result += pre;
       }
-      pre=current;
+      pre = current;
     }
     result += current;
     return result;
