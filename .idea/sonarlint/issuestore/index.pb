@@ -64,3 +64,9 @@ a
 1src/main/java/org/leetcode/Ch0053MaxSubArray.java,6\c\6c5b93a520aadfbd21a9081a93af12f436b55423
 b
 2src/main/java/org/leetcode/Ch0035SearchInsert.java,6\6\6658a9a77cffa27a10592e34e20af467a227ff2c
+f
+6src/main/java/org/leetcode/Ch0058LengthOfLastWord.java,c\0\c099e71012c41cb9f77295bbd84759076e658bfa
+]
+-src/main/java/org/leetcode/Ch0066PlusOne.java,c\a\ca6133de09c719f4a475701f52cb64d7286b8a41
+_
+/src/main/java/org/leetcode/Ch0067AddBinary.java,7\8\7891982c3cc290f29a73d3027bacbc9d90d9965a
