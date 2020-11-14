@@ -38,9 +38,9 @@ public class Ch0088Merge {
 //        int[] num2 = new int[]{2, 5, 6};
 //    int[] num1 = new int[]{1, 2, 3, 5, 6, 0};
 //    int[] num2 = new int[]{2};
-    int[] num1 = new int[]{2, 0};
-    int[] num2 = new int[]{1};
-    merge(num1, 1, num2, 1);
+    int[] num1 = new int[]{1, 2, 3, 0, 0, 0};
+    int[] num2 = new int[]{2, 5, 6};
+    merge6(num1, 3, num2, 3);
     System.out.println(Arrays.toString(num1));
   }
 
@@ -97,11 +97,11 @@ public class Ch0088Merge {
    * <p>
    * 直觉
    * <p>
-   * 一般而言，对于有序数组可以通过 双指针法 达到O(n + m)O(n+m)的时间复杂度。
+   * 一般而言，对于有序数组可以通过 双指针法 达到O(n+m)的时间复杂度。
    * <p>
    * 最直接的算法实现是将指针p1 置为 nums1的开头， p2为 nums2的开头，在每一步将最小值放入输出数组中。
    * <p>
-   * 由于 nums1 是用于输出的数组，需要将nums1中的前m个元素放在其他地方，也就需要 O(m)O(m) 的空间复杂度。
+   * 由于 nums1 是用于输出的数组，需要将nums1中的前m个元素放在其他地方，也就需要 O(m) 的空间复杂度。
    * <p>
    * ==============================
    * <p>
@@ -112,30 +112,24 @@ public class Ch0088Merge {
    * 空间复杂度 : O(m)。
    */
   public void merge3(int[] nums1, int m, int[] nums2, int n) {
-    // Make a copy of nums1.
     int[] nums1_copy = new int[m];
     System.arraycopy(nums1, 0, nums1_copy, 0, m);
 
-    // Two get pointers for nums1_copy and nums2.
     int p1 = 0;
     int p2 = 0;
-
-    // Set pointer for nums1
     int p = 0;
 
-    // Compare elements from nums1_copy and nums2
-    // and add the smallest one into nums1.
     while ((p1 < m) && (p2 < n)) {
       nums1[p++] = (nums1_copy[p1] < nums2[p2]) ? nums1_copy[p1++] : nums2[p2++];
     }
 
-    // if there are still elements to add
     if (p1 < m) {
       System.arraycopy(nums1_copy, p1, nums1, p1 + p2, m + n - p1 - p2);
     }
     if (p2 < n) {
       System.arraycopy(nums2, p2, nums1, p1 + p2, m + n - p1 - p2);
     }
+
   }
 
   /**
@@ -158,22 +152,45 @@ public class Ch0088Merge {
    * 空间复杂度 : O(1)。
    */
   public void merge4(int[] nums1, int m, int[] nums2, int n) {
-    // two get pointers for nums1 and nums2
     int p1 = m - 1;
     int p2 = n - 1;
-    // set pointer for nums1
     int p = m + n - 1;
 
-    // while there are still elements to compare
-    while ((p1 >= 0) && (p2 >= 0))
-    // compare two elements from nums1 and nums2
-    // and add the largest one in nums1
-    {
+    while ((p1 >= 0) && (p2 >= 0)) {
       nums1[p--] = (nums1[p1] < nums2[p2]) ? nums2[p2--] : nums1[p1--];
     }
-
-    // add missing elements from nums2
     System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
+
+  }
+
+  public void merge5(int[] nums1, int m, int[] nums2, int n) {
+    int[] nums1Copy = new int[m];
+    System.arraycopy(nums1, 0, nums1Copy, 0, m);
+    int p1 = 0;
+    int p2 = 0;
+    int p = 0;
+
+    while (p1 < m && p2 < n) {
+      nums1[p++] = nums1Copy[p1] > nums2[p2] ? nums2[p2++] : nums1Copy[p1++];
+    }
+    if (p1 < m) {
+      System.arraycopy(nums1Copy, p1, nums1, p1 + p2, m + n - p1 - p2);
+    }
+    if (p2 < n) {
+      System.arraycopy(nums2, p2, nums1, p1 + p2, m + n - p1 - p2);
+    }
+  }
+
+  public static void merge6(int[] nums1, int m, int[] nums2, int n) {
+
+    int p1 = m - 1;
+    int p2 = n - 1;
+    int p = m + n - 1;
+
+    while (p1 >= 0 && p2 >= 0) {
+      nums1[p--] = nums1[p1] > nums2[p2] ? nums1[p1--] : nums2[p2--];
+    }
+    System.arraycopy(nums2, 0, nums1, 0, n - (n - p2 - 1));
   }
 
 }
