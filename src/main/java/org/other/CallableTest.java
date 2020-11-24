@@ -6,7 +6,19 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-class CallableTest implements Callable {
+public class CallableTest implements Callable {
+
+    private String name;
+    public CallableTest(String name){
+        this.name = name;
+    }
+    @Override
+    public Object call() throws Exception {
+        System.out.println("调用Callable的call()方法进行逻辑处理开始1！");
+        System.out.println("调用Callable的call()方法进行逻辑处理开始2！");
+        System.out.println("调用Callable的call()方法进行逻辑处理开始3！");
+        return name;//call()方法执行完后返回的数据
+    }
     public static void main(String[] args) {
         //使用main方法模拟Callable的call()方法的调用
         CallableTest callableTest = new CallableTest("我是阿T");
@@ -23,13 +35,5 @@ class CallableTest implements Callable {
         }
     }
 
-    private String name;
-    public CallableTest(String name){
-        this.name = name;
-    }
-    @Override
-    public Object call() throws Exception {
-        System.out.println("调用Callable的call()方法进行逻辑处理开始！");
-        return name;//call()方法执行完后返回的数据
-    }
+
 }
