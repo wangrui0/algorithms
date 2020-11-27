@@ -103,6 +103,7 @@ public class Ch0112PathSum {
    * <p>
    * 平均情况下树的高度与节点数的对数正相关，空间复杂度为 O(logN)。
    * <p>
+   *
    * @param root
    * @param sum
    * @return
@@ -115,6 +116,46 @@ public class Ch0112PathSum {
       return sum == root.val;
     }
     return hasPathSum2(root.left, sum - root.val) || hasPathSum2(root.right, sum - root.val);
+  }
+
+  public boolean hasPathSum3(TreeNode root, int sum) {
+    if (root == null) {
+      return false;
+    }
+    if (root.left == null && root.right == null) {
+      return root.val == sum;
+    }
+    return hasPathSum3(root.left, sum - root.val) || hasPathSum3(root.right, sum - root.val);
+  }
+
+  public boolean hasPathSum4(TreeNode root, int sum) {
+    if (root == null) {
+      return false;
+    }
+
+    Queue<TreeNode> queue = new LinkedList<>();
+    Queue<Integer> queueValue = new LinkedList<>();
+    queue.offer(root);
+    queueValue.offer(root.val);
+    while (!queue.isEmpty()) {
+
+      TreeNode poll = queue.poll();
+      Integer pollValue = queueValue.poll();
+
+      if (poll.left == null && poll.right == null) {
+        if (pollValue == sum) {
+          return true;
+        }
+        continue;
+      } else if (poll.left != null) {
+        queue.offer(poll.left);
+        queueValue.offer(poll.left.val+pollValue);
+      } else {
+        queue.offer(poll.right);
+        queueValue.offer(poll.right.val+pollValue);
+      }
+    }
+    return false;
   }
 
 }
