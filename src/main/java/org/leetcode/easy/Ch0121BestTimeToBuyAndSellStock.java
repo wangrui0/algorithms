@@ -2,13 +2,12 @@ package org.leetcode.easy;
 
 /**
  * <p>买卖股票的最佳时机
+ *
  * <p> 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
  *
  * <p> 如果你最多只允许完成一笔交易（即买入和卖出一支股票一次），设计一个算法来计算你所能获取的最大利润。
  *
  * <p> 注意：你不能在买入股票前卖出股票。
- * <p>
- *  
  *
  * <p> 示例 1:
  *
@@ -32,4 +31,83 @@ package org.leetcode.easy;
  */
 public class Ch0121BestTimeToBuyAndSellStock {
 
+  public static void main(String[] args) {
+    System.out.println(maxProfit2(new int[]{7, 1, 5, 3, 6, 4}));
+    System.out.println(maxProfit2(new int[]{7, 6, 4, 3, 1}));
+  }
+
+  public static int maxProfit(int[] prices) {
+    int max = 0;
+    for (int i = 0; i < prices.length; i++) {
+      for (int j = 1; j < prices.length; j++) {
+        if (i != j && prices[i] < prices[j] && i < j) {
+          int sub = prices[j] - prices[i];
+          if (max < sub) {
+            max = sub;
+          }
+        }
+      }
+    }
+    return max;
+  }
+
+  /**
+   * 官方
+   *
+   * @param prices
+   * @return
+   */
+  public static int maxProfit2(int[] prices) {
+    int max = 0;
+    for (int i = 0; i < prices.length; i++) {
+      for (int j = i + 1; j < prices.length; j++) {
+        if (prices[i] < prices[j]) {
+          int sub = prices[j] - prices[i];
+          if (max < sub) {
+            max = sub;
+          }
+        }
+      }
+    }
+    return max;
+  }
+
+  /**
+   * [7,1,5,3,6,4]
+   *
+   * @param prices
+   * @return
+   */
+  public static int maxProfit3(int[] prices) {
+    int minprice = Integer.MAX_VALUE;
+    int maxprofit = 0;
+    for (int i = 0; i < prices.length; i++) {
+      if (prices[i] < minprice) {
+        minprice = prices[i];
+      } else if (prices[i] - minprice > maxprofit) {
+        maxprofit = prices[i] - minprice;
+      }
+    }
+    return maxprofit;
+  }
+
+  /**
+   * [7,1,5,3,6,4]
+   *
+   * @param prices
+   * @return
+   */
+  public static int maxProfit4(int[] prices) {
+    int minPrice = Integer.MAX_VALUE;
+    int maxProfile = 0;
+    for (int i = 0; i < prices.length; i++) {
+      if (prices[i] < minPrice) {
+        minPrice = prices[i];
+      } else if (prices[i] - minPrice > maxProfile) {
+        maxProfile = prices[i] - minPrice;
+
+      }
+    }
+    return maxProfile;
+  }
 }

@@ -29,4 +29,55 @@ package org.leetcode.easy;
  */
 public class Ch0125ValidPalindrome {
 
+  public static void main(String[] args) {
+    String str = "A man, a plan, a canal: Panama";
+    System.err.println(isPalindrome(str));
+  }
+
+  public static boolean isPalindrome(String s) {
+    char[] chars = s.toCharArray();
+    int n = chars.length - 1;
+    for (int i = 0, j = n; i < j; ) {
+      while (i < j && !Character.isLetterOrDigit(s.charAt(i))) {
+        i++;
+      }
+      if (i > j) {
+        return true;
+      }
+      while (i < j && !Character.isLetterOrDigit(s.charAt(j))) {
+        j--;
+      }
+      if (i >= j) {
+        return true;
+      }
+
+      if (Character.toLowerCase(chars[i]) != Character.toLowerCase(chars[j])) {
+        return false;
+      }
+      i++;
+      j--;
+    }
+    return true;
+  }
+
+  public boolean isPalindrome2(String s) {
+    int n = s.length();
+    int left = 0, right = n - 1;
+    while (left < right) {
+      while (left < right && !Character.isLetterOrDigit(s.charAt(left))) {
+        ++left;
+      }
+      while (left < right && !Character.isLetterOrDigit(s.charAt(right))) {
+        --right;
+      }
+      if (left < right) {
+        if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) {
+          return false;
+        }
+        ++left;
+        --right;
+      }
+    }
+    return true;
+  }
 }
