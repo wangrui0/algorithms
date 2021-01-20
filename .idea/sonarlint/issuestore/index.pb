@@ -88,3 +88,9 @@ u
 Esrc/main/java/org/leetcode/easy/Ch0167TwoSumIIInputArrayIsSorted.java,9\4\947edf70d89fb5d55cf51f464c2d7ba98787eaba
 b
 2src/main/java/org/leetcode/easy/Ch0006Convert.java,5\6\56604f641e8182c50c3528aba40a9553396d2825
+f
+6src/main/java/org/leetcode/easy/Ch0190ReverseBits.java,5\1\51501120b92363d0c92326b216ac59b76232d096
+h
+8src/main/java/org/leetcode/easy/Ch0191NumberOf1Bits.java,4\d\4ddcb662fbb7911825fabe4ffb8831d89f80213c
+r
+Bsrc/main/java/org/leetcode/easy/Ch0172FactorialTrailingZeroes.java,5\f\5fed7c91dd4a3bb5f35d20dd2c3d95d0cd7e31c3
