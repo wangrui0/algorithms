@@ -62,16 +62,15 @@ import java.util.Stack;
  * @author: wangrui
  * @date: 2021/1/25
  */
-public class Ch0232ImplementQueueUsingStacks {
+public class Ch0232ImplementQueueUsingStacks2 {
 
   private Stack<Integer> s1 = new Stack<>();
   private Stack<Integer> s2 = new Stack<>();
   private int front;
 
   /**
-   * <p> s1 是入队列用的
-   * <p> s2 是出队列用的
-   * <p> front 是获取队列头用的
+   * <p> s1 用于纯粹
+   * <p>s2 是临时队列
    *
    * @param x
    */
@@ -79,28 +78,29 @@ public class Ch0232ImplementQueueUsingStacks {
     if (s1.empty()) {
       front = x;
     }
-    s1.push(x);
-  }
-
-  public int pop() {
-    if (s2.isEmpty()) {
-      while (!s1.isEmpty()) {
-        s2.push(s1.pop());
-      }
+    while (!s1.isEmpty()) {
+      s2.push(s1.pop());
     }
-    return s2.pop();
+    s2.push(x);
+    while (!s2.isEmpty()) {
+      s1.push(s2.pop());
+    }
   }
 
-  // Return whether the queue is empty.
-  public boolean empty() {
-    return s1.isEmpty() && s2.isEmpty();
+  public void pop() {
+    s1.pop();
+    if (!s1.empty()) {
+      front = s1.peek();
+    }
   }
 
   // Get the front element.
   public int peek() {
-    if (!s2.isEmpty()) {
-      return s2.peek();
-    }
     return front;
+  }
+
+  // Return whether the queue is empty.
+  public boolean empty() {
+    return s1.isEmpty();
   }
 }
