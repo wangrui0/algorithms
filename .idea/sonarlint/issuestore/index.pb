@@ -226,3 +226,17 @@ x
 Hsrc/main/java/org/leetcode/shunxu/ch350/Ch303RangeSumQueryImmutable.java,1\7\17413d57403d9af3341b36264ba0dff7268b0340
 o
 ?src/main/java/org/leetcode/shunxu/ch350/Ch344ReverseString.java,4\2\42a08232df0545a326b0d9e183fa15bcf2e8928d
+P
+ src/main/java/org/other/LRU.java,b\e\be6dcc5cc49c8ddb77807b4ba135f2c96a5cd9b4
+Q
+!src/main/java/org/other/LRU2.java,d\4\d49c956850224f0cceb3aba3f395e955e0093a94
+Q
+!src/main/java/org/other/LRU1.java,f\d\fdcbba21e2cab0acf2411fb4158770101c9ea47d
+x
+Hsrc/main/java/org/leetcode/shunxu/ch350/Ch345ReverseVowelsOfAString.java,7\5\75128fafc6eaf60c93dbc2d818b38445f4e56a0b
+o
+?src/main/java/org/leetcode/shunxu/ch350/Ch346MovingAverage.java,c\f\cf2b167c892fabaaccb848d7dbb2f6376515d374
+y
+Isrc/main/java/org/leetcode/shunxu/ch350/Ch349IntersectionOfTwoArrays.java,3\3\3312670495447c56b39bbba6379eb4cec547a770
+{
+Ksrc/main/java/org/leetcode/shunxu/ch350/Ch350IntersectionOfTwoArraysII.java,e\3\e33bf1ad1c1767fda6eaadfcc62c72cdf4e43327
