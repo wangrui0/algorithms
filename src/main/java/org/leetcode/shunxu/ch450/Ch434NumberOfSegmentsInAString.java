@@ -20,6 +20,20 @@ package org.leetcode.shunxu.ch450;
  */
 public class Ch434NumberOfSegmentsInAString {
 
+  /**
+   * <p>复杂度分析
+   *
+   * <p>    时间复杂度 :O(n)。
+   *
+   * <p> 这里用到的内置函数（无论是 Java 还是 Python）的时间复杂度或为 O(n)，或为 O(1) ，故整个算法可以在线性复杂度内完成。
+   *
+   * <p>空间复杂度 : O(n)。
+   *
+   * <p>     split 函数 (不管哪种语言) 返回长度为 O(n) 的数组/列表，故算法使用线性的额外空间
+   *
+   * @param s
+   * @return
+   */
   public int countSegments(String s) {
     s = s.trim();
     if (s == null || s.length() == 0) {
@@ -28,6 +42,20 @@ public class Ch434NumberOfSegmentsInAString {
     return s.split("\\s+").length;
   }
 
+  /**
+   * 复杂度分析
+   *
+   *     时间复杂度 : O(n)。
+   *
+   *     对每个下标进行常数时间的检测。
+   *
+   *     空间复杂度 : O(1)。
+   *
+   *     只使用了额外的几个整数，因此使用的空间为常数。
+   *
+   * @param s
+   * @return
+   */
   public int countSegments2(String s) {
     s = s.trim();
     int count = 0;
