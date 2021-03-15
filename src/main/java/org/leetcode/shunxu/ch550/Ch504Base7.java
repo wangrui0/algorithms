@@ -22,6 +22,7 @@ package org.leetcode.shunxu.ch550;
  */
 public class Ch504Base7 {
 
+
   public String convertToBase7(int num) {
     return null;
   }
