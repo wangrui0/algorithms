@@ -26,6 +26,7 @@ package org.leetcode.shunxu.ch500;
 public class Ch485MaxConsecutiveOnes {
 
   /**
+   *
    * 复杂度分析
    *
    *     时间复杂度：O(n)，其中 nnn 是数组的长度。需要遍历数组一次。
