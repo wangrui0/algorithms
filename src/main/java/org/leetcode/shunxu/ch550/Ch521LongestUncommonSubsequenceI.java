@@ -1,5 +1,8 @@
 package org.leetcode.shunxu.ch550;
 
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
+import sun.nio.cs.ext.MacHebrew;
+
 /**
  * <p>521. 最长特殊序列 Ⅰ
  * <p>给你两个字符串，请你从这两个字符串中找出最长的特殊序列。
@@ -27,6 +30,7 @@ package org.leetcode.shunxu.ch550;
  * <p>输出：-1
  *
  *
+ *
  * <p>提示：
  *
  * <p>两个字符串长度均处于区间 [1 - 100] 。
@@ -39,7 +43,21 @@ package org.leetcode.shunxu.ch550;
  * @Date: 2021/3/15 8:20 下午
  */
 public class Ch521LongestUncommonSubsequenceI {
-    public String reverseStr(String s, int k) {
-        return null;
+    /**
+     * <p>复杂度分析
+     *
+     * <p>时间复杂度：O(min(x,y))，其中 x 和 y 是字符串 a 和 b 的长度。方法 equals 的时间复杂度为 min(x,y)。
+     *
+     * <p>空间复杂度：O(1)，无需额外空间。
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public int findLUSlength(String a, String b) {
+        if (a.equals(b)) {
+            return -1;
+        }
+        return Math.max(a.length(), b.length());
     }
 }
