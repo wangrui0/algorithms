@@ -88,6 +88,7 @@ public class Ch500KeyboardRow {
             }
         }
 
+
         if (find == null) {
             ok = false;
             return ok;
