@@ -13,6 +13,7 @@ package org.leetcode.shunxu.ch600;
  *
  * <p>示例 1:
  *
+ *
  * <p>输入: "PPALLP"
  * <p>输出: True
  * <p>示例 2:
