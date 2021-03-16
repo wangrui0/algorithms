@@ -30,13 +30,42 @@ package org.leetcode.shunxu.ch500;
  * <p>在真实的面试中遇到过这道题？
  * <p>https://leetcode-cn.com/problems/construct-the-rectangle/
  *
- *
  * @author: wangrui
  * @date: 2021/3/11
  */
 public class Ch492ConstructTheRectangle {
 
   public int[] constructRectangle(int area) {
-    return null;
+    int width=(int) Math.sqrt(area);
+    int[] result = new int [2];
+    while(width>0){
+      if(area % width == 0){
+        result[0] = area/width;
+        result[1] = width;
+        return result;
+      }
+      width--;
+    }
+    return result;
+  }
+
+  public static int[] constructRectangle2(int area) {
+    int[] result = new int[2];
+    int minSub = 0;
+    int length = 0;
+    int width = 0;
+    for (int i = 1; i * i <= area; i++) {
+      if (area % i == 0) {
+        int sub = area / i - i;
+        if (sub <= minSub || i == 1) {
+          length = area / i;
+          width = i;
+          minSub=sub;
+        }
+      }
+    }
+    result[0] = length;
+    result[1] = width;
+    return result;
   }
 }
