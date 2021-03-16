@@ -2,7 +2,7 @@ package org.tree;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * 中序的规则就是  左子树-->根结点 ---> 右子树.

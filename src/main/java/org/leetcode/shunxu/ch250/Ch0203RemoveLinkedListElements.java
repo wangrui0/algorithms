@@ -1,6 +1,6 @@
 package org.leetcode.shunxu.ch250;
 
-import org.leetcode.ListNode;
+import org.ListNode;
 
 /**
  * 删除链表中等于给定值 val 的所有节点。

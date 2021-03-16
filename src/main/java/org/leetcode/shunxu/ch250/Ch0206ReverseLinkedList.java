@@ -1,6 +1,6 @@
 package org.leetcode.shunxu.ch250;
 
-import org.leetcode.ListNode;
+import org.ListNode;
 
 /**
  * <p> 反转一个单链表。

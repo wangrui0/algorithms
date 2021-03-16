@@ -2,7 +2,7 @@ package org.leetcode.shunxu.ch250;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.leetcode.ListNode;
+import org.ListNode;
 
 /**
  * <p> 请判断一个链表是否为回文链表。

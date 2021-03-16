@@ -1,6 +1,6 @@
 package org.leetcode.shunxu.ch50;
 
-import org.leetcode.ListNode;
+import org.ListNode;
 
 /**
  * 合并两个有序链表

@@ -1,7 +1,7 @@
 package org.leetcode.shunxu.ch100;
 
 import java.util.HashSet;
-import org.leetcode.ListNode;
+import org.ListNode;
 
 /**
  * <p>

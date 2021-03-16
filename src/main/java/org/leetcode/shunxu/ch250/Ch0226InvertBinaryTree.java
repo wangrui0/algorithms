@@ -1,6 +1,6 @@
 package org.leetcode.shunxu.ch250;
 
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * <p> 226. 翻转二叉树

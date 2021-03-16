@@ -30,6 +30,7 @@ package org.leetcode.shunxu.ch500;
  * <p>在真实的面试中遇到过这道题？
  * <p>https://leetcode-cn.com/problems/construct-the-rectangle/
  *
+ *
  * @author: wangrui
  * @date: 2021/3/11
  */
