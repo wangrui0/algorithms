@@ -1,6 +1,6 @@
 package org.leetcode.shunxu.ch300;
 
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * <p>给定一个不为空的二叉搜索树和一个目标值 target，请在该二叉搜索树中找到最接近目标值 target 的数值。

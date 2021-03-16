@@ -1,6 +1,6 @@
 package org.leetcode.shunxu.ch550;
 
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * <p>543. 二叉树的直径

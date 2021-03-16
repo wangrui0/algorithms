@@ -2,7 +2,7 @@ package org.leetcode.shunxu.ch150;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * <p>

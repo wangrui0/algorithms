@@ -1,11 +1,9 @@
 package org.tree;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 import java.util.Stack;
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * 前序的规则就是根结点 ---> 左子树 ---> 右子树.

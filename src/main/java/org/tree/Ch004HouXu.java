@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * 后序的规则就是  左子树-->右子树--->根结点

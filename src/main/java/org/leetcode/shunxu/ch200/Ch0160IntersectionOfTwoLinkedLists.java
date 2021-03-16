@@ -2,7 +2,7 @@ package org.leetcode.shunxu.ch200;
 
 import java.util.HashSet;
 import java.util.Set;
-import org.leetcode.ListNode;
+import org.ListNode;
 
 /**
  * 相交链表

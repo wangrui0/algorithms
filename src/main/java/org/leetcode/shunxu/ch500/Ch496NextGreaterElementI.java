@@ -1,5 +1,9 @@
 package org.leetcode.shunxu.ch500;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 /**
  * <p>496. 下一个更大元素 I
  *
@@ -22,6 +26,8 @@ package org.leetcode.shunxu.ch500;
  *
  * <p>示例 2:
  *
+ *
+ *
  * <p>输入: nums1 = [2,4], nums2 = [1,2,3,4].
  * <p>输出: [3,-1]
  * <p>解释:
@@ -42,7 +48,6 @@ package org.leetcode.shunxu.ch500;
  * <p>进阶：你可以设计一个时间复杂度为 O(nums1.length + nums2.length) 的解决方案吗？
  * <p> https://leetcode-cn.com/problems/next-greater-element-i/
  *
- *
  * @author: wangrui
  * @date: 2021/3/11
  */
@@ -50,6 +55,59 @@ public class Ch496NextGreaterElementI {
 
 
   public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-    return null;
+    Stack<Integer> stack = new Stack();
+    Map<Integer, Integer> map = new HashMap<>();
+
+    int[] array = new int[nums1.length];
+
+    for (int i = 0; i < nums2.length; i++) {
+      while (!stack.isEmpty() && stack.peek() < nums2[i]) {
+        map.put(stack.pop(), nums2[i]);
+      }
+      stack.push(nums2[i]);
+    }
+
+    while (!stack.isEmpty()) {
+      map.put(stack.pop(), -1);
+    }
+    for (int i = 0; i < nums1.length; i++) {
+      array[i] = map.get(nums1[i]);
+    }
+    return array;
+  }
+
+  /**
+   * <p>复杂度分析
+   *
+   * <p>   时间复杂度：O(M+N)，其中 MMM 和 NNN 分别是数组 nums1 和 nums2 的长度。
+   *
+   * <p>   空间复杂度：O(N)。我们在遍历 nums2 时，需要使用栈，以及哈希映射用来临时存储答案。
+   *
+   * <p>作者：LeetCode
+   * <p>链接：https://leetcode-cn.com/problems/next-greater-element-i/solution/xia-yi-ge-geng-da-yuan-su-i-by-leetcode/
+   * <p>来源：力扣（LeetCode）
+   * <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+   *
+   * @param findNums
+   * @param nums
+   * @return
+   */
+  public int[] nextGreaterElement2(int[] findNums, int[] nums) {
+    Stack<Integer> stack = new Stack<>();
+    HashMap<Integer, Integer> map = new HashMap<>();
+    int[] res = new int[findNums.length];
+    for (int i = 0; i < nums.length; i++) {
+      while (!stack.empty() && nums[i] > stack.peek()) {
+        map.put(stack.pop(), nums[i]);
+      }
+      stack.push(nums[i]);
+    }
+    while (!stack.empty()) {
+      map.put(stack.pop(), -1);
+    }
+    for (int i = 0; i < findNums.length; i++) {
+      res[i] = map.get(findNums[i]);
+    }
+    return res;
   }
 }

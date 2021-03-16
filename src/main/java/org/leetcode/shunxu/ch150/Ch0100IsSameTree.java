@@ -1,6 +1,6 @@
 package org.leetcode.shunxu.ch150;
 
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * 相同的树

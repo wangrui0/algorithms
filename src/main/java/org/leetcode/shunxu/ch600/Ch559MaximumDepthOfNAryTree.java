@@ -1,7 +1,7 @@
 package org.leetcode.shunxu.ch600;
 
 
-import org.leetcode.Node;
+import org.Node;
 
 /**
  * <p>559. N 叉树的最大深度

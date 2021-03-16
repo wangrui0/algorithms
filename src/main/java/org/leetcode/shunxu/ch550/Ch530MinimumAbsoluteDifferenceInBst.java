@@ -1,6 +1,6 @@
 package org.leetcode.shunxu.ch550;
 
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * <p>530. 二叉搜索树的最小绝对差

@@ -1,7 +1,7 @@
 package org.leetcode.shunxu.ch150;
 
 import java.util.Random;
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * <p>
