@@ -48,6 +48,7 @@ package org.leetcode.shunxu.ch500;
  */
 public class Ch496NextGreaterElementI {
 
+
   public int[] nextGreaterElement(int[] nums1, int[] nums2) {
     return null;
   }
