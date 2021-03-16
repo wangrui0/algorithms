@@ -3,7 +3,7 @@ package org.leetcode.shunxu.ch450;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
-import org.leetcode.TreeNode;
+import org.TreeNode;
 
 /**
  * <p> 404. 左叶子之和
