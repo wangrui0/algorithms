@@ -29,6 +29,7 @@ package org.leetcode.shunxu.ch550;
  *
  * <p>提示：
  *
+ *
  * <p>0 <= n <= 30
  * <p>通过次数152,245提交次数222,945
  * <p>https://leetcode-cn.com/problems/fibonacci-number/
@@ -37,7 +38,40 @@ package org.leetcode.shunxu.ch550;
  * @Date: 2021/3/15 8:24 下午
  */
 public class Ch509FibonacciNumber {
-    public int fib(int n) {
-        return 0;
+    public static void main(String[] args) {
+        System.out.println(fib(2));
+    }
+
+    //非递归
+
+    /**
+     * <p>复杂度分析
+     *
+     * <p>时间复杂度：O(n)。
+     *
+     * <p>空间复杂度：O(1)。
+     *
+     * @param n
+     * @return
+     */
+    public static int fib(int n) {
+        if (n < 2) {
+            return n;
+        }
+        int p = 0, q = 0, r = 1;
+        for (int i = 2; i <= n; i++) {
+            p = q;
+            q = r;
+            r = p + q;
+        }
+        return r;
+
+    }
+
+    public static int fib2(int n) {
+        if (n < 2) {
+            return n;
+        }
+        return fib2(n - 1) + fib2(n - 2);
     }
 }
