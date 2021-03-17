@@ -1,5 +1,9 @@
 package org.leetcode.shunxu.ch600;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * <p>575. 分糖果
  *
@@ -20,6 +24,7 @@ package org.leetcode.shunxu.ch600;
  *
  * <p>注意:
  *
+ *
  * <p>    数组的长度为[2, 10,000]，并且确定为偶数。
  * <p>    数组中数字的大小在范围[-100,000, 100,000]内。
  *
@@ -31,8 +36,41 @@ package org.leetcode.shunxu.ch600;
  * <p>@date: 2021/3/17
  */
 public class Ch575DistributeCandies {
+    /**
+     * <p>时间复杂度：O(n)。整个 candies 数组只遍历一次。这里，nn 表示 candies 数组的大小。
+     * <p>空间复杂度：O(n),在最坏的情况下，set 的大小为 nn。
+     *
+     * <p>作者：LeetCode
+     * <p>链接：https://leetcode-cn.com/problems/distribute-candies/solution/fen-tang-guo-by-leetcode/
+     * <p>来源：力扣（LeetCode）
+     * <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     * @param candyType
+     * @return
+     */
+    public int distributeCandies(int[] candyType) {
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < candyType.length; i++) {
+            set.add(candyType[i]);
+        }
+        return Math.min(set.size(), candyType.length / 2);
+    }
 
-  public int distributeCandies(int[] candyType) {
-    return 0;
-  }
+    /**
+     * 复杂度分析
+     *
+     * 时间复杂度：O(nlogn)。排序需要 O(nlogn) 的时间。
+     * 空间复杂度：O(1)。
+     * @param candyType
+     * @return
+     */
+    public int distributeCandies2(int[] candyType) {
+        Arrays.sort(candyType);
+        int count = 1;
+        for (int i = 1; i < candyType.length && count < candyType.length / 2; i++) {
+            if (candyType[i] > candyType[i - 1]) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
