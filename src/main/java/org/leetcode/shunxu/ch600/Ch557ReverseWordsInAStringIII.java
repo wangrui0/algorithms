@@ -21,7 +21,61 @@ package org.leetcode.shunxu.ch600;
  * @Date: 2021/3/15 8:08 下午
  */
 public class Ch557ReverseWordsInAStringIII {
-    public String reverseWords(String s) {
-        return null;
+
+  /**
+   * self
+   *
+   * @param s
+   * @return
+   */
+  public String reverseWords(String s) {
+    char[] chars = s.toCharArray();
+    for (int i = 0; i < chars.length; ) {
+      int start = i;
+      while (i < chars.length && s.charAt(i) != ' ') {
+        i++;
+      }
+      for (int j = i - 1; start < j; ) {
+        char temp = chars[start];
+        chars[start++] = chars[j];
+        chars[j--] = temp;
+      }
+      while (i < chars.length && s.charAt(i) == ' ') {
+        i++;
+      }
     }
+    return new String(chars);
+  }
+
+  /**
+   * <p>复杂度分析
+   *
+   * <p>  时间复杂度：O(N)，其中 N 为字符串的长度。原字符串中的每个字符都会在 O(1) 的时间内放入新字符串中。
+   *
+   * <p>  空间复杂度：O(N)。我们开辟了与原字符串等大的空间。
+   *
+   * @param s
+   * @return
+   */
+  public String reverseWords2(String s) {
+    StringBuffer ret = new StringBuffer();
+    int length = s.length();
+    int i = 0;
+    while (i < length) {
+      int start = i;
+      while (i < length && s.charAt(i) != ' ') {
+        i++;
+      }
+      for (int p = start; p < i; p++) {
+        ret.append(s.charAt(start + i - 1 - p));
+      }
+      while (i < length && s.charAt(i) == ' ') {
+        i++;
+        ret.append(' ');
+      }
+    }
+    return ret.toString();
+  }
+
+
 }

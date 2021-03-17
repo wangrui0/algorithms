@@ -34,7 +34,6 @@ import org.TreeNode;
  * <p>在真实的面试中遇到过这道题？
  * <p>https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/
  * 贡献者
- *
  * @Author: shenpei
  * @Date: 2021/3/15 8:19 下午
  */
