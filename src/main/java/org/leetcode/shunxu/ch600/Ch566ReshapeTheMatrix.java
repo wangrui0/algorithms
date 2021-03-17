@@ -21,7 +21,7 @@ package org.leetcode.shunxu.ch600;
  * <p>输出:
  * <p>[[1,2,3,4]]
  * <p>解释:
- * <p>行遍历nums的结果是 [1,2,3,4]。新的矩阵是 1 *<p>4 矩阵, 用之前的元素值一行一行填充新矩阵。
+ * <p>行遍历nums的结果是 [1,2,3,4]。新的矩阵是 1 *4 矩阵, 用之前的元素值一行一行填充新矩阵。
  *
  * <p>示例 2:
  *
@@ -34,7 +34,8 @@ package org.leetcode.shunxu.ch600;
  * <p>[[1,2],
  * <p> [3,4]]
  * <p>解释:
- * <p>没有办法将 2 *<p>2 矩阵转化为 2 *<p>4 矩阵。 所以输出原矩阵。
+ * <p>没有办法将 2 *2 矩阵转化为 2 *4 矩阵。 所以输出原矩阵。
+ *
  *
  * <p>注意：
  *
@@ -47,8 +48,31 @@ package org.leetcode.shunxu.ch600;
  * <p>@date: 2021/3/17
  */
 public class Ch566ReshapeTheMatrix {
-
-  public int[][] matrixReshape(int[][] nums, int r, int c) {
-    return null;
-  }
+    /**
+     * <p>[[1,2],
+     * <p> [3,4]
+     * [5,6]]
+     * 1 2 3 4
+     * <p>r = 2, c = 4
+     * <p>输出:
+     * <p>[[1,2],
+     * <p> [3,4]]
+     *
+     * @param nums
+     * @param r
+     * @param c
+     * @return
+     */
+    public int[][] matrixReshape(int[][] nums, int r, int c) {
+        int m = nums.length;
+        int n = nums[0].length;
+        if (n * m != r * c) {
+            return nums;
+        }
+        int[][] ans = new int[r][c];
+        for (int x = 0; x < m * n; x++) {
+            ans[x / c][x % c] = nums[x / n][x % n];
+        }
+        return ans;
+    }
 }

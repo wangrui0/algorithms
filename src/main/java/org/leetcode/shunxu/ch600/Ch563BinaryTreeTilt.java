@@ -50,6 +50,7 @@ import org.TreeNode;
  * <p>     树中节点数目的范围在 [0, 104] 内
  * <p>     -1000 <= Node.val <= 1000
  * <p>
+ *
  * <p> 通过次数24,522
  * <p> 提交次数41,672
  * <p> 在真实的面试中遇到过这道题？
@@ -59,7 +60,29 @@ import org.TreeNode;
  */
 public class Ch563BinaryTreeTilt {
 
-  public int findTilt(TreeNode root) {
-    return 0;
-  }
+    int tilt = 0;
+
+    public int findTilt(TreeNode root) {
+        traverse(root);
+        return tilt;
+    }
+
+    /**
+     * 递归函数 traverse，在任何结点调用该函数，都会返回当前结点下面（包括其自身）的结点和
+     *
+     * @param root
+     * @return
+     */
+    public int traverse(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int left = traverse(root.left);
+        int right = traverse(root.right);
+        tilt += Math.abs(left - right);
+
+        return left + right + root.val;
+    }
+
 }
