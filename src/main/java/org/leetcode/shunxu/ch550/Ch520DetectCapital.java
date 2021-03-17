@@ -1,7 +1,5 @@
 package org.leetcode.shunxu.ch550;
 
-import com.sun.xml.internal.xsom.XSUnionSimpleType;
-
 /**
  * <p>520. 检测大写字母
  * <p>给定一个单词，你需要判断单词的大写使用是否正确。
@@ -27,7 +25,6 @@ import com.sun.xml.internal.xsom.XSUnionSimpleType;
  * <p>通过次数32,849提交次数58,743
  * <p> 在真实的面试中遇到过这道题？
  * <p>https://leetcode-cn.com/problems/detect-capital/
- *
  * @Author: shenpei
  * @Date: 2021/3/15 8:23 下午
  */

@@ -25,7 +25,6 @@ import org.TreeNode;
  *
  * <p> 通过次数98,755提交次数188,416
  * <p> https://leetcode-cn.com/problems/diameter-of-binary-tree/
- *
  * @Author: shenpei
  * @Date: 2021/3/15 8:09 下午
  */
