@@ -5,9 +5,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
 import javafx.util.Pair;
-import org.junit.platform.commons.util.CollectionUtils;
-import org.leetcode.Node;
+import org.Node;
 
 /**
  * <p>559. N 叉树的最大深度
