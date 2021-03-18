@@ -14,8 +14,7 @@ package org.leetcode.shunxu.ch650;
  * <p>输出：true
  * 示例 2：
  * <p>
- * 输入：flowerbed = [1,0,0,0,1], n = 2
- * 输出：false
+ * 输入：flowerbed = [1,0,0,0,1], n = 2 输出：false
  * <p>
  * <p>
  * 提示：
@@ -32,7 +31,73 @@ package org.leetcode.shunxu.ch650;
  * @Date: 2021/3/17 10:13 下午
  */
 public class Ch605CanPlaceFlowers {
-    public boolean canPlaceFlowers(int[] flowerbed, int n) {
-        return true;
+
+  public boolean canPlaceFlowers(int[] flowerbed, int n) {
+    int pre = -1;
+    int length = flowerbed.length;
+    int count = 0;
+    for (int i = 0; i < length; i++) {
+      if (flowerbed[i] == 1) {
+        if (pre == -1) {
+          count += i / 2;
+        } else {
+          count += (i - pre - 2) / 2;
+        }
+        pre = i;
+        if (count >= n) {
+          return true;
+        }
+      }
     }
+
+    if (pre == -1) {
+      count += (length + 1) / 2;
+    } else {
+      count += (length - 1 - pre) / 2;
+    }
+    return count >= n;
+  }
+
+  /**
+   * <p>复杂度分析
+   *
+   * <p>    时间复杂度：O(m)，其中 m 是数组 flowerbed 的长度。需要遍历数组一次。
+   *
+   * <p>   空间复杂度:O(1)。额外使用的空间为常数。
+   *
+   * <p>作者：LeetCode-Solution
+   * <p>链接：https://leetcode-cn.com/problems/can-place-flowers/solution/chong-hua-wen-ti-by-leetcode-solution-sojr/
+   * <p>来源：力扣（LeetCode）
+   * <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+   *
+   * @param flowerbed
+   * @param n
+   * @return
+   */
+  public boolean canPlaceFlowers2(int[] flowerbed, int n) {
+    int count = 0;
+    int m = flowerbed.length;
+    int prev = -1;
+    for (int i = 0; i < m; i++) {
+      if (flowerbed[i] == 1) {
+        if (prev < 0) {
+          count += i / 2;
+        } else {
+          count += (i - prev - 2) / 2;
+        }
+        if (count >= n) {
+          return true;
+        }
+        prev = i;
+      }
+    }
+    if (prev < 0) {
+      count += (m + 1) / 2;
+    } else {
+      count += (m - prev - 1) / 2;
+    }
+    return count >= n;
+  }
 }
+
+
