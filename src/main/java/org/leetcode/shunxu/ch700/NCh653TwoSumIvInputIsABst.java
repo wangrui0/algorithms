@@ -1,4 +1,4 @@
-package org.leetcode.shunxu.ch650;
+package org.leetcode.shunxu.ch700;
 
 import org.TreeNode;
 
