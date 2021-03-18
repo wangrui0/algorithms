@@ -1,5 +1,8 @@
 package org.leetcode.shunxu.ch600;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <p>594. 最长和谐子序列
  *
@@ -41,7 +44,148 @@ package org.leetcode.shunxu.ch600;
  */
 public class Ch594LongestHarmoniousSubsequence {
 
-  public int findLHS(int[] nums) {
-    return 0;
+  public static int findLHS1(int[] nums) {
+    int count = 0;
+    int length = nums.length;
+    int maxCount = 0;
+    boolean flag = false;
+    for (int i = 0; i < length; i++) {
+      for (int j = 0; j < length; j++) {
+        if ((nums[i] == nums[j] || nums[i] == nums[j] - 1)) {
+          if (nums[i] == nums[j] - 1) {
+            flag = true;
+          }
+          count++;
+        }
+      }
+      if (count > maxCount && flag) {
+        maxCount = count;
+      }
+      count = 0;
+      flag = false;
+    }
+    return maxCount;
+  }
+
+  public static int findLHS2(int[] nums) {
+    int maxCount = 0;
+    Map<Integer, Integer> map = new HashMap<>();
+    for (int num : nums) {
+      map.put(num, map.getOrDefault(num, 0) + 1);
+    }
+    for (Integer num : map.keySet()) {
+      if (map.get(num + 1) != null) {
+        int count = map.get(num) + map.get(num + 1);
+        if (count > maxCount) {
+          maxCount = count;
+        }
+      }
+    }
+    return maxCount;
+  }
+
+  public static int findLHS3(int[] nums) {
+    int maxCount = 0;
+    Map<Integer, Integer> map = new HashMap<>();
+    for (int num : nums) {
+      int count = map.getOrDefault(num, 0) + 1;
+      map.put(num, count);
+      if (map.containsKey(num + 1)) {
+        maxCount = Math.max(maxCount, map.get(num + 1) + count);
+      }
+      if (map.containsKey(num - 1)) {
+        maxCount = Math.max(maxCount, map.get(num - 1) + count);
+      }
+    }
+    return maxCount;
+  }
+
+  /**
+   * <p>复杂度分析
+   *
+   * <p>   时间复杂度：O(N^2)，其中 N 是数组的长度。
+   *
+   * <p>   空间复杂度：O(1)。
+   *
+   * @param nums
+   * @return
+   */
+  public int findLHS1_1(int[] nums) {
+    int res = 0;
+    for (int i = 0; i < nums.length; i++) {
+      int count = 0;
+      boolean flag = false;
+      for (int j = 0; j < nums.length; j++) {
+        if (nums[j] == nums[i]) {
+          count++;
+        } else if (nums[j] + 1 == nums[i]) {
+          count++;
+          flag = true;
+        }
+      }
+      if (flag) {
+        res = Math.max(count, res);
+      }
+    }
+    return res;
+  }
+
+  /**
+   * <p>复杂度分析
+   *
+   * <p>   时间复杂度：O(N)，其中 N 是数组的长度。
+   *
+   * <p>  空间复杂度：O(N)，用来存储哈希映射。
+   *
+   * <p>作者：LeetCode
+   * <p>链接：https://leetcode-cn.com/problems/longest-harmonious-subsequence/solution/zui-chang-he-xie-zi-xu-lie-by-leetcode/
+   * <p>来源：力扣（LeetCode）
+   * <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+   *
+   * @param nums
+   * @return
+   */
+  public int findLHS2_2(int[] nums) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    int res = 0;
+    for (int num : nums) {
+      map.put(num, map.getOrDefault(num, 0) + 1);
+    }
+    for (int key : map.keySet()) {
+      if (map.containsKey(key + 1)) {
+        res = Math.max(res, map.get(key) + map.get(key + 1));
+      }
+    }
+    return res;
+  }
+
+  /**
+   * <p>复杂度分析
+   *
+   * <p>    时间复杂度：O(N)，其中 N 是数组的长度。
+   *
+   * <p>    空间复杂度：O(N)，用来存储哈希映射。
+   *
+   * <p>作者：LeetCode
+   * <p>链接：https://leetcode-cn.com/problems/longest-harmonious-subsequence/solution/zui-chang-he-xie-zi-xu-lie-by-leetcode/
+   * <p>来源：力扣（LeetCode）
+   * <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+   *
+   * @param nums
+   * @return
+   */
+  public int findLHS3_3(int[] nums) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    int res = 0;
+    for (int num : nums) {
+      map.put(num, map.getOrDefault(num, 0) + 1);
+      if (map.containsKey(num + 1)) {
+        res = Math.max(res, map.get(num) + map.get(num + 1));
+      }
+      if (map.containsKey(num - 1)) {
+        res = Math.max(res, map.get(num) + map.get(num - 1));
+      }
+    }
+    return res;
   }
 }
