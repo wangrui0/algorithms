@@ -42,8 +42,42 @@ package org.leetcode.shunxu.ch600;
  * @Author: shenpei
  * @Date: 2021/3/17 10:05 下午
  */
-public class NCh598RangAdditionII {
-    public int maxCount(int m, int n, int[][] ops) {
-        return 0;
+public class Ch598RangAdditionII {
+
+  public static int maxCount1(int m, int n, int[][] ops) {
+    int minX = m;
+    int minY = n;
+    for (int[] op : ops) {
+      int x = op[0];
+      int y = op[1];
+      minX = Math.min(Math.min(x, minX), m);
+      minY = Math.min(Math.min(y, minY), n);
     }
+    return minX * minY;
+  }
+
+  /**
+   * <p>复杂度分析
+   *
+   * <p>    时间复杂度：O(x)。只需要遍历所有操作一次，x 是操作的数目。
+   *
+   * <p>   空间复杂度：O(1)。不需要额外的数组空间。
+   *
+   * <p>作者：LeetCode
+   * <p>链接：https://leetcode-cn.com/problems/range-addition-ii/solution/fan-wei-qiu-he-ii-by-leetcode/
+   * <p>来源：力扣（LeetCode）
+   * <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+   *
+   * @param m
+   * @param n
+   * @param ops
+   * @return
+   */
+  public int maxCount1_1(int m, int n, int[][] ops) {
+    for (int[] op : ops) {
+      m = Math.min(m, op[0]);
+      n = Math.min(n, op[1]);
+    }
+    return m * n;
+  }
 }
