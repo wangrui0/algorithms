@@ -33,7 +33,7 @@ import java.util.Arrays;
  * @Author: shenpei
  * @Date: 2021/3/17 10:28 下午
  */
-public class NCh628MaximumProductOfThreeNumbers {
+public class Ch628MaximumProductOfThreeNumbers {
 
   /**
    * <p>复杂度分析
