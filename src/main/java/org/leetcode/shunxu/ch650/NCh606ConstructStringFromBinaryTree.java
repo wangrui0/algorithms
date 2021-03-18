@@ -2,6 +2,10 @@ package org.leetcode.shunxu.ch650;
 
 import org.TreeNode;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Stack;
+
 /**
  * <p> 606. 根据二叉树创建字符串
  * <p> 你需要采用前序遍历的方式，将一个二叉树转换成一个由括号和整数组成的字符串。
@@ -43,7 +47,68 @@ import org.TreeNode;
  * @Date: 2021/3/17 10:22 下午
  */
 public class NCh606ConstructStringFromBinaryTree {
+    /**
+     * <p>复杂度分析
+     *
+     * <p>时间复杂度：O(N)，其中 N 是二叉树中的节点数目。
+     *
+     * <p>空间复杂度：O(N)，在最坏情况下，会递归 N 层，需要 O(N) 的栈空间。
+     *
+     * <p>作者：LeetCode
+     * <p>链接：https://leetcode-cn.com/problems/construct-string-from-binary-tree/solution/gen-ju-er-cha-shu-chuang-jian-zi-fu-chuan-by-leetc/
+     * <p>来源：力扣（LeetCode）
+     * <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     *
+     * @param t
+     * @return
+     */
     public String tree2str(TreeNode t) {
-        return null;
+        if (t == null) {
+            return "";
+        }
+        if (t.left == null && t.right == null) {
+            return t.val + "";
+        }
+
+        if (t.right == null) {
+            return t.val + "(" + tree2str(t.left) + ")";
+        }
+        return t.val + "(" + tree2str(t.left) + ")" + "(" + tree2str(t.right) + ")";
+    }
+
+    /**
+     * <p>复杂度分析
+     *
+     * <p>时间复杂度：O(N)，其中 NN 是二叉树中的节点数目。
+     *
+     * <p>空间复杂度：O(N)，在最坏情况下，栈中会存放 NN 个节点。
+     *
+     * @param t
+     * @return
+     */
+    public String tree2str2(TreeNode t) {
+        if (t == null)
+            return "";
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(t);
+        Set<TreeNode> visited = new HashSet<>();
+        StringBuilder s = new StringBuilder();
+        while (!stack.isEmpty()) {
+            t = stack.peek();
+            if (visited.contains(t)) {
+                stack.pop();
+                s.append(")");
+            } else {
+                visited.add(t);
+                s.append("(" + t.val);
+                if (t.left == null && t.right != null)
+                    s.append("()");
+                if (t.right != null)
+                    stack.push(t.right);
+                if (t.left != null)
+                    stack.push(t.left);
+            }
+        }
+        return s.substring(1, s.length() - 1);
     }
 }
