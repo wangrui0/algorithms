@@ -32,5 +32,5 @@ package org.leetcode.shunxu.ch650;
  * @Author: shenpei
  * @Date: 2021/3/17 10:26 下午
  */
-public class Ch617MergeTwoBinaryTrees {
+public class NCh617MergeTwoBinaryTrees {
 }

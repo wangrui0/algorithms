@@ -50,7 +50,8 @@ import org.TreeNode;
  * <p>@author: wangrui
  * <p>@date: 2021/3/17
  */
-public class Ch572SubtreeOfAnotherTree {
+public class NCh572SubtreeOfAnotherTree {
+
 
   public boolean isSubtree(TreeNode s, TreeNode t) {
     return true;

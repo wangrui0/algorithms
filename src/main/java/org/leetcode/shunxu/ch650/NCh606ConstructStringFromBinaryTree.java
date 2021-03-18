@@ -42,7 +42,7 @@ import org.TreeNode;
  * @Author: shenpei
  * @Date: 2021/3/17 10:22 下午
  */
-public class Ch606ConstructStringFromBinaryTree {
+public class NCh606ConstructStringFromBinaryTree {
     public String tree2str(TreeNode t) {
         return null;
     }

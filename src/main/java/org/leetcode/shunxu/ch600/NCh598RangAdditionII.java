@@ -42,7 +42,7 @@ package org.leetcode.shunxu.ch600;
  * @Author: shenpei
  * @Date: 2021/3/17 10:05 下午
  */
-public class Ch598RangAdditionII {
+public class NCh598RangAdditionII {
     public int maxCount(int m, int n, int[][] ops) {
         return 0;
     }

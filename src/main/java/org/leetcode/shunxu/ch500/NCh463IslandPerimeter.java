@@ -48,7 +48,7 @@ package org.leetcode.shunxu.ch500;
  * @author: wangrui
  * @date: 2021/3/4
  */
-public class Ch463IslandPerimeter {
+public class NCh463IslandPerimeter {
 
   public int islandPerimeter(int[][] grid) {
     return -1;

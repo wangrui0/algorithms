@@ -31,7 +31,7 @@ import java.util.List;
  * @Author: shenpei
  * @Date: 2021/3/17 10:29 下午
  */
-public class Ch637AverageOfLevelsInBinaryTree {
+public class NCh637AverageOfLevelsInBinaryTree {
     public List<Double> averageOfLevels(TreeNode root) {
         return null;
     }
