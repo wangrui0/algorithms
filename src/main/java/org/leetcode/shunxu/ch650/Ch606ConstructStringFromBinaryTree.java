@@ -46,7 +46,7 @@ import java.util.Stack;
  * @Author: shenpei
  * @Date: 2021/3/17 10:22 下午
  */
-public class NCh606ConstructStringFromBinaryTree {
+public class Ch606ConstructStringFromBinaryTree {
     /**
      * <p>复杂度分析
      *
