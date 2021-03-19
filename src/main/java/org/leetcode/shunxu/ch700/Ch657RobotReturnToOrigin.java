@@ -1,4 +1,4 @@
-package org.leetcode.shunxu.ch650;
+package org.leetcode.shunxu.ch700;
 
 /**
  * <p>657. 机器人能否返回原点

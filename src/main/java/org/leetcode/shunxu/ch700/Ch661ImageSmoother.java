@@ -1,4 +1,4 @@
-package org.leetcode.shunxu.ch650;
+package org.leetcode.shunxu.ch700;
 
 /**
  * <p>661. 图片平滑器
