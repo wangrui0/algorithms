@@ -58,6 +58,7 @@ public class Ch617MergeTwoBinaryTrees {
     if (root1 == null) {
       return root2;
     }
+
     if (root2 == null) {
       return root1;
     }
