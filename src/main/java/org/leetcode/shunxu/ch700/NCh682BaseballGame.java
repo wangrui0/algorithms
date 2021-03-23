@@ -1,5 +1,7 @@
 package org.leetcode.shunxu.ch700;
 
+import java.util.Stack;
+
 /**
  * <p>682. 棒球比赛
  * <p>你现在是一场采用特殊赛制棒球比赛的记录员。这场比赛由若干回合组成，过去几回合的得分可能会影响以后几回合的得分。
@@ -58,7 +60,40 @@ package org.leetcode.shunxu.ch700;
  * @Date: 2021/3/18 11:29 下午
  */
 public class NCh682BaseballGame {
-    public int calPoints(String[] ops) {
-        return 0;
+
+  /**
+   * <p> 复杂度分析
+   *
+   * <p>  复杂度分析：O(N)，其中 N 是 ops 的长度。我们解析给定数组中的每个元素，然后每个元素执行 O(1) 的工作。
+   *
+   * <p>   空间复杂度：O(N)，用于存储 stack 的空间。
+   *
+   * @param ops
+   * @return
+   */
+  public int calPoints(String[] ops) {
+    Stack<Integer> stack = new Stack();
+
+    for (String op : ops) {
+      if (op.equals("+")) {
+        int top = stack.pop();
+        int newtop = top + stack.peek();
+        stack.push(top);
+        stack.push(newtop);
+      } else if (op.equals("C")) {
+        stack.pop();
+      } else if (op.equals("D")) {
+        stack.push(2 * stack.peek());
+      } else {
+        stack.push(Integer.valueOf(op));
+      }
     }
+
+    int ans = 0;
+    for (int score : stack) {
+      ans += score;
+    }
+    return ans;
+  }
+
 }
