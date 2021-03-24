@@ -1,5 +1,7 @@
 package org.leetcode.shunxu.ch750;
 
+import java.util.Arrays;
+
 /**
  * <p>724. 寻找数组的中心下标
  *
@@ -51,9 +53,41 @@ package org.leetcode.shunxu.ch750;
  * <p>@author: wangrui
  * <p>@date: 2021/3/23
  */
-public class NCh724FindPivotIndex {
+public class Ch724FindPivotIndex {
 
   public int pivotIndex(int[] nums) {
+    int total = Arrays.stream(nums).sum();
+    int sum = 0;
+    for (int i = 0; i < nums.length; i++) {
+      int num = nums[i];
+      if (2 * sum + num == total) {
+        return i;
+      }
+      sum += num;
+    }
     return -1;
   }
+
+  /**
+   * <p>复杂度分析
+   *
+   * <p> 时间复杂度：O(n)，其中 n 为数组的长度。
+   *
+   * <p>空间复杂度：O(1)。
+   *
+   * @param nums
+   * @return
+   */
+  public int pivotIndex2(int[] nums) {
+    int total = Arrays.stream(nums).sum();
+    int sum = 0;
+    for (int i = 0; i < nums.length; ++i) {
+      if (2 * sum + nums[i] == total) {
+        return i;
+      }
+      sum += nums[i];
+    }
+    return -1;
+  }
+
 }
