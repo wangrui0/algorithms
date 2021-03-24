@@ -1,5 +1,7 @@
 package org.leetcode.shunxu.ch750;
 
+import java.util.PriorityQueue;
+
 /**
  * <p>703. 数据流中的第 K 大元素
  *
@@ -44,13 +46,39 @@ package org.leetcode.shunxu.ch750;
  * <p>@author: wangrui
  * <p>@date: 2021/3/23
  */
-public class NCh703KthLargestElementInAStream {
+public class Ch703KthLargestElementInAStream {
 
-  public NCh703KthLargestElementInAStream(int k, int[] nums) {
+  PriorityQueue<Integer> pq;
+  int k;
 
+
+  public Ch703KthLargestElementInAStream(int k, int[] nums) {
+    this.k = k;
+    pq = new PriorityQueue<Integer>();
+    for (int x : nums) {
+      add(x);
+    }
   }
 
+  /**
+   * <p> 复杂度分析
+   *
+   * <p>    时间复杂度：
+   *
+   * <p>       初始化时间复杂度为：O(nlogk) ，其中 n 为初始化时 nums 的长度；
+   *
+   * <p>       单次插入时间复杂度为：O(logk)。
+   *
+   * <p>    空间复杂度：O(k)。需要使用优先队列存储前 k 大的元素。
+   *
+   * @param val
+   * @return
+   */
   public int add(int val) {
-    return -1;
+    pq.offer(val);
+    if (pq.size() > k) {
+      pq.poll();
+    }
+    return pq.peek();
   }
 }
