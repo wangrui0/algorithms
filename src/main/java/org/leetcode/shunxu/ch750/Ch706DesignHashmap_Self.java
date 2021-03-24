@@ -1,5 +1,8 @@
 package org.leetcode.shunxu.ch750;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+
 /**
  * <p>706. 设计哈希映射
  *
@@ -49,33 +52,98 @@ package org.leetcode.shunxu.ch750;
  * <p>@author: wangrui
  * <p>@date: 2021/3/23
  */
-public class NCh706DesignHashmap {
+public class Ch706DesignHashmap_Self {
 
-  /**
-   * Initialize your data structure here.
-   */
-  public NCh706DesignHashmap() {
+  private static final int BASE = 769;
+  private static LinkedList<Pair>[] lists;
 
+  class Pair {
+
+    private Integer key;
+    private Integer value;
+
+    public Pair() {
+    }
+
+    public Pair(Integer key, Integer value) {
+      this.key = key;
+      this.value = value;
+    }
+
+    public Integer getKey() {
+      return key;
+    }
+
+    public void setKey(Integer key) {
+      this.key = key;
+    }
+
+    public Integer getValue() {
+      return value;
+    }
+
+    public void setValue(Integer value) {
+      this.value = value;
+    }
   }
 
-  /**
-   * value will always be non-negative.
-   */
+  public Ch706DesignHashmap_Self() {
+    lists = new LinkedList[BASE];
+    for (int i = 0; i < 769; i++) {
+      lists[i] = new LinkedList<>();
+    }
+  }
+
   public void put(int key, int value) {
+    int hash = hash(key);
+
+    LinkedList<Pair> list = lists[hash];
+
+    Iterator<Pair> iterator = list.iterator();
+    while (iterator.hasNext()) {
+      Pair next = iterator.next();
+      if (next.key == key) {
+        next.setValue(value);
+        return;
+      }
+    }
+    list.addLast(new Pair(key, value));
 
   }
 
-  /**
-   * Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key
-   */
   public int get(int key) {
+    int hash = hash(key);
+
+    LinkedList<Pair> list = lists[hash];
+
+    Iterator<Pair> iterator = list.iterator();
+    while (iterator.hasNext()) {
+      Pair next = iterator.next();
+      if (next.key == key) {
+        return next.value;
+      }
+    }
     return -1;
   }
 
-  /**
-   * Removes the mapping of the specified value key if this map contains a mapping for the key
-   */
   public void remove(int key) {
+    int hash = hash(key);
 
+    LinkedList<Pair> list = lists[hash];
+
+    Iterator<Pair> iterator = list.iterator();
+    while (iterator.hasNext()) {
+      Pair next = iterator.next();
+      if (next.key == key) {
+        list.remove(next);
+        return;
+      }
+    }
   }
+
+  private static int hash(int key) {
+    return key % BASE;
+  }
+
 }
+

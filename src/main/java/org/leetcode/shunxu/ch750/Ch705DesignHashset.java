@@ -1,5 +1,8 @@
 package org.leetcode.shunxu.ch750;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+
 /**
  * <p> 705. 设计哈希集合
  *
@@ -48,27 +51,61 @@ package org.leetcode.shunxu.ch750;
  * <p>@author: wangrui
  * <p>@date: 2021/3/23
  */
-public class NCh705DesignHashset {
+public class Ch705DesignHashset {
+
+  private static final int BASE = 769;
+  private LinkedList[] data;
 
   /**
    * Initialize your data structure here.
    */
-  public NCh705DesignHashset() {
-
+  public Ch705DesignHashset() {
+    data = new LinkedList[BASE];
+    for (int i = 0; i < BASE; ++i) {
+      data[i] = new LinkedList<Integer>();
+    }
   }
 
   public void add(int key) {
-
+    int h = hash(key);
+    Iterator<Integer> iterator = data[h].iterator();
+    while (iterator.hasNext()) {
+      Integer element = iterator.next();
+      if (element == key) {
+        return;
+      }
+    }
+    data[h].offerLast(key);
   }
 
   public void remove(int key) {
-
+    int h = hash(key);
+    Iterator<Integer> iterator = data[h].iterator();
+    while (iterator.hasNext()) {
+      Integer element = iterator.next();
+      if (element == key) {
+        data[h].remove(element);
+        return;
+      }
+    }
   }
 
   /**
    * Returns true if this set contains the specified element
    */
   public boolean contains(int key) {
-    return true;
+    int h = hash(key);
+    Iterator<Integer> iterator = data[h].iterator();
+    while (iterator.hasNext()) {
+      Integer element = iterator.next();
+      if (element == key) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private static int hash(int key) {
+    return key % BASE;
   }
 }

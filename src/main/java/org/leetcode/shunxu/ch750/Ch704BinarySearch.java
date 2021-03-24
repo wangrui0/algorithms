@@ -25,7 +25,7 @@ package org.leetcode.shunxu.ch750;
  * <p>    你可以假设 nums 中的所有元素是不重复的。
  * <p>    n 将在 [1, 10000]之间。
  * <p>    nums 的每个元素都将在 [-9999, 9999]之间。
- *https://leetcode-cn.com/problems/binary-search/
+ * https://leetcode-cn.com/problems/binary-search/
  * <p>通过次数104,107
  * <p>提交次数185,991
  * <p>在真实的面试中遇到过这道题？
@@ -33,9 +33,46 @@ package org.leetcode.shunxu.ch750;
  * <p>@author: wangrui
  * <p>@date: 2021/3/23
  */
-public class NCh704BinarySearch {
+public class Ch704BinarySearch {
 
   public int search(int[] nums, int target) {
+    int left = 0, right = nums.length - 1;
+    while (left <= right) {
+      int mid = left + (right - left) / 2;
+      if (nums[mid] == target) {
+        return mid;
+      } else if (nums[mid] > target) {
+        right = mid - 1;
+      } else {
+        left = mid + 1;
+      }
+    }
+    return -1;
+  }
+
+  /**
+   * <p>复杂度分析
+   *
+   * <p>    时间复杂度：O(logN)。
+   * <p> 空间复杂度：O(1)。
+   *
+   * @param nums
+   * @param target
+   * @return
+   */
+  public int search2(int[] nums, int target) {
+    int pivot, left = 0, right = nums.length - 1;
+    while (left <= right) {
+      pivot = left + (right - left) / 2;
+      if (nums[pivot] == target) {
+        return pivot;
+      }
+      if (target < nums[pivot]) {
+        right = pivot - 1;
+      } else {
+        left = pivot + 1;
+      }
+    }
     return -1;
   }
 }
