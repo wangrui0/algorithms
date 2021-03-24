@@ -59,7 +59,7 @@ import java.util.Stack;
  * @Author: shenpei
  * @Date: 2021/3/18 11:29 下午
  */
-public class NCh682BaseballGame {
+public class Ch682BaseballGame {
 
   /**
    * <p> 复杂度分析
@@ -92,6 +92,31 @@ public class NCh682BaseballGame {
     int ans = 0;
     for (int score : stack) {
       ans += score;
+    }
+    return ans;
+  }
+
+  public static int calPoints2(String[] ops) {
+    Stack<Integer> stack = new Stack<>();
+    for (int i = 0; i < ops.length; i++) {
+      String op = ops[i];
+      if (op.equals("+")) {
+        Integer pop = stack.pop();
+        Integer peek = stack.peek();
+        stack.push(pop);
+        stack.push(pop + peek);
+      } else if (op.equals("C")) {
+        stack.pop();
+      } else if (op.equals("D")) {
+        stack.push(stack.peek() * 2);
+      } else {
+        stack.push(Integer.valueOf(op));
+      }
+    }
+    int ans = 0;
+    while (!stack.isEmpty()){
+      ans += stack.pop();
+
     }
     return ans;
   }
