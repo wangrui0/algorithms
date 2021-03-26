@@ -40,9 +40,46 @@ package org.leetcode.shunxu.ch800;
  * <p>@author: wangrui
  * <p>@date: 2021/3/24
  */
-public class NCh762PrimeNumberOfSetBitsInBinaryRepresentation {
+public class Ch762PrimeNumberOfSetBitsInBinaryRepresentation {
 
   public int countPrimeSetBits(int L, int R) {
-    return -1;
+    int num = 0;
+    for (int i = L; i <= R; i++) {
+      if (isSmallPrime(Integer.bitCount(i))) {
+        num++;
+      }
+    }
+    return num;
   }
+
+  public boolean isSmallPrime(int x) {
+    return x == 2 || x == 3 || x == 5 || x == 7 || x == 11 || x == 13 || x == 17 || x == 19;
+  }
+
+  /**
+   * <p>复杂度分析
+   *
+   * <p>  时间复杂度：O(D)，其中 D=R−L，指的是所需判断数字的个数。
+   * <p> 空间复杂度：O(1)。
+   *
+   * @param L
+   * @param R
+   * @return
+   */
+  public int countPrimeSetBits2(int L, int R) {
+    int ans = 0;
+    for (int x = L; x <= R; ++x) {
+      if (isSmallPrime(Integer.bitCount(x))) {
+        ans++;
+      }
+    }
+    return ans;
+  }
+
+  public boolean isSmallPrime2(int x) {
+    return (x == 2 || x == 3 || x == 5 || x == 7 ||
+        x == 11 || x == 13 || x == 17 || x == 19);
+  }
+
+
 }
