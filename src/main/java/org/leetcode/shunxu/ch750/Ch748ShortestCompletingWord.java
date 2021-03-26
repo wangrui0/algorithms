@@ -66,9 +66,49 @@ package org.leetcode.shunxu.ch750;
  * <p>@author: wangrui
  * <p>@date: 2021/3/24
  */
-public class NCh748ShortestCompletingWord {
+public class Ch748ShortestCompletingWord {
 
+  /**
+   * <p>复杂度分析
+   * <p>
+   * <p>   时间复杂度：O(N)。N 指的是 words 的元素个数，比较 licensePlate 和 words[i] 的字母计数需要 O(1) 的时间
+   * <p>   空间复杂度：O(1)，使用常数的空间。
+   *
+   * @param licensePlate
+   * @param words
+   * @return
+   */
   public String shortestCompletingWord(String licensePlate, String[] words) {
-    return null;
+    int[] target = count(licensePlate);
+    String ans = "";
+    for (String word : words) {
+      if ((word.length() < ans.length() || ans.length() == 0) &&
+          dominates(count(word.toLowerCase()), target)) {
+        ans = word;
+      }
+    }
+    return ans;
+  }
+
+  public boolean dominates(int[] count1, int[] count2) {
+    for (int i = 0; i < 26; ++i) {
+      if (count1[i] < count2[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public int[] count(String word) {
+    int[] ans = new int[26];
+    for (char letter : word.toCharArray()) {
+      int index = Character.toLowerCase(letter) - 'a';
+      if (0 <= index && index < 26) {
+        ans[index]++;
+      }
+    }
+    return ans;
   }
 }
+
+
