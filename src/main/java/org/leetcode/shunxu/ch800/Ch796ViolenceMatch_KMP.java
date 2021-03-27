@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @author: wangrui
  * @date: 2021/3/27
  */
-public class Ch796ViolenceMatch {
+public class Ch796ViolenceMatch_KMP {
 
   /**
    * <p> 暴力匹配算法实现
