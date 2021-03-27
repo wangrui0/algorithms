@@ -32,7 +32,7 @@ package org.leetcode.shunxu.ch800;
  * <p>@author: wangrui
  * <p>@date: 2021/3/26
  */
-public class NCh788RotatedDigits {
+public class Ch788RotatedDigits {
 
   /**
    * <p>方法一：暴力解法【通过】
