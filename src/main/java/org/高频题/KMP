@@ -1,0 +1,33 @@
+/**
+   * s 主，t 子
+   *
+   * @return
+   */
+  public boolean kmp(List sOrder, List tOrder) {
+    int sLen = sOrder.size(), tLen = tOrder.size();
+    int[] fail = new int[tOrder.size()];
+    Arrays.fill(fail, -1);
+    //组装next
+    for (int i = 1, j = -1; i < tLen; ++i) {
+      while (j != -1 && !(tOrder.get(i).equals(tOrder.get(j + 1)))) {
+        j = fail[j];
+      }
+      if (tOrder.get(i).equals(tOrder.get(j + 1))) {
+        ++j;
+      }
+      fail[i] = j;
+    }
+    //j 是实际已经匹配的长度,kmp 算法
+    for (int i = 0, j = -1; i < sLen; ++i) {
+      while (j != -1 && !(sOrder.get(i).equals(tOrder.get(j + 1)))) {
+        j = fail[j];
+      }
+      if (sOrder.get(i).equals(tOrder.get(j + 1))) {
+        ++j;
+      }
+      if (j == tLen - 1) {
+        return true;
+      }
+    }
+    return false;
+  }
