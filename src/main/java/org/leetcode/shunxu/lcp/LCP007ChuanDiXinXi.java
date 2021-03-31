@@ -83,12 +83,14 @@ public class LCP007ChuanDiXinXi {
    * @return
    */
   public static int numWays_2(int n, int[][] relation, int k) {
+    //dp用于存储上一次到达每个节点的次数
     int[] dp = new int[n];
     dp[0] = 1;
     for (int i = 1; i <= k; i++) {
       int[] array = new int[n];
       for (int[] pos : relation) {
         //0:是起始位置；1:是结束位置
+        //这次到达每个节点的次数，等于所有上次到达前一个节点的次数相加
         array[pos[1]] += dp[pos[0]];
       }
       dp = array;
