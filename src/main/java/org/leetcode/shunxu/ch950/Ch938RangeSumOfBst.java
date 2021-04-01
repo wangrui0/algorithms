@@ -38,6 +38,18 @@ public class Ch938RangeSumOfBst {
 
   int ans = 0;
 
+  /**
+   * <p> 复杂度分析
+   *
+   * <p>     时间复杂度：O(N)，其中 N 是树中的节点数目。
+   *
+   * <p>     空间复杂度：O(H)，其中 H 是树的高度。
+   *
+   * @param root
+   * @param L
+   * @param R
+   * @return
+   */
   public int rangeSumBST(TreeNode root, int L, int R) {
     dfs(root, L, R);
     return ans;
@@ -56,7 +68,6 @@ public class Ch938RangeSumOfBst {
       }
     }
   }
-
 
 
   public int rangeSumBST_2(TreeNode root, int L, int R) {
