@@ -57,7 +57,7 @@ package org.leetcode.shunxu.ch1000;
  * <p>@author: wangrui
  * <p>@date: 2021/4/2
  */
-public class ChFindTheTownJudge {
+public class Ch997FindTheTownJudge {
 
   public int findJudge(int N, int[][] trust) {
     if (trust.length == 0 && N == 1) {
