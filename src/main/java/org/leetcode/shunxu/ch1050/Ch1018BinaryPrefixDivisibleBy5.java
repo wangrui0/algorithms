@@ -88,5 +88,16 @@ public class Ch1018BinaryPrefixDivisibleBy5 {
     return answer;
   }
 
+  public List<Boolean> prefixesDivBy5_3(int[] A) {
+    List<Boolean> answer = new ArrayList<Boolean>();
+    int prefix = 0;
+    int length = A.length;
+    for (int i = 0; i < length; i++) {
+      prefix = ((prefix << 1) + A[i]) % 5;
+      answer.add(prefix % 5 == 0);
+    }
+    return answer;
+  }
+
 
 }
