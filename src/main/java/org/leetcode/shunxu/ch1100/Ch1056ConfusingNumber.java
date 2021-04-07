@@ -6,4 +6,5 @@ package org.leetcode.shunxu.ch1100;
  */
 public class Ch1056ConfusingNumber {
 
+
 }
