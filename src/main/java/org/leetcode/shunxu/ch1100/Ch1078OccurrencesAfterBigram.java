@@ -1,5 +1,8 @@
 package org.leetcode.shunxu.ch1100;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 1078. Bigram 分词
  *
@@ -38,6 +41,18 @@ package org.leetcode.shunxu.ch1100;
 public class Ch1078OccurrencesAfterBigram {
 
   public String[] findOcurrences(String text, String first, String second) {
-    return null;
+    // 首先按照 " " 空格去切分字符串
+    String[] words = text.split(" ");
+    List<String> list = new ArrayList<>();
+    // 然后按照规则直接检查就可以了
+    for (int i = 0; i < words.length - 2; ++i) {
+      if (words[i].equals(first) && words[i + 1].equals(second))
+        // 遇到符合要求的，直接添加进返回值
+        list.add(words[i + 2]);
+    }
+    String[] ans = new String[list.size()];
+    list.toArray(ans);
+    return ans;
+
   }
 }
