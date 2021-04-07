@@ -68,5 +68,53 @@ public class Ch1046LastStoneWeight {
     return pq.isEmpty() ? 0 : pq.poll();
   }
 
+  public static void main(String[] args) {
+    System.out.println(lastStoneWeight_2(new int[]{2, 7, 4, 1, 8, 1}));
+//    System.out.println(lastStoneWeight_2(new int[]{3, 7, 8}));
+  }
+
+  public static int lastStoneWeight_2(int[] stones) {
+    for (int i = (stones.length - 1) / 2; i >= 0; i--) {
+      adjustHeap(stones, i, stones.length);
+    }
+    int j = stones.length - 1;
+    while (j >= 1) {
+      int stoneMax = stones[0];//最大
+      stones[0] = stones[j];
+      stones[j] = stoneMax;
+      adjustHeap(stones, 0, j);
+      j--;
+      int stone2 = stones[0];
+      if (stoneMax - stone2 > 0) {
+        stones[0] = stoneMax - stone2;
+        adjustHeap(stones, 0, j + 1);
+      } else {
+        stones[0] = stones[j];
+        stones[j] = stone2;
+        adjustHeap(stones, 0, j);
+        j--;
+      }
+    }
+    return j == 0 ? stones[0] : 0;
+  }
+
+  private static void adjustHeap(int[] arr, int parent, int length) {
+    int temp = arr[parent];
+    int lChild = parent * 2 + 1;
+    while (lChild < length) {
+      int rChild = lChild + 1;
+      if (rChild < length && arr[lChild] < arr[rChild]) {
+        lChild++;
+      }
+      if (arr[lChild] < temp) {
+        break;
+      }
+      arr[parent] = arr[lChild];
+      parent = lChild;
+      lChild = parent * 2 + 1;
+    }
+    arr[parent] = temp;
+  }
+
 
 }
