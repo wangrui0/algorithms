@@ -80,6 +80,7 @@ public class Ch1122RelativeSortArray {
    * @return
    */
   public int[] relativeSortArray(int[] arr1, int[] arr2) {
+    //把要排序的放到桶里面
     int upper = 0;
     for (int x : arr1) {
       upper = Math.max(upper, x);
@@ -88,6 +89,7 @@ public class Ch1122RelativeSortArray {
     for (int x : arr1) {
       ++frequency[x];
     }
+    //按arr2排序
     int[] ans = new int[arr1.length];
     int index = 0;
     for (int x : arr2) {
@@ -96,9 +98,36 @@ public class Ch1122RelativeSortArray {
       }
       frequency[x] = 0;
     }
+    //排序arr2中没有的
     for (int x = 0; x <= upper; ++x) {
       for (int i = 0; i < frequency[x]; ++i) {
         ans[index++] = x;
+      }
+    }
+    return ans;
+  }
+  public static int[] relativeSortArray_self(int[] arr1, int[] arr2) {
+    int maxValue = 0;
+    for (int x : arr1) {
+      if (x > maxValue) {
+        maxValue = x;
+      }
+    }
+    int[] frequency = new int[maxValue + 1];
+    for (int i = 0; i < arr1.length; i++) {
+      frequency[arr1[i]]++;
+    }
+    int[] ans = new int[arr1.length];
+    int index = 0;
+    for (int i = 0; i < arr2.length; i++) {
+      for (int j = 0; j < frequency[arr2[i]]; j++) {
+        ans[index++] = arr2[i];
+      }
+      frequency[arr2[i]] = 0;
+    }
+    for (int i = 0; i < frequency.length; i++) {
+      for (int j = 0; j < frequency[i]; j++) {
+        ans[index++] = i;
       }
     }
     return ans;
