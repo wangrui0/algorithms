@@ -38,7 +38,12 @@ import java.util.Map;
 public class Ch1122RelativeSortArray {
 
   /**
-   * 自定义排序
+   * <p>自定义排序
+   * <p>复杂度分析
+   *
+   * <p>  时间复杂度：O(mlogm+n)，其中 m 和 n 分别是数组 arr1​ 和 arr2​ 的长度。构造哈希表 rank 的时间复杂度为 O(n)，排序的时间复杂度为O(mlogm)。
+   * <p>
+   * <p> 空间复杂度：O(logm+n)，哈希表 rank 需要的空间为 O(n)，排序需要的栈空间为 O(logm)
    *
    * @param arr1
    * @param arr2
@@ -106,6 +111,7 @@ public class Ch1122RelativeSortArray {
     }
     return ans;
   }
+
   public static int[] relativeSortArray_self(int[] arr1, int[] arr2) {
     int maxValue = 0;
     for (int x : arr1) {
