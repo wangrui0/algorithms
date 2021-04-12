@@ -46,7 +46,7 @@ public class Ch1154DayOfTheYear {
 
   public static int dayOfYear(String date) {
 
-    int[] days = new int[]{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 31, 30};
+    int[] days = new int[]{0, 31, 28, 31, 30, 31, 30, 30, 31, 30, 31, 31, 30};
 
     int year = Integer.valueOf(date.substring(0, 4));
     int month = Integer
