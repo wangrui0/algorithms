@@ -77,4 +77,36 @@ public class Ch1175PrimeArrangements {
     }
     return (int) ans % 1000000007;
   }
+
+  public int numPrimeArrangements_2(int n) {
+    if (n <= 2) {
+      return 1;
+    }
+    int prime = 2;
+    for (int i = 4; i <= n; i++) {
+      if (isPrime(i) == true) {
+        prime++;
+      }
+    }
+    return (int) (calculate(prime) * calculate(n - prime) % 1000000007);
+  }
+
+  private boolean isPrime(int n) {
+    for (int i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private long calculate(int n) {
+    long res = 1;
+    for (int i = 2; i <= n; i++) {
+      res *= i;
+      res %= 1000000007;
+    }
+    return res;
+  }
+
 }
