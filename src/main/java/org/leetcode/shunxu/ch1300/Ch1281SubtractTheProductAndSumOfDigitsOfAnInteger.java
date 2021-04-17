@@ -46,6 +46,7 @@ public class Ch1281SubtractTheProductAndSumOfDigitsOfAnInteger {
       int digit = n % 10;
       add += digit;
       mul *= digit;
+      n/=10;
     }
     return add - mul;
   }
