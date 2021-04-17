@@ -48,6 +48,6 @@ public class Ch1281SubtractTheProductAndSumOfDigitsOfAnInteger {
       mul *= digit;
       n/=10;
     }
-    return add - mul;
+    return mul-add  ;
   }
 }
