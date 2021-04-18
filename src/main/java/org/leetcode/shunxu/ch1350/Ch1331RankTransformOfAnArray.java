@@ -88,7 +88,6 @@ public class Ch1331RankTransformOfAnArray {
     for (int num : arr) {
       ans[index++] = preSum[num - min] + 1;
     }
-
     return ans;
   }
 
