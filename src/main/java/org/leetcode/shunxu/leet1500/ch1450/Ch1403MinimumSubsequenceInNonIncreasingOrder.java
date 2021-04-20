@@ -100,7 +100,7 @@ public class Ch1403MinimumSubsequenceInNonIncreasingOrder {
     int sum0 = 0;
     List<Integer> ans = new ArrayList<>();
     int index = nums.length - 1;
-    while (sum0 < sum / 2) {
+    while (sum0 <= sum / 2) {
       ans.add(nums[index]);
       sum0 += nums[index];
       index--;
