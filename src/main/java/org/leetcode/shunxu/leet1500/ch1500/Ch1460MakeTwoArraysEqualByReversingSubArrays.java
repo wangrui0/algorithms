@@ -107,9 +107,9 @@ public class Ch1460MakeTwoArraysEqualByReversingSubArrays {
   public boolean canBeEqual_4(int[] target, int[] arr) {
     int[] targetCount = new int[1001];
     int[] arrCount = new int[1001];
-    for (int i = 0; i < 1001; i++) {
+    for (int i = 0; i < target.length; i++) {
       targetCount[target[i]]++;
-      arrCount[arrCount[i]]++;
+      arrCount[arr[i]]++;
     }
     for (int i = 0; i < 1001; i++) {
       if (targetCount[i] != arrCount[i]) {
