@@ -144,4 +144,23 @@ public class Ch1441BuildAnArrayWithStackOperations {
     return ans;
   }
 
+  public static List<String> buildArray_3(int[] target, int n) {
+    List<String> ans = new ArrayList<>();
+    int count = 0;
+    for (int i = 1; i <= n; i++) {
+      if (count >= target.length) {
+        break;
+      }
+      if (count < target.length) {
+        ans.add("Push");
+      }
+      if (target[count] != i) {
+        ans.add("Pop");
+        count--;
+      }
+      count++;
+    }
+    return ans;
+  }
+
 }
