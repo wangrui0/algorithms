@@ -45,4 +45,43 @@ package org.leetcode.shunxu.leet1500.ch1450;
  */
 public class Ch1437CheckIfAll1sAreAtLeastLengthKPlacesAway {
 
+  /**
+   * <p>复杂度分析
+   *
+   * <p>    时间复杂度：O(N)，其中 N 是数组 nums 的长度。
+   *
+   * <p>  空间复杂度：O(1)。
+   *
+   * @param nums
+   * @param k
+   * @return
+   */
+  public boolean kLengthApart(int[] nums, int k) {
+    int n = nums.length;
+    int prev = -1;
+    for (int i = 0; i < n; ++i) {
+      if (nums[i] == 1) {
+        if (prev != -1 && i - prev - 1 < k) {
+          return false;
+        }
+        prev = i;
+      }
+    }
+    return true;
+  }
+
+  public static boolean kLengthApart_2(int[] nums, int k) {
+    int pre = -1;
+    for (int i = 0; i < nums.length; i++) {
+      if (pre == -1 && nums[i] == 1) {
+        pre = i;
+      } else if (nums[i] == 1 && i - pre - 1 < k) {
+        return false;
+      } else if (nums[i] == 1 && i - pre - 1 >= k) {
+        pre = i;
+      }
+    }
+    return true;
+  }
 }
+
