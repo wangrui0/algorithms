@@ -1,5 +1,8 @@
 package org.leetcode.shunxu.leet1500.ch1450;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <p>1431. 拥有最多糖果的孩子
  *
@@ -46,5 +49,48 @@ package org.leetcode.shunxu.leet1500.ch1450;
  * <p>@date: 2021/4/20
  */
 public class Ch1431KidsWithTheGreatestNumberOfCandies {
+
+  public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+    int max = 0;
+    for (int candie : candies) {
+      max = Math.max(max, candie);
+    }
+    List<Boolean> ans = new ArrayList<>();
+    for (int candie : candies) {
+      if (candie + extraCandies >= max) {
+        ans.add(true);
+      } else {
+        ans.add(false);
+      }
+    }
+    return ans;
+  }
+
+  /**
+   * <p>  复杂度分析
+   *
+   * <p>  假设小朋友的总数为 n。
+   *
+   * <p>    时间复杂度：我们首先使用 O(n) 的时间预处理出所有小朋友拥有的糖果数目最大值。对于每一个小朋友，我们需要 O(1) 的时间判断这个小朋友是否可以拥有最多的糖果，故渐进时间复杂度为
+   * O(n)。
+   *
+   * <p>   空间复杂度：这里只用了常数个变量作为辅助空间，与 n 的规模无关，故渐进空间复杂度为 O(1)
+   *
+   * @param candies
+   * @param extraCandies
+   * @return
+   */
+  public List<Boolean> kidsWithCandies_2(int[] candies, int extraCandies) {
+    int n = candies.length;
+    int maxCandies = 0;
+    for (int i = 0; i < n; ++i) {
+      maxCandies = Math.max(maxCandies, candies[i]);
+    }
+    List<Boolean> ret = new ArrayList<Boolean>();
+    for (int i = 0; i < n; ++i) {
+      ret.add(candies[i] + extraCandies >= maxCandies);
+    }
+    return ret;
+  }
 
 }
