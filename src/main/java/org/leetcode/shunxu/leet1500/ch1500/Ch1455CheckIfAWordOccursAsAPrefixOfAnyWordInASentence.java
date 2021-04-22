@@ -60,4 +60,33 @@ package org.leetcode.shunxu.leet1500.ch1500;
  */
 public class Ch1455CheckIfAWordOccursAsAPrefixOfAnyWordInASentence {
 
+  public int isPrefixOfWord(String sentence, String searchWord) {
+    //先按" "分开
+    String[] arr = sentence.split(" ");
+    int i;
+    //如果包含且下标为0,就直接break
+    for (i = 0; i < arr.length; i++) {
+      if (arr[i].indexOf(searchWord) == 0) {
+        break;
+      }
+    }
+    //判断是因为什么退出的,然后返回结果
+    if (i >= arr.length) {
+      return -1;
+    } else {
+      return i + 1;
+    }
+  }
+
+  public static int isPrefixOfWord_self(String sentence, String searchWord) {
+    String[] words = sentence.split(" ");
+    for (int i = 0; i < words.length; i++) {
+      if (words[i].indexOf(searchWord) == 0) {
+        return i + 1;
+      }
+    }
+    return -1;
+  }
+
+
 }
