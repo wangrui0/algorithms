@@ -1,5 +1,9 @@
 package org.leetcode.shunxu.leet1500.ch1450;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 /**
  * <p>1441. 用栈操作构建数组
  *
@@ -56,5 +60,88 @@ package org.leetcode.shunxu.leet1500.ch1450;
  * <p>@date: 2021/4/20
  */
 public class Ch1441BuildAnArrayWithStackOperations {
+
+  /**
+   * <p>方法一：栈
+   * <p>时间复杂度：O(n)
+   * <p>空间复杂度：O(1)
+   *
+   * @param target
+   * @param n
+   * @return
+   */
+  public List<String> buildArray(int[] target, int n) {
+
+    List<String> list = new ArrayList<>();
+    Stack<Integer> stack = new Stack<>();
+    int flag = 0;
+
+    for (int i = 1; i <= n; i++) {
+
+      if (flag < target.length) {
+
+        list.add("Push");
+        stack.push(i);
+      }
+      if (flag < target.length && stack.peek() != target[flag]) {
+
+        list.add("Pop");
+        stack.pop();
+        flag--;
+      }
+      flag++;
+    }
+    return list;
+  }
+
+  /**
+   * <p>方法一：非栈
+   * <p>时间复杂度：O(n)
+   * <p>空间复杂度：O(1)
+   *
+   * @param target
+   * @param n
+   * @return
+   */
+  public List<String> buildArray_2(int[] target, int n) {
+
+    List<String> list = new ArrayList<>();
+    int flag = 0;
+
+    for (int i = 1; i <= n; i++) {
+
+      if (flag >= target.length) {
+        break;
+      }
+      if (i == target[flag] && flag < target.length) {
+
+        list.add("Push");
+      }
+      if (i != target[flag] && flag < target.length) {
+
+        list.add("Push");
+        list.add("Pop");
+        flag--;
+      }
+      flag++;
+    }
+    return list;
+  }
+
+  public static List<String> buildArray_self(int[] target, int n) {
+    List<String> ans = new ArrayList<>();
+    int index = 1;
+    for (int i = 0; i < target.length; i++) {
+      int num = target[i];
+      while (index <= num) {
+        ans.add("Push");
+        if (index != num) {
+          ans.add("Pop");
+        }
+        index++;
+      }
+    }
+    return ans;
+  }
 
 }
