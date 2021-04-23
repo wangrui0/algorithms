@@ -41,6 +41,15 @@ import java.util.Arrays;
  */
 public class Ch1502CanMakeArithmeticProgressionFromSequence {
 
+  /**
+   * <p>  复杂度分析
+   *
+   * <p>    时间复杂度：O(nlogn)。排序的时间代价为 O(nlogn)。
+   * <p>    空间复杂度：O(logn)。快速排序中使用的栈空间期望是 O(logn)。
+   *
+   * @param arr
+   * @return
+   */
   public boolean canMakeArithmeticProgression(int[] arr) {
     Arrays.sort(arr);
     for (int i = 1; i < arr.length - 1; i++) {
