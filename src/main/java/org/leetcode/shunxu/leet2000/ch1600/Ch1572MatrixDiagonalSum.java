@@ -47,5 +47,55 @@ package org.leetcode.shunxu.leet2000.ch1600;
  *<p>@date: 2021/4/22
  */
 public class Ch1572MatrixDiagonalSum {
+  public int diagonalSum_self(int[][] mat) {
+    //11  22  33
+    //03  12  22 30
+    int ans = 0;
+    for (int i = 0; i < mat.length; i++) {
+      ans += mat[i][i];
+      if (i != mat.length - 1 - i) {
+        ans += mat[i][mat.length - 1 - i];
+      }
+    }
+    return ans;
+  }
 
+  /**
+   * <p>方法一：遍历
+   * <p>复杂度分析
+   *
+   * <p>   时间复杂度：O(n^2)，其中 n 是矩阵 mat 的边长。
+   * <p>   空间复杂度：O(1)。
+   *
+   * @param mat
+   * @return
+   */
+  public int diagonalSum_1(int[][] mat) {
+    int n = mat.length, sum = 0;
+    for (int i = 0; i < n; ++i) {
+      for (int j = 0; j < n; ++j) {
+        if (i == j || i + j == n - 1) {
+          sum += mat[i][j];
+        }
+      }
+    }
+    return sum;
+  }
+
+  /**
+   * <p>  复杂度分析
+   *
+   * <p>    时间复杂度：O(n)，其中 n 是矩阵 mat 的边长。
+   * <p>   空间复杂度：O(1)。
+   *
+   * @param mat
+   * @return
+   */
+  public int diagonalSum_2(int[][] mat) {
+    int n = mat.length, sum = 0, mid = n / 2;
+    for (int i = 0; i < n; ++i) {
+      sum += mat[i][i] + mat[i][n - 1 - i];
+    }
+    return sum - mat[mid][mid] * (n & 1);
+  }
 }
