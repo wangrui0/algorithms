@@ -44,14 +44,47 @@ package org.leetcode.shunxu.leet2000.ch1650;
  * <p>@date: 2021/4/22
  */
 public class Ch1603DesignParkingSystem {
+    private int big;
+    private int medium;
+    private int small;
 
-  public Ch1603DesignParkingSystem(int big, int medium, int small) {
+    /**
+     * 时间复杂度
+     * <p>
+     * 时间复杂度：单次操作为 O(1)O(1)。
+     * <p>
+     * 空间复杂度：O(1)O(1)。
+     *
+     * @param big
+     * @param medium
+     * @param small
+     */
+    public Ch1603DesignParkingSystem(int big, int medium, int small) {
+        this.big = big;
+        this.medium = medium;
+        this.small = small;
 
-  }
+    }
 
-  public boolean addCar(int carType) {
-    return true;
-  }
+    public boolean addCar(int carType) {
+        if (carType == 1) {
+            if (big > 0) {
+                big--;
+                return true;
+            }
+        } else if (carType == 2) {
+            if (medium > 0) {
+                medium--;
+                return true;
+            }
+        } else {
+            if (small > 0) {
+                small--;
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 /**
