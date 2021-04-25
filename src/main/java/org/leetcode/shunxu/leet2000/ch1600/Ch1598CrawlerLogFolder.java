@@ -1,5 +1,7 @@
 package org.leetcode.shunxu.leet2000.ch1600;
 
+import java.util.Stack;
+
 /**
  * <p>1598. 文件夹操作日志搜集器
  *
@@ -53,8 +55,46 @@ package org.leetcode.shunxu.leet2000.ch1600;
  * <p>@date: 2021/4/22
  */
 public class Ch1598CrawlerLogFolder {
+    public static void main(String[] args) {
+        System.out.println(minOperations(new String[]{"d1/", "../", "../", "../"}));
+    }
 
-  public int minOperations(String[] logs) {
-    return -1;
-  }
+    public static int minOperations(String[] logs) {
+        int count = 0;
+        for (int i = 0; i < logs.length; i++) {
+            String operation = logs[i];
+            if (operation.equals("../")) {
+                if (count >= 1) {
+                    count--;
+                }
+                continue;
+            } else if (operation.equals("./")) {
+                continue;
+            } else {
+                count++;
+            }
+
+        }
+        return count;
+    }
+
+    public static int minOperations_2(String[] logs) {
+        Stack<String> stack = new Stack<>();
+        for (int i = 0; i < logs.length; i++) {
+            String operation = logs[i];
+            if (operation.equals("../")) {
+                if (stack.size() >= 1) {
+                    stack.pop();
+                }
+                continue;
+            } else if (operation.equals("./")) {
+                continue;
+            } else {
+                stack.push(operation);
+            }
+
+        }
+        return stack.size();
+    }
+
 }
