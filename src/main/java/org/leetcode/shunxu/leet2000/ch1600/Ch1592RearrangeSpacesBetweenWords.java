@@ -1,5 +1,8 @@
 package org.leetcode.shunxu.leet2000.ch1600;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <p>1592. 重新排列单词间的空格
  *
@@ -54,8 +57,98 @@ package org.leetcode.shunxu.leet2000.ch1600;
  * <p>@date: 2021/4/22
  */
 public class Ch1592RearrangeSpacesBetweenWords {
+    public static void main(String[] args) {
+        System.out.println(reorderSpaces("  this   is  a sentence "));
+    }
 
-  public String reorderSpaces(String text) {
-    return "";
-  }
+    public static String reorderSpaces(String text) {
+        String[] splits = text.trim().split("\\s+");
+        int countWord = 0;
+        for (String word : splits) {
+            countWord += word.length();
+        }
+        int blank = text.length() - countWord;
+        StringBuilder sb = new StringBuilder();
+        int eachBlank;
+        int reminder;
+        if (splits.length == 1) {
+            eachBlank = 0;
+            reminder = blank;
+        } else {
+            eachBlank = blank / (splits.length - 1);
+            reminder = blank % (splits.length - 1);
+        }
+
+        for (int i = 0; i < splits.length; i++) {
+            String word = splits[i];
+            sb.append(word);
+            int num = 0;
+            if (i == splits.length - 1) {
+                break;
+            }
+            while (num < eachBlank) {
+                sb.append(" ");
+                num++;
+            }
+        }
+        for (int i = 0; i < reminder; i++) {
+            sb.append(" ");
+        }
+        return sb.toString();
+    }
+
+    public String reorderSpaces_2(String text) {
+        StringBuilder sb = new StringBuilder();
+        //空格计数
+        int spaceCnt = 0;
+        //存储单词
+        List<String> words = new ArrayList<>();
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == ' ') {
+                //空格数加1
+                spaceCnt++;
+            } else {
+                int j = i + 1;
+                while (j < text.length() && text.charAt(j) != ' ') {
+                    j++;
+                }
+                //加入words
+                words.add(text.substring(i, j));
+                i = j - 1;
+            }
+        }
+        //特判只有1个单词的情况，避免”除0异常“
+        if (words.size() == 1) {
+            //拼接上唯一的单词
+            sb.append(words.get(0));
+            //拼接上所有的空格
+            for (int i = 0; i < spaceCnt; i++) {
+                sb.append(' ');
+            }
+        } else {
+            //间隔数
+            int gap = spaceCnt / (words.size() - 1);
+            //单词间的空格
+            StringBuilder space = new StringBuilder();
+            for (int i = 0; i < gap; i++) {
+                space.append(' ');
+            }
+            //剩余数
+            int left = spaceCnt % (words.size() - 1);
+            for (int i = 0; i < words.size(); i++) {
+                //拼接单词
+                sb.append(words.get(i));
+                //拼接空格
+                if (i != words.size() - 1) {
+                    sb.append(space);
+                }
+            }
+            //如果有剩余的，拼接到末尾
+            for (int i = 0; i < left; i++) {
+                sb.append(' ');
+            }
+        }
+        return sb.toString();
+    }
+
 }
