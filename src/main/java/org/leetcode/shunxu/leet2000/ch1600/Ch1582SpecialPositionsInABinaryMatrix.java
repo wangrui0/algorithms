@@ -58,8 +58,29 @@ package org.leetcode.shunxu.leet2000.ch1600;
  * <p>@date: 2021/4/22
  */
 public class Ch1582SpecialPositionsInABinaryMatrix {
+    public static void main(String[] args) {
+        System.out.println(numSpecial(new int[][]{{1, 0, 0}, {0, 0, 1}, {1, 0, 0}}));
+    }
 
-  public int numSpecial(int[][] mat) {
-    return -1;
-  }
+    public static int numSpecial(int[][] mat) {
+        int count = 0;
+        int[] row = new int[mat.length];
+        int[] col = new int[mat[0].length];
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                if (mat[i][j] == 1) {
+                    row[i]++;
+                    col[j]++;
+                }
+            }
+        }
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                if (mat[i][j] == 1 && row[i] == 1 && col[j] == 1) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
 }
