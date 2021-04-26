@@ -46,7 +46,19 @@ package org.leetcode.leet2000.ch1700;
  */
 public class Ch1662CheckIfTwoStringArraysAreEquivalent {
 
-  public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-    return true;
-  }
+    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+        StringBuilder sb1 = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
+        for (String word : word1) {
+            sb1.append(word);
+        }
+        for (String word : word2) {
+            sb2.append(word);
+        }
+        return sb1.toString().equals(sb2.toString());
+    }
+
+    public boolean arrayStringsAreEqual_2(String[] word1, String[] word2) {
+        return String.join("", word1).equals(String.join("", word2));
+    }
 }
