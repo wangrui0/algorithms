@@ -1,5 +1,6 @@
 package org.leetcode.leet2000.ch1700;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,15 +54,28 @@ import java.util.List;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 7:30 下午
  */
-public class NCh1656DesignAnOrderedStream {
+public class Ch1656DesignAnOrderedStream {
+    private String[] stream;
+    private int ptr, n;
 
-  public NCh1656DesignAnOrderedStream(int n) {
+    public Ch1656DesignAnOrderedStream(int n) {
+        stream = new String[n + 1];
+        this.ptr = 1;
+        this.n = n;
+    }
 
-  }
-
-  public List<String> insert(int idKey, String value) {
-    return null;
-  }
+    public List<String> insert(int idKey, String value) {
+        stream[idKey] = value;
+        List<String> ans = new ArrayList<>();
+        for (int i = ptr; i <= n; i++) {
+            if (stream[i] == null) {
+                break;
+            }
+            ans.add(stream[i]);
+            ptr++;
+        }
+        return ans;
+    }
 }
 
 /**
