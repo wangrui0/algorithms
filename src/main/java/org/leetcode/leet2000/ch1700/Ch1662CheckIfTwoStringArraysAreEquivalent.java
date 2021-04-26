@@ -44,7 +44,7 @@ package org.leetcode.leet2000.ch1700;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 7:30 下午
  */
-public class NCh1662CheckIfTwoStringArraysAreEquivalent {
+public class Ch1662CheckIfTwoStringArraysAreEquivalent {
 
   public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
     return true;
