@@ -36,9 +36,30 @@ package org.leetcode.leet2000.ch1750;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:01 下午
  */
-public class NCh1732FindTheHighestAltitude {
+public class Ch1732FindTheHighestAltitude {
 
-  public int largestAltitude(int[] gain) {
-    return -1;
-  }
+    public int largestAltitude(int[] gain) {
+        int max = 0;
+        int sum = 0;
+        for (int x : gain) {
+            sum += x;
+            max = Math.max(max, sum);
+        }
+        return max;
+    }
+
+    public int largestAltitude_2(int[] gain) {
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for (int i = 0; i < gain.length; i++) {
+            sum += gain[i];
+            max = Math.max(max, sum);
+        }
+        if (max < 0) {
+            return 0;
+        }
+        return max;
+
+    }
+
 }
