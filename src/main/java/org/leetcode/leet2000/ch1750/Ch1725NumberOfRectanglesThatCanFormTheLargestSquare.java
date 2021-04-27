@@ -1,5 +1,8 @@
 package org.leetcode.leet2000.ch1750;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <p>1725. 可以形成最大正方形的矩形数目
  *
@@ -43,7 +46,33 @@ package org.leetcode.leet2000.ch1750;
  */
 public class Ch1725NumberOfRectanglesThatCanFormTheLargestSquare {
 
-  public int countGoodRectangles(int[][] rectangles) {
-    return -1;
-  }
+    public int countGoodRectangles(int[][] rectangles) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int[] rectangle : rectangles) {
+            int min = Math.min(rectangle[0], rectangle[1]);
+            map.put(min, map.getOrDefault(min, 0) + 1);
+        }
+        int maxKey = 0;
+        for (Integer key : map.keySet()) {
+            if (key > maxKey) {
+                maxKey = key;
+            }
+        }
+        return map.get(maxKey);
+    }
+
+    public int countGoodRectangles_2(int[][] rectangles) {
+        int max = 0;
+        int count = 0;
+        for (int i = 0; i < rectangles.length; i++) {
+            int min = Math.min(rectangles[i][0], rectangles[i][1]);
+            if (min > max) {
+                max = min;
+                count = 1;
+            } else if (min == max) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
