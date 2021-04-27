@@ -107,4 +107,27 @@ public class Ch1704DetermineIfStringHalvesAreAlike {
 
     return count == 0;
   }
+
+  public static boolean halvesAreAlike_3(String s) {
+    int[] arr = new int[128];
+    arr['a'] = 1;
+    arr['e'] = 1;
+    arr['i'] = 1;
+    arr['o'] = 1;
+    arr['u'] = 1;
+    arr['A'] = 1;
+    arr['E'] = 1;
+    arr['I'] = 1;
+    arr['O'] = 1;
+    arr['U'] = 1;
+
+    int count = 0;
+    int mid = s.length() >> 1;
+    for (int i = 0; i < mid; i++) {
+      count += arr[s.charAt(i)];
+      count -= arr[s.charAt(mid + i)];
+    }
+    return count == 0;
+  }
+
 }
