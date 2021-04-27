@@ -41,7 +41,7 @@ package org.leetcode.leet2000.ch1750;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:00 下午
  */
-public class NCh1725NumberOfRectanglesThatCanFormTheLargestSquare {
+public class Ch1725NumberOfRectanglesThatCanFormTheLargestSquare {
 
   public int countGoodRectangles(int[][] rectangles) {
     return -1;

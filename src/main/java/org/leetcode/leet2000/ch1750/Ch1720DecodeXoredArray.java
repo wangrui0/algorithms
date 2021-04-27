@@ -49,5 +49,6 @@ public class Ch1720DecodeXoredArray {
             ans[i+1]=ans[i]^encoded[i];
         }
         return ans;
+
     }
 }
