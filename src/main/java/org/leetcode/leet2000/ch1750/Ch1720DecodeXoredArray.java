@@ -34,10 +34,20 @@ package org.leetcode.leet2000.ch1750;
  * @Author: shenpei
  * @Date: 2021/4/25 9:59 下午
  */
-public class NCh1720DecodeXoredArray {
+public class Ch1720DecodeXoredArray {
+    public static void main(String[] args) {
+        System.out.println(decode(new int[]{1,2,3},1));
+    }
 
-  //  a^b=c,c^a=b;
-  public int[] decode(int[] encoded, int first) {
-    return null;
-  }
+    //  a^b=c,c^a=b;
+    //encoded[i] = arr[i] XOR arr[i + 1]
+    //encoded[0] = arr[0]^ arr[1]^arr[0]=arr[1]
+    public static int[] decode(int[] encoded, int first) {
+        int[] ans = new int[encoded.length + 1];
+        ans[0]=first;
+        for (int i = 0; i <encoded.length ; i++) {
+            ans[i+1]=ans[i]^encoded[i];
+        }
+        return ans;
+    }
 }
