@@ -57,6 +57,12 @@ import java.util.Queue;
  */
 public class Ch1700NumberOfStudentsUnableToEatLunch {
 
+  /**
+   * 很巧妙啊，有一个不符合，说明就不用往后走了
+   * @param students
+   * @param sandwiches
+   * @return
+   */
   public static int countStudents(int[] students, int[] sandwiches) {
     int stu[] = new int[2];
     for (int i = 0; i < students.length; i++) {
