@@ -53,4 +53,15 @@ public class Ch1716CalculateMoneyInLeetcodeBank {
     int day = n % 7, week = n / 7;
     return ((day + 1) * day) / 2 + day * week + (((week + 7) * week) / 2) * 7;
   }
+
+  //  此处撰写解题思路
+//  算出有几个整星期零几天。
+//  第一周28，35，42·····所以和为28a +a(a-1)7/2
+//  然后零散的几天，第一天是n/7+1,最后一天n/7+n%7,一共是(n/7+1+n/7+n%7)(n%7)/2
+  public int totalMoney(int n) {
+    int a = n / 7, b = n % 7;
+    int ans = 28 * a + a * (a - 1) * 7 / 2 + (a + 1 + a + b) * b / 2;
+    return ans;
+  }
+
 }
