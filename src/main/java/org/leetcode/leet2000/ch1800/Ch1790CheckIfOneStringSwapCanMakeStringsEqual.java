@@ -47,9 +47,25 @@ package org.leetcode.leet2000.ch1800;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:15 下午
  */
-public class NCh1790CheckIfOneStringSwapCanMakeStringsEqual {
+public class Ch1790CheckIfOneStringSwapCanMakeStringsEqual {
 
-  public boolean areAlmostEqual(String s1, String s2) {
-    return true;
-  }
+    public boolean areAlmostEqual(String s1, String s2) {
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+        int first = -1;
+        int second = -1;
+        for (int i = 0; i < s1.length(); i++) {
+            if (s1.charAt(i) == s2.charAt(i)) {
+                continue;
+            } else if (first == -1) {
+                first = i;
+            } else if (second == -1) {
+                second = i;
+            } else {
+                return false;
+            }
+        }
+        return first == -1 && second == -1 || first != -1 & second != -1 && s1.charAt(second) == s2.charAt(first) && s1.charAt(first) == s2.charAt(second);
+    }
 }
