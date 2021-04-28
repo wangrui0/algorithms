@@ -43,9 +43,43 @@ package org.leetcode.leet2000.ch1800;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:05 下午
  */
-public class NCh1758MinimumChangesToMakeAlternatingBinaryString {
+public class Ch1758MinimumChangesToMakeAlternatingBinaryString {
 
+
+  /**
+   * <p> 两种情况：
+   * <p>  1.偶数位为0，奇数位为1 这种情况下，任意位的值和索引奇偶性相同，即s[i]%2==i%2，若不满足，即需要变动该位，则计数cnt1++
+   * <p> 2.偶数位为1，奇数位为0这种情况下，任意位的值和索引奇偶性不同，即s[i]%2!=i%2，若不满足，即需要变动该位，则计数cnt2++
+   *
+   * <p>
+   * 比较哪种需要变动的位数小
+   * <p>太妙了啊
+   *
+   * @param s
+   * @return
+   */
   public int minOperations(String s) {
-    return -1;
+    int n = s.length(), cnt1 = 0, cnt2 = 0;
+    for (int i = 0; i < n; i++) {
+      if (Integer.valueOf(s.charAt(i) % 2) != i % 2) {
+        cnt1++;
+      } else {
+        cnt2++;
+      }
+    }
+    return Math.min(cnt1, cnt2);
   }
+
+  public int minOperations_2(String s) {
+    int n = s.length(), cnt1 = 0, cnt2 = 0;
+    for (int i = 0; i < n; i++) {
+      if (Integer.valueOf(s.charAt(i) % 2) != i % 2) {
+        cnt1++;
+      } else {
+        cnt2++;
+      }
+    }
+    return Math.min(cnt1, cnt2);
+  }
+
 }
