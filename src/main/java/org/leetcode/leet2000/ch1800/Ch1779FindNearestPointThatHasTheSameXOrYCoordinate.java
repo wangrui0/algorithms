@@ -45,9 +45,36 @@ package org.leetcode.leet2000.ch1800;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:10 下午
  */
-public class NCh1779FindNearestPointThatHasTheSameXOrYCoordinate {
+public class Ch1779FindNearestPointThatHasTheSameXOrYCoordinate {
+
 
   public int nearestValidPoint(int x, int y, int[][] points) {
-    return -1;
+    int index = -1;
+    int min = Integer.MAX_VALUE;
+    for (int i = 0; i < points.length; i++) {
+      int[] point = points[i];
+      if (point[0] == x || point[1] == y) {
+        int value = Math.abs(point[0] - x) + Math.abs(point[1] - y);
+        if (value < min) {
+          min = Math.min(min, value);
+          index = i;
+        }
+      }
+    }
+    return index;
+  }
+
+  public int nearestValidPoint_2(int x, int y, int[][] points) {
+    int min = 20000;
+    int index = -1;
+    for (int i = 0; i < points.length; ++i) {
+      if (x == points[i][0] || y == points[i][1]) {
+        if (min > Math.abs(points[i][0] - x) + Math.abs(points[i][1] - y)) {
+          min = Math.abs(points[i][0] - x) + Math.abs(points[i][1] - y);
+          index = i;
+        }
+      }
+    }
+    return index;
   }
 }
