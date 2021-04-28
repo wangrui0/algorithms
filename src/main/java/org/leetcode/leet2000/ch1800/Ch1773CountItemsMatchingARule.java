@@ -21,8 +21,8 @@ import java.util.List;
  *
  * <p>示例 1：
  *
- * <p>输入：items = [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey = "color",
- * ruleValue = "silver"
+ * <p>输入：items = [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey =
+ * "color", ruleValue = "silver"
  * <p>输出：1
  * <p>解释：只有一件物品匹配检索规则，这件物品是 ["computer","silver","lenovo"] 。
  *
@@ -50,9 +50,48 @@ import java.util.List;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:10 下午
  */
-public class NCh1773CountItemsMatchingARule {
+public class Ch1773CountItemsMatchingARule {
 
-  public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
-    return 0;
+  public static int countMatches_self(List<List<String>> items, String ruleKey, String ruleValue) {
+    int ans = 0;
+    for (List<String> item : items) {
+      if (ruleKey.equals("type") && item.get(0).equals(ruleValue)) {
+        ans++;
+      } else if (ruleKey.equals("color") && item.get(1).equals(ruleValue)) {
+        ans++;
+      } else if (ruleKey.equals("name") && item.get(2).equals(ruleValue)) {
+        ans++;
+      }
+    }
+    return ans;
+  }
+
+  public static int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+    int ans = 0;
+    for (List<String> item : items) {
+      if (ruleKey.equals("type") && item.get(0).equals(ruleValue) || ruleKey.equals("color") && item.get(1)
+          .equals(ruleValue) || ruleKey.equals("name") && item.get(2).equals(ruleValue)) {
+        ans++;
+      }
+    }
+    return ans;
+  }
+
+  public int countMatches_2(List<List<String>> items, String ruleKey, String ruleValue) {
+    int a = -1;
+    int count = 0;
+    if (ruleKey.equals("type")) {
+      a = 0;
+    } else if (ruleKey.equals("color")) {
+      a = 1;
+    } else {
+      a = 2;
+    }
+    for (int i = 0; i < items.size(); i++) {
+      if (items.get(i).get(a).equals(ruleValue)) {
+        count++;
+      }
+    }
+    return count;
   }
 }
