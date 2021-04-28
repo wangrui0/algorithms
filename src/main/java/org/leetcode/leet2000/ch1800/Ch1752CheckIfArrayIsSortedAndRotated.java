@@ -1,5 +1,7 @@
 package org.leetcode.leet2000.ch1800;
 
+import java.util.Arrays;
+
 /**
  * <p>1752. 检查数组是否经排序和轮转得到
  *
@@ -60,9 +62,75 @@ package org.leetcode.leet2000.ch1800;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:05 下午
  */
-public class NCh1752CheckIfArrayIsSortedAndRotated {
+public class Ch1752CheckIfArrayIsSortedAndRotated {
 
+  /**
+   * <p>感觉有点问题，但是leetcode 过了
+   * <p>如果经过了轮转。数组起始一定大于结束，有且只有一次是非递增的。如 5 一定大于 2，起点在1变化。
+   *
+   * @param nums
+   * @return
+   */
   public boolean check(int[] nums) {
+    int n = nums.length;
+    //有经过轮转
+    boolean isCount = nums[0] >= nums[n - 1];
+
+    for (int i = 1; i < n; i++) {
+
+      if (nums[i] < nums[i - 1]) {
+        if (isCount) {
+          isCount = false;
+        } else {
+          return false;
+        }
+      }
+
+    }
     return true;
   }
+
+  /*
+        执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+        内存消耗：36.2 MB, 在所有 Java 提交中击败了100.00%的用户
+    */
+  public boolean check_2(int[] nums) {
+    int i = 0;
+    for (i = 1; i < nums.length; ) {
+      if (nums[i] >= nums[i - 1]) {
+        i++;
+      } else {
+        break;
+      }
+    }
+    if (i == nums.length) {
+      return true;
+    }
+
+    for (; i < nums.length - 1; ) {
+      if (nums[i + 1] >= nums[i]) {
+        i++;
+      } else {
+        break;
+      }
+    }
+    if (i == nums.length - 1 && nums[nums.length - 1] <= nums[0]) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean check_3(int[] nums) {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < nums.length; i++) {
+      sb.append((char) nums[i]);
+    }
+    Arrays.sort(nums);
+    StringBuilder sb1 = new StringBuilder();
+    for (int i = 0; i < nums.length; i++) {
+      sb1.append((char) nums[i]);
+    }
+    return ("" + sb1 + sb1).contains(sb);
+  }
+
 }
