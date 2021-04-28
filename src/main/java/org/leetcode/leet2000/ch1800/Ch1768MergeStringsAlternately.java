@@ -50,9 +50,42 @@ package org.leetcode.leet2000.ch1800;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:06 下午
  */
-public class NCh1768MergeStringsAlternately {
+public class Ch1768MergeStringsAlternately {
 
   public String mergeAlternately(String word1, String word2) {
-    return null;
+    StringBuilder sb = new StringBuilder();
+    int i = 0;
+    for (; i < word1.length() && i < word2.length(); i++) {
+      sb.append(word1.charAt(i)).append(word2.charAt(i));
+    }
+    if (i < word1.length()) {
+      for (; i < word1.length(); i++) {
+        sb.append(word1.charAt(i));
+      }
+    } else {
+      for (; i < word2.length(); i++) {
+        sb.append(word2.charAt(i));
+      }
+    }
+    return sb.toString();
   }
+
+  public String mergeAlternately_2(String word1, String word2) {
+    int len1 = word1.length(), len2 = word2.length();
+    char[] letters = new char[len1 + len2];
+    int i = 0, j = 0;
+    while (i + j < len1 + len2) {
+      if (i < len1) {
+        letters[i + j] = word1.charAt(i);
+        i++;
+      }
+      if (j < len2) {
+        letters[i + j] = word2.charAt(j);
+        j++;
+      }
+    }
+    return new String(letters);
+  }
+
+
 }
