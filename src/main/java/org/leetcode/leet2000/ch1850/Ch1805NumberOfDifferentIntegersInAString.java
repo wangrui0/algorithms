@@ -1,5 +1,10 @@
 package org.leetcode.leet2000.ch1850;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * <p>1805. 字符串中不同整数的数目
  *
@@ -44,9 +49,27 @@ package org.leetcode.leet2000.ch1850;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:17 下午
  */
-public class NCh1805NumberOfDifferentIntegersInAString {
+public class Ch1805NumberOfDifferentIntegersInAString {
 
-  public int numDifferentIntegers(String word) {
-    return -1;
-  }
+    public int numDifferentIntegers(String word) {
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            if (Character.isDigit(c)) {
+                StringBuilder sb = new StringBuilder();
+                //去除前导0
+                while (i < word.length() && word.charAt(i) == '0') {
+                    i++;
+                }
+                while (i < word.length() && Character.isDigit(word.charAt(i))) {
+                    sb.append(word.charAt(i));
+                    i++;
+                }
+                i -= 1;
+                set.add(sb.toString());
+            }
+        }
+        return set.size();
+
+    }
 }
