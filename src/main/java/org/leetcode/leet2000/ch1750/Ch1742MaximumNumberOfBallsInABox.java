@@ -83,7 +83,26 @@ public class Ch1742MaximumNumberOfBallsInABox {
     return sum;
   }
 
-  public int countBalls_self_2(int lowLimit, int highLimit) {
+  public int countBalls_1(int l, int h) {
+    int[] cnt = new int[46];
+    for (int i = l; i <= h; i++) {
+      int num = i, bitSum = 0;
+      while (num != 0) {
+        bitSum += num % 10;
+        num = num / 10;
+      }
+      cnt[bitSum]++;
+    }
+    int ans = 0;
+    for (int e : cnt) {
+      if (ans < e) {
+        ans = e;
+      }
+    }
+    return ans;
+  }
+
+  public int countBalls_2(int lowLimit, int highLimit) {
     Map<Integer, Integer> map = new HashMap<>();
     int digitNum = digitSum(lowLimit);
     map.put(digitNum, 1);
@@ -107,7 +126,7 @@ public class Ch1742MaximumNumberOfBallsInABox {
     return maxValue;
   }
 
-  public int countBalls(int lowLimit, int highLimit) {
+  public int countBalls_3(int lowLimit, int highLimit) {
     int[] ans = new int[46];
     for (int i = lowLimit; i <= highLimit; i++) {
       int a = i;
@@ -124,7 +143,8 @@ public class Ch1742MaximumNumberOfBallsInABox {
     return ans[ans.length - 1];
   }
 
-  public int countBalls_2(int lowLimit, int highLimit) {
+  ///////////////////////////////////
+  public int countBalls_4(int lowLimit, int highLimit) {
     // 盒子所有可能编号为下标组成的数组
     int[] arr = new int[46];
     // 第一个小球对应的盒子的编号
@@ -167,4 +187,71 @@ public class Ch1742MaximumNumberOfBallsInABox {
     }
     return endZeroCount;
   }
+
+  public int countBalls_5(int l, int h) {
+    int[] cnt = new int[46], cache = new int[h + 1];
+    for (int i = 1; i <= h; i++) {
+      cache[i] = cache[i / 10] + i % 10;
+    }
+    for (int i = l; i <= h; i++) {
+      cnt[cache[i]]++;
+    }
+    int ans = 0;
+    for (int e : cnt) {
+      if (ans < e) {
+        ans = e;
+      }
+    }
+    return ans;
+  }
+
+  public int getBitSum(int n) {
+    int bitSum = 0;
+    while (n != 0) {
+      bitSum += n % 10;
+      n /= 10;
+    }
+    return bitSum;
+  }
+
+  public int countBalls_6(int l, int h) {
+    int[] cnt = new int[46];
+    int ans = 0, bitSum = getBitSum(l);
+    for (int i = l; i <= h; i++) {
+      if (i % 10 == 0) {
+        bitSum = getBitSum(i);
+      }
+      cnt[bitSum++]++;
+    }
+    for (int e : cnt) {
+      if (ans < e) {
+        ans = e;
+      }
+    }
+    return ans;
+  }
+
+  public int countBalls_7(int l, int h) {
+    int[] cnt = new int[46];
+    int ans = 0, bitSum = getBitSum(l);
+    for (int i = l; i <= h; i++) {
+      if (i % 10 == 0) {
+        int num = i / 10;
+        bitSum = 0;
+        while (num != 0) {
+          bitSum += num % 10;
+          num /= 10;
+        }
+      }
+      cnt[bitSum++]++;
+    }
+    for (int e : cnt) {
+      if (ans < e) {
+        ans = e;
+      }
+    }
+    return ans;
+  }
+
+
 }
