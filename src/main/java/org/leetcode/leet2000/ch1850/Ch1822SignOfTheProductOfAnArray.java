@@ -47,9 +47,50 @@ package org.leetcode.leet2000.ch1850;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:19 下午
  */
-public class NCh1822SignOfTheProductOfAnArray {
+public class Ch1822SignOfTheProductOfAnArray {
 
   public int arraySign(int[] nums) {
+    int signal = 1;
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] == 0) {
+        return 0;
+      } else if (nums[i] < 0) {
+        signal *= -1;
+      }
+    }
+    return signal;
+  }
+
+  public int arraySign_2(int[] nums) {
+    int temp = 0;
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] < 0) {
+        temp++;
+      }
+      if (nums[i] > 0) {
+        continue;
+      }
+      if (nums[i] == 0) {
+        return 0;
+      }
+    }
+    if (temp % 2 == 0) {
+      return 1;
+    }
     return -1;
+  }
+
+  public int arraySign_3(int[] nums) {
+    int answer = 1;
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] == 0) {
+        answer = 0;
+        break;
+      }
+      if (nums[i] < 0) {
+        answer = answer * (-1);
+      }
+    }
+    return answer;
   }
 }
