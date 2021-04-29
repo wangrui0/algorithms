@@ -1,6 +1,5 @@
 package org.leetcode.leet2000.ch1850;
 
-import javax.smartcardio.CardException;
 
 /**
  * <p>1832. 判断句子是否为全字母句
@@ -38,9 +37,37 @@ import javax.smartcardio.CardException;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:20 下午
  */
-public class NCh1832CheckIfTheSentenceIsPangram {
+public class Ch1832CheckIfTheSentenceIsPangram {
 
   public boolean checkIfPangram(String sentence) {
+    int[] count = new int[26];
+    for (int i = 0; i < sentence.length(); i++) {
+      count[sentence.charAt(i) - 'a']++;
+    }
+    for (int i = 0; i < count.length; i++) {
+      if (count[i] == 0) {
+        return false;
+      }
+    }
     return true;
+  }
+
+  public boolean checkIfPangram_2(String sentence) {
+    if (sentence.length() < 26) {
+      return false;
+    }
+    boolean[] arr = new boolean[26];
+    int count = 0;
+    for (int i = 0; i < sentence.length(); i++) {
+      int index = sentence.charAt(i) - 'a';
+      if (!arr[index]) {
+        count++;
+        if (count == 26) {
+          return true;
+        }
+        arr[index] = true;
+      }
+    }
+    return false;
   }
 }
