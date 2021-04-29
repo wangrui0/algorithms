@@ -37,9 +37,16 @@ package org.leetcode.leet2000.ch1850;
  * @Author: shenpei
  * @Date: 2021/4/25 10:19 下午
  */
-public class NCh1827MinimumOperationsToMakeTheArrayIncreasing {
+public class Ch1827MinimumOperationsToMakeTheArrayIncreasing {
 
   public int minOperations(int[] nums) {
-    return -1;
+    int ans = 0;
+    for (int i = 1; i < nums.length; i++) {
+      if (nums[i] <= nums[i - 1]) {
+        ans += nums[i - 1] + 1 - nums[i];
+        nums[i] = nums[i - 1] + 1;
+      }
+    }
+    return ans;
   }
 }
