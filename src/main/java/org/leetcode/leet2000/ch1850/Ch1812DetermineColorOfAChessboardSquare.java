@@ -43,9 +43,26 @@ package org.leetcode.leet2000.ch1850;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:17 下午
  */
-public class NCh1812DetermineColorOfAChessboardSquare {
+public class Ch1812DetermineColorOfAChessboardSquare {
 
-  public boolean squareIsWhite(String coordinates) {
-    return true;
+  /**
+   * 判断行和列是奇数还是偶数
+   *
+   * @param coordinates
+   * @return
+   */
+  public boolean squareIsWhite_self(String coordinates) {
+    int column = coordinates.charAt(0) - '0';
+    int row = coordinates.charAt(1) - '0';
+
+    return ((row + column) & 1) == 1;
+  }
+
+  public boolean squareIsWhite_2(String coordinates) {
+    // + 1 是为了将坐标映射成 [1, n]，而不是 [0, n - 1]
+    int x = coordinates.charAt(0) - 'a' + 1;
+    int y = coordinates.charAt(1) - '0';
+    // 根据行和列的奇偶性来判断返回值
+    return (x & 1) == 1 ? (y & 1) == 1 ? false : true : (y & 1) == 0 ? false : true;
   }
 }
