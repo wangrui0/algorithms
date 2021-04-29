@@ -51,9 +51,31 @@ package org.leetcode.leet2000.ch1850;
  * <p>@Author: shenpei
  * <p>@Date: 2021/4/25 10:18 下午
  */
-public class NCh1816TruncateSentence {
+public class Ch1816TruncateSentence {
 
-  public String truncateSentence(String s, int k) {
-    return null;
+  public static String truncateSentence(String s, int k) {
+    for (int i = 0; i < s.length(); i++) {
+      if (s.charAt(i) == ' ') {
+        k--;
+      }
+      if (k == 0) {
+        return s.substring(0, i);
+      }
+    }
+    return s;
   }
+
+  public String truncateSentence_2(String s, int k) {
+    String array[] = s.split(" ");//按空格截断
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < k; i++) {
+      sb.append(array[i]);
+      if (i < k - 1) {
+        sb.append(" ");//i不为k-1时补空格
+      }
+    }
+    return sb.toString();
+  }
+
+
 }
