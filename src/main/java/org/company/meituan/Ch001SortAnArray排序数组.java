@@ -32,7 +32,7 @@ import java.util.Random;
  * <p>@author: wangrui
  * <p>@date: 2021/4/29
  */
-public class A001排序数组 {
+public class Ch001SortAnArray排序数组 {
 
   /**
    * <p> 方法一：快速排序
