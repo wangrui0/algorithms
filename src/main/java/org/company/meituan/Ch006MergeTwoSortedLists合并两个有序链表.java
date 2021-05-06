@@ -33,7 +33,7 @@ import org.ListNode;
  * <p>@author: wangrui
  * <p>@date: 2021/5/6
  */
-public class Ch006MergeTwoSortedLists {
+public class Ch006MergeTwoSortedLists合并两个有序链表 {
 
   public static void main(String[] args) {
     ListNode l1 = new ListNode(1);
