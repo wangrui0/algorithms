@@ -1,4 +1,4 @@
-package org.company.meituan;
+package org.company.meituan.algorithm;
 
 /**
  * <p>50. Pow(x, n)

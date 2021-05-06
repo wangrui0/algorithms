@@ -1,4 +1,4 @@
-package org.company.meituan;
+package org.company.meituan.algorithm;
 
 /**
  * <p>121. 买卖股票的最佳时机

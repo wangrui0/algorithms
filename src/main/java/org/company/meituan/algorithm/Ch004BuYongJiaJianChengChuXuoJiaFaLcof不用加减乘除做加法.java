@@ -1,4 +1,4 @@
-package org.company.meituan;
+package org.company.meituan.algorithm;
 
 /**
  * <p>剑指 Offer 65. 不用加减乘除做加法

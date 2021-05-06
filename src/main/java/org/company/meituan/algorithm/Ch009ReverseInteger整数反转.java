@@ -1,4 +1,4 @@
-package org.company.meituan;
+package org.company.meituan.algorithm;
 
 /**
  * <p>7. 整数反转
