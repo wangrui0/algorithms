@@ -104,6 +104,28 @@ public class Ch017_142LinkedListCycleII环形链表II {
     return null;
   }
 
+  public static ListNode detectCycle_3(ListNode head) {
+    if (head == null || head.next == null) {
+      return null;
+    }
+    ListNode slow = head, fast = head;
+    boolean flag = true;
+    while (slow != fast || flag) {
+      flag = false;
+      if (slow == null || fast == null || fast.next == null) {
+        return null;
+      }
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    ListNode ptr = head;
+    while (ptr != slow) {
+      ptr = ptr.next;
+      slow = slow.next;
+    }
+    return ptr;
+  }
+
 
 }
 
