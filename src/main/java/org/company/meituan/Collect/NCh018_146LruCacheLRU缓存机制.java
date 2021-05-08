@@ -54,7 +54,7 @@ import java.util.Map;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class Ch018_146LruCacheLRU缓存机制 {
+public class NCh018_146LruCacheLRU缓存机制 {
 
 
   class DLinkedNode {
@@ -80,7 +80,7 @@ public class Ch018_146LruCacheLRU缓存机制 {
   private int capacity;
   private DLinkedNode head, tail;
 
-  public Ch018_146LruCacheLRU缓存机制(int capacity) {
+  public NCh018_146LruCacheLRU缓存机制(int capacity) {
     this.size = 0;
     this.capacity = capacity;
     // 使用伪头部和伪尾部节点
