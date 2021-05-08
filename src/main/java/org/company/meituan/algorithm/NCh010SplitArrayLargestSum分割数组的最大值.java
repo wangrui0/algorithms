@@ -44,7 +44,7 @@ import java.util.Arrays;
  * <p>@author: wangrui
  * <p>@date: 2021/5/6
  */
-public class Ch010SplitArrayLargestSum分割数组的最大值 {
+public class NCh010SplitArrayLargestSum分割数组的最大值 {
 
   /**
    * <p> 方法一：动态规划
