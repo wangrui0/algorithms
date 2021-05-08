@@ -32,7 +32,7 @@ package org.company.meituan.Collect;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class Ch011_704BinarySearch二分查找 {
+public class NCh011_704BinarySearch二分查找 {
 
 
   public static int search(int[] nums, int target) {
@@ -86,14 +86,8 @@ public class Ch011_704BinarySearch二分查找 {
     return nums[left] == target ? left : -1;
   }
 
-  /**
-   * <p> System.out.println(search(new int[]{1, 5, 5, 6, 6}, 8));
-   * <p>  System.out.println(search(new int[]{5, 5, 5, 6, 6}, 5));
-   *
-   * @param nums
-   * @param target
-   * @return
-   */
+/*//    System.out.println(lastSearch(new int[]{1, 5, 5, 6, 6,6}, 6));
+    System.out.println(lastSearch(new int[]{5, 5, 5, 6, 6}, 6));*/
   public static int lastSearch(int[] nums, int target) {
     int len = nums.length;
     if (len == 0) {
