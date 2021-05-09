@@ -1,4 +1,4 @@
-package org.company.meituan.Collect;
+package org.company.meituan.Collect.leet25;
 
 /**
  * <p>718. 最长重复子数组

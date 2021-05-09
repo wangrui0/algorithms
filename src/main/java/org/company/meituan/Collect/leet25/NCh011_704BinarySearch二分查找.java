@@ -1,4 +1,4 @@
-package org.company.meituan.Collect;
+package org.company.meituan.Collect.leet25;
 
 /**
  * <p>704. 二分查找

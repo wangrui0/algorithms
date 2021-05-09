@@ -1,4 +1,4 @@
-package org.company.meituan.Collect;
+package org.company.meituan.Collect.leet25;
 
 /**
  * <p>|补充题4. 手撕快速排序
@@ -30,6 +30,6 @@ package org.company.meituan.Collect;
  * <p>@author: wangrui
  * <p>@date: 2021/4/29
  */
-public class Ch001_912QuickSort快速排序 {
+public class KCh001_912QuickSort快速排序 {
 
 }

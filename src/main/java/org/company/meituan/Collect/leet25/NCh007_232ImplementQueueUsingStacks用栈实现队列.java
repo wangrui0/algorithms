@@ -1,4 +1,4 @@
-package org.company.meituan.Collect;
+package org.company.meituan.Collect.leet25;
 
 import java.util.Deque;
 import java.util.LinkedList;
