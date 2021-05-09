@@ -49,9 +49,23 @@ package org.company.meituan.Collect;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class Ch009_53MaximumSubarray最大子序和 {
+public class NCh009_53MaximumSubarray最大子序和 {
 
+  /**
+   * <p>复杂度
+   *
+   * <p>   时间复杂度：O(n)，其中 n 为 nums 数组的长度。我们只需要遍历一遍数组即可求得答案。
+   * <p>  空间复杂度：O(1)。我们只需要常数空间存放若干变量。
+   *
+   * @param nums
+   * @return
+   */
   public int maxSubArray(int[] nums) {
-    return -1;
+    int pre = 0, ans = nums[0];
+    for (int i = 0; i < nums.length; i++) {
+      pre = Math.max(pre + nums[i], nums[i]);
+      ans = Math.max(ans, pre);
+    }
+    return ans;
   }
 }
