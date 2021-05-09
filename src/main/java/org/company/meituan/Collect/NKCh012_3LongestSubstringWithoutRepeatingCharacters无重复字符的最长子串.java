@@ -70,4 +70,21 @@ public class NKCh012_3LongestSubstringWithoutRepeatingCharacters无重复字符�
     }
     return ans;
   }
+
+  public int lengthOfLongestSubstring_2(String s) {
+    int ans = 0, rp = -1;
+    int length = s.length();
+    Set<Character> set = new HashSet<>();
+    for (int i = 0; i < s.length(); i++) {
+      if (i != 0) {
+        set.remove(s.charAt(i - 1));
+      }
+      while (rp + 1 < length && !set.contains(s.charAt(rp + 1))) {
+        set.add(s.charAt(rp + 1));
+        rp++;
+      }
+      ans = Math.max(ans, rp + 1 - i);
+    }
+    return ans;
+  }
 }
