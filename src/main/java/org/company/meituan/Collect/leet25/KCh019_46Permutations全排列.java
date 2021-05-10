@@ -2,7 +2,10 @@ package org.company.meituan.Collect.leet25;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * <p>46. 全排列
@@ -78,6 +81,27 @@ public class KCh019_46Permutations全排列 {
       // 撤销操作
       Collections.swap(output, first, i);
     }
+  }
+
+  public void test() {
+
+    List<String> list = new ArrayList() {{
+      add("05-9");
+      add("05-10");
+    }};
+    //日期， 月份 ，数量
+    Map<String, Map<String, List>> map = new HashMap<>();
+    List<Map<String, List<Integer>>> ans = new ArrayList<>();
+
+    for (Entry<String, Map<String, List>> entry : map.entrySet()) {
+      List<Integer> 数量统计 = new ArrayList<>();
+      for (int i = 0; i < list.size(); i++) {
+        String day = list.get(i);
+        List<Integer> value = entry.getValue().get(day);
+        //如果为空，给0值，否咋给1值
+      }
+    }
+    
   }
 }
 
