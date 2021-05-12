@@ -60,7 +60,7 @@ package org.company.meituan.Collect.leet25;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class Ch025_151ReverseWordsInAString翻转字符串里的单词 {
+public class KCh025_151ReverseWordsInAString翻转字符串里的单词 {
 
   public String reverseWords(String s) {
     return null;

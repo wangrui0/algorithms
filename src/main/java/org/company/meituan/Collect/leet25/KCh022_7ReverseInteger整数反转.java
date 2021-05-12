@@ -43,7 +43,7 @@ package org.company.meituan.Collect.leet25;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class Ch022_7ReverseInteger整数反转 {
+public class KCh022_7ReverseInteger整数反转 {
 
   public int reverse(int x) {
     return -1;
