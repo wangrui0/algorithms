@@ -22,7 +22,7 @@ package org.company.meituan.all.leet25;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class KCh013_215KthLargestElementInAnArray数组中的第K个最大元素 {
+public class AKCh013_215KthLargestElementInAnArray数组中的第K个最大元素 {
 
   public int findKthLargest(int[] nums, int k) {
     return -1;

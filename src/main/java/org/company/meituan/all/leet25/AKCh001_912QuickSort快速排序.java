@@ -30,6 +30,6 @@ package org.company.meituan.all.leet25;
  * <p>@author: wangrui
  * <p>@date: 2021/4/29
  */
-public class KCh001_912QuickSort快速排序 {
+public class AKCh001_912QuickSort快速排序 {
 
 }

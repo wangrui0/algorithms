@@ -38,7 +38,7 @@ package org.company.meituan.all.leet25;
  * <p>@author: wangrui
  * <p>@date: 2021/5/9
  */
-public class KCh021_offer_10_I_FeiBoNaQiShuLieLcof剑指Offerr10_II斐波那契数列 {
+public class AKCh021_offer_10_I_FeiBoNaQiShuLieLcof剑指Offerr10_II斐波那契数列 {
 
   public int fib(int n) {
     return -1;

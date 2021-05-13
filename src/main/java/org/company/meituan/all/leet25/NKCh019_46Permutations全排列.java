@@ -1,7 +1,9 @@
 package org.company.meituan.all.leet25;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +46,7 @@ import java.util.Map.Entry;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class KCh019_46Permutations全排列 {
+public class NKCh019_46Permutations全排列 {
 
   /**
    * <p>  复杂度分析
@@ -83,25 +85,41 @@ public class KCh019_46Permutations全排列 {
     }
   }
 
-  public void test() {
-
-    List<String> list = new ArrayList() {{
-      add("05-9");
-      add("05-10");
-    }};
-    //日期， 月份 ，数量
-    Map<String, Map<String, List>> map = new HashMap<>();
-    List<Map<String, List<Integer>>> ans = new ArrayList<>();
-
-    for (Entry<String, Map<String, List>> entry : map.entrySet()) {
-      List<Integer> 数量统计 = new ArrayList<>();
-      for (int i = 0; i < list.size(); i++) {
-        String day = list.get(i);
-        List<Integer> value = entry.getValue().get(day);
-        //如果为空，给0值，否咋给1值
-      }
+  /**
+   * <p>  复杂度分析
+   *
+   * <p>     时间复杂度：O(n×n!)，其中 n 为序列的长度
+   * <p>    空间复杂度：O(n)
+   *
+   * @param nums
+   * @return
+   */
+  public List<List<Integer>> permute_2(int[] nums) {
+    int length = nums.length;
+    List<List<Integer>> ans = new ArrayList<>();
+    if (length == 0) {
+      return ans;
     }
-    
+    Deque<Integer> path = new ArrayDeque<Integer>();
+    boolean[] used = new boolean[length];
+    dfs(nums, length, 0, path, used, ans);
+    return ans;
+  }
+
+  private void dfs(int[] nums, int length, int depth, Deque<Integer> path, boolean[] used, List<List<Integer>> ans) {
+    if (depth == length) {
+      ans.add(new ArrayList<>(path));
+    }
+    for (int i = 0; i < length; i++) {
+      if (used[i]) {
+        continue;
+      }
+      path.addLast(nums[i]);
+      used[i] = true;
+      dfs(nums, length, depth + 1, path, used, ans);
+      used[i] = false;
+      path.removeLast();
+    }
   }
 }
 

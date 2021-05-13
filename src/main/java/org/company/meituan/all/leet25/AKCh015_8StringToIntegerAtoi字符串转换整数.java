@@ -105,7 +105,7 @@ package org.company.meituan.all.leet25;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class KCh015_8StringToIntegerAtoi字符串转换整数 {
+public class AKCh015_8StringToIntegerAtoi字符串转换整数 {
 
   public int maximalRectangle(char[][] matrix) {
     return 0;
