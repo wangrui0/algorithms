@@ -47,7 +47,7 @@ import java.util.Set;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class NKCh012_3LongestSubstringWithoutRepeatingCharacters无重复字符的最长子串 {
+public class NCh012_3LongestSubstringWithoutRepeatingCharacters无重复字符的最长子串 {
 
   public int lengthOfLongestSubstring(String s) {
     // 哈希集合，记录每个字符是否出现过

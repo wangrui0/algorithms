@@ -36,7 +36,7 @@ import java.util.List;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class NKCh020_54SpiralMatrix螺旋矩阵 {
+public class NCh020_54SpiralMatrix螺旋矩阵 {
 
   /**
    * <p> 方法一：模拟

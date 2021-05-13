@@ -46,7 +46,7 @@ import java.util.Map.Entry;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class NKCh019_46Permutations全排列 {
+public class NCh019_46Permutations全排列 {
 
   /**
    * <p>  复杂度分析
