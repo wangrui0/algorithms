@@ -36,7 +36,7 @@ package org.company.meituan.all.leet25;
  * <p>@author: wangrui
  * <p>@date: 2021/5/9
  */
-public class AKCh021_offer_10_II_QingWaTiaoTaiJieWenTiLcof剑指Offer10_II青蛙跳台阶问题 {
+public class KCh021_offer_10_II_QingWaTiaoTaiJieWenTiLcof剑指Offer10_II青蛙跳台阶问题 {
 
   public int numWays(int n) {
     return -1;
