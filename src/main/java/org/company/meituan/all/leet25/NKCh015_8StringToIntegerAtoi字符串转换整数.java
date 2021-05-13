@@ -1,5 +1,8 @@
 package org.company.meituan.all.leet25;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <p>8. 字符串转换整数 (atoi)
  *
@@ -48,7 +51,7 @@ package org.company.meituan.all.leet25;
  * <p>第 3 步："   -42"（读入 "42"）
  * <p>               ^
  * <p>解析得到整数 -42 。
- * <p>由于 "-42" 在范围 [-231, 231 - 1] 内，最终结果为 -42 。
+ * <p>由于 "-42" 在范围 [-2^31, 2^31 - 1] 内，最终结果为 -42 。
  *
  * <p>示例 3：
  *
@@ -90,7 +93,7 @@ package org.company.meituan.all.leet25;
  * <p>第 3 步："-91283472332"（读入 "91283472332"）
  * <p>                     ^
  * <p>解析得到整数 -91283472332 。
- * <p>由于 -91283472332 小于范围 [-231, 231 - 1] 的下界，最终结果被截断为 -231 = -2147483648 。
+ * <p>由于 -91283472332 小于范围 [-2^31, 2^31 - 1] 的下界，最终结果被截断为 -2^31 = -2147483648 。
  *
  *
  *
@@ -105,9 +108,100 @@ package org.company.meituan.all.leet25;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class AKCh015_8StringToIntegerAtoi字符串转换整数 {
+public class NKCh015_8StringToIntegerAtoi字符串转换整数 {
 
-  public int maximalRectangle(char[][] matrix) {
-    return 0;
+  public static int myAtoi_self(String s) {
+    Boolean blankFlag = true;
+    Boolean flag = true;
+    int num = 0;
+    for (int i = 0; i < s.length(); i++) {
+      if (s.charAt(i) == ' ' && blankFlag) {
+        continue;
+      }
+      if (s.charAt(i) == '+' && blankFlag) {
+        blankFlag = false;
+        continue;
+      }
+      if (s.charAt(i) == '-' && blankFlag) {
+        flag = false;
+        blankFlag = false;
+        continue;
+      }
+      if (s.charAt(i) == '0' && blankFlag) {
+        blankFlag = false;
+        continue;
+      }
+      if (s.charAt(i) < '0' || s.charAt(i) > '9' || s.charAt(i) == ' ') {
+        return num > Integer.MAX_VALUE ? Integer.MAX_VALUE
+            : num < Integer.MIN_VALUE ? Integer.MIN_VALUE : flag ? num : num * -1;
+      }
+      if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
+        blankFlag = false;
+        if (flag && num > (Integer.MAX_VALUE - (s.charAt(i) - 48)) / 10) {
+          return Integer.MAX_VALUE;
+        } else if (!flag && num * -1 < (Integer.MIN_VALUE + (s.charAt(i) - 48)) / 10) {
+          return Integer.MIN_VALUE;
+        }
+        num = num * 10 + (s.charAt(i) - 48);
+      }
+    }
+    return num > Integer.MAX_VALUE ? Integer.MAX_VALUE
+        : num < Integer.MIN_VALUE ? Integer.MIN_VALUE : flag ? num : num * -1;
+  }
+
+  /**
+   * <p>自动机
+   * <p>复杂度分析
+   *
+   * <p>    时间复杂度：O(n)，其中 n 为字符串的长度。我们只需要依次处理所有的字符，处理每个字符需要的时间为 O(1)。
+   *
+   * <p>   空间复杂度：O(1)，自动机的状态只需要常数空间存储。
+   *
+   * @param str
+   * @return
+   */
+  public int myAtoi(String str) {
+    Automaton automaton = new Automaton();
+    int length = str.length();
+    for (int i = 0; i < length; ++i) {
+      automaton.get(str.charAt(i));
+    }
+    return (int) (automaton.sign * automaton.ans);
+  }
+}
+
+class Automaton {
+
+  public int sign = 1;
+  public long ans = 0;
+  private String state = "start";
+  private Map<String, String[]> table = new HashMap<String, String[]>() {{
+    put("start", new String[]{"start", "signed", "in_number", "end"});
+    put("signed", new String[]{"end", "end", "in_number", "end"});
+    put("in_number", new String[]{"end", "end", "in_number", "end"});
+    put("end", new String[]{"end", "end", "end", "end"});
+  }};
+
+  public void get(char c) {
+    state = table.get(state)[get_col(c)];
+    if ("in_number".equals(state)) {
+      ans = ans * 10 + c - '0';
+      ans = sign == 1 ? Math.min(ans, (long) Integer.MAX_VALUE) : Math.min(ans, -(long) Integer.MIN_VALUE);
+    } else if ("signed".equals(state)) {
+      sign = c == '+' ? 1 : -1;
+    }
+  }
+
+  private int get_col(char c) {
+    if (c == ' ') {
+      return 0;
+    }
+    if (c == '+' || c == '-') {
+      return 1;
+    }
+    if (Character.isDigit(c)) {
+      return 2;
+    }
+    return 3;
   }
 }
