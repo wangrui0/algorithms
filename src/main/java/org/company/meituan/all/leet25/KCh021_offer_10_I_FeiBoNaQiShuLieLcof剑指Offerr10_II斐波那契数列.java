@@ -38,9 +38,34 @@ package org.company.meituan.all.leet25;
  * <p>@author: wangrui
  * <p>@date: 2021/5/9
  */
-public class AKCh021_offer_10_I_FeiBoNaQiShuLieLcof剑指Offerr10_II斐波那契数列 {
+public class KCh021_offer_10_I_FeiBoNaQiShuLieLcof剑指Offerr10_II斐波那契数列 {
+
+  public static int fib_self(int n) {
+    if (n == 0) {
+      return 0;
+    }
+    if (n == 1) {
+      return 1;
+    }
+
+    int f0 = 0;
+    int f1 = 1;
+    for (int i = 2; i <= n; i++) {
+      int fn = f0 + f1;
+      f0 = f1;
+      f1 = fn % 1000000007;
+    }
+    return f1;
+  }
 
   public int fib(int n) {
-    return -1;
+    int a = 0, b = 1, sum;
+    for (int i = 0; i < n; i++) {
+      sum = (a + b) % 1000000007;
+      a = b;
+      b = sum;
+    }
+    return a;
   }
+
 }
