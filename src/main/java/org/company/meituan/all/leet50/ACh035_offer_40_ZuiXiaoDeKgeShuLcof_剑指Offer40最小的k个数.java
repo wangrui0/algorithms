@@ -31,7 +31,7 @@ package org.company.meituan.all.leet50;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class Ch035_offer_40_ZuiXiaoDeKgeShuLcof_剑指Offer40最小的k个数 {
+public class ACh035_offer_40_ZuiXiaoDeKgeShuLcof_剑指Offer40最小的k个数 {
 
   public int[] getLeastNumbers(int[] arr, int k) {
     return null;

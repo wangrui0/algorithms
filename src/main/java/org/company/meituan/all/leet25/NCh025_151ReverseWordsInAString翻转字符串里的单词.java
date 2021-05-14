@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -199,6 +200,38 @@ public class NCh025_151ReverseWordsInAString翻转字符串里的单词 {
     d.offerFirst(word.toString());
 
     return String.join(" ", d);
+  }
+
+  public static String reverseWords_4(String s) {
+    LinkedList<String> list = new LinkedList<>();
+    int left = 0, right = s.length() - 1;
+    while (left <= right) {
+      if (s.charAt(left) == ' ') {
+        left++;
+      } else {
+        break;
+      }
+    }
+    while (left <= right) {
+      if (s.charAt(right) == ' ') {
+        right--;
+      } else {
+        break;
+      }
+    }
+
+    StringBuilder word = new StringBuilder();
+    while (left <= right) {
+      if (s.charAt(left) != ' ') {
+        word.append(s.charAt(left));
+      } else if (word.length() != 0) {
+        list.addFirst(word.toString());
+        word.setLength(0);
+      }
+      left++;
+    }
+    list.addFirst(word.toString());
+    return String.join(" ", list);
   }
 
 

@@ -37,7 +37,7 @@ import org.ListNode;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class Ch034_92ReverseLinkedListII反转链表II {
+public class ACh034_92ReverseLinkedListII反转链表II {
 
   public ListNode reverseBetween(ListNode head, int left, int right) {
     return null;
