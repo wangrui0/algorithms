@@ -44,7 +44,7 @@ package org.company.meituan.all.leet50;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class Ch028_1143_LongestCommonSubsequence最长公共子序列 {
+public class ACh028_1143_LongestCommonSubsequence最长公共子序列 {
 
   public int longestCommonSubsequence(String text1, String text2) {
     return -1;

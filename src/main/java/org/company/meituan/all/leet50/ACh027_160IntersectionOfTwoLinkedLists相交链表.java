@@ -54,7 +54,7 @@ import org.ListNode;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class Ch027_160IntersectionOfTwoLinkedLists相交链表 {
+public class ACh027_160IntersectionOfTwoLinkedLists相交链表 {
 
   public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
     return null;

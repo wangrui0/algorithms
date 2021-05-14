@@ -33,7 +33,7 @@ package org.company.meituan.all.leet25;
  *<p>@author: wangrui
  *<p>@date: 2021/5/10
  */
-public class KCh024_70ClimbingStairs爬楼梯 {
+public class AKCh024_70ClimbingStairs爬楼梯 {
 
   public int climbStairs(int n) {
     return -1;

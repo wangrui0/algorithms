@@ -39,7 +39,7 @@ import org.TreeNode;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class KCh023_124BinaryTreeMaximumPathSum二叉树中的最大路径和 {
+public class AKCh023_124BinaryTreeMaximumPathSum二叉树中的最大路径和 {
 
   public int maxPathSum(TreeNode root) {
     return -1;

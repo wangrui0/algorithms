@@ -40,7 +40,7 @@ import java.util.List;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class Ch030_15_3Sum三数之和 {
+public class ACh030_15_3Sum三数之和 {
 
   public List<List<Integer>> threeSum(int[] nums) {
     return null;

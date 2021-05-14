@@ -64,7 +64,7 @@ package org.company.meituan.all.leet50;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class Ch026_468ValidateIpAddress验证IP地址 {
+public class ACh026_468ValidateIpAddress验证IP地址 {
 
   public String validIPAddress(String IP) {
     return null;

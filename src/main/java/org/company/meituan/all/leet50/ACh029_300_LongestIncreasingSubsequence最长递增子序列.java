@@ -45,7 +45,7 @@ package org.company.meituan.all.leet50;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class Ch029_300_LongestIncreasingSubsequence最长递增子序列 {
+public class ACh029_300_LongestIncreasingSubsequence最长递增子序列 {
 
   public int lengthOfLIS(int[] nums) {
     return -1;
