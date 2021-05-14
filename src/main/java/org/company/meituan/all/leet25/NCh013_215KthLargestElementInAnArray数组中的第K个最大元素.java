@@ -24,7 +24,7 @@ import java.util.Random;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class KCh013_215KthLargestElementInAnArray数组中的第K个最大元素 {
+public class NCh013_215KthLargestElementInAnArray数组中的第K个最大元素 {
 
   Random random = new Random();
 
