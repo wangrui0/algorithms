@@ -1,4 +1,4 @@
-package org.company.meituan.all.week01.doing;
+package org.company.meituan.all.week01.done;
 
 import java.net.*;
 import java.util.regex.Pattern;
@@ -68,7 +68,7 @@ import java.util.regex.Pattern;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class ACh026_468ValidateIpAddress验证IP地址 {
+public class NCh026_468ValidateIpAddress验证IP地址 {
 
 
   public String validIPAddress_1(String IP) {
@@ -128,7 +128,7 @@ public class ACh026_468ValidateIpAddress验证IP地址 {
     }
   }
 
-
+  //
   public String validateIPv4(String IP) {
     String[] nums = IP.split("\\.", -1);
     for (String x : nums) {
