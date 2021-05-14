@@ -42,7 +42,7 @@ import org.ListNode;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class ACh033_19RemoveNthNodeFromEndOfList删除链表的倒数第N个结点 {
+public class Ch033_19RemoveNthNodeFromEndOfList删除链表的倒数第N个结点 {
 
   public ListNode removeNthFromEnd(ListNode head, int n) {
     return null;

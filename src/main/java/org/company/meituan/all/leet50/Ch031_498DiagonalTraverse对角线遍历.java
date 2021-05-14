@@ -33,7 +33,7 @@ package org.company.meituan.all.leet50;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class ACh031_498DiagonalTraverse对角线遍历 {
+public class Ch031_498DiagonalTraverse对角线遍历 {
 
   public int[] findDiagonalOrder(int[][] mat) {
     return null;

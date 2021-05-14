@@ -21,7 +21,7 @@ package org.company.meituan.all.leet50;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class ACh032_415AddStrings字符串相加 {
+public class Ch032_415AddStrings字符串相加 {
 
   public String addStrings(String num1, String num2) {
     return null;
