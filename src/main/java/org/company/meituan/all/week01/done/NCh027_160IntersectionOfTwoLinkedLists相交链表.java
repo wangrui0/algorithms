@@ -1,5 +1,7 @@
-package org.company.meituan.all.week01.doing;
+package org.company.meituan.all.week01.done;
 
+import java.util.HashSet;
+import java.util.Set;
 import org.ListNode;
 
 /**
@@ -54,9 +56,76 @@ import org.ListNode;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class ACh027_160IntersectionOfTwoLinkedLists相交链表 {
+public class NCh027_160IntersectionOfTwoLinkedLists相交链表 {
 
+  /*
+   *方法一: 暴力法
+   * 对链表A中的每一个结点 ai​，遍历整个链表 B 并检查链表 B 中是否存在结点和 ai​ 相同。
+   * 代码省略。
+   * 复杂度分析
+   *时间复杂度 : O(mn)。
+   *空间复杂度 : O(1)。
+   */
   public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
     return null;
+  }
+
+  /**
+   * <p>方法二: 哈希表法
+   * <p>复杂度分析
+   *
+   * <p>  时间复杂度 : O(m+n)。
+   * <p>  空间复杂度 : O(m) 或 O(n)。
+   *
+   * @param headA
+   * @param headB
+   * @return
+   */
+  public ListNode getIntersectionNode_2(ListNode headA, ListNode headB) {
+    Set<ListNode> hashSet = new HashSet<>();
+
+    ListNode curNode = headA;
+    while (curNode != null) {
+      hashSet.add(curNode);
+      curNode = curNode.next;
+    }
+
+    curNode = headB;
+    while (curNode != null) {
+      if (hashSet.contains(curNode)) {
+        return curNode;
+      }
+      curNode = curNode.next;
+    }
+    return null;
+  }
+
+  /**
+   * @param headA
+   * @param headB
+   * @return
+   */
+  public ListNode getIntersectionNode_3(ListNode headA, ListNode headB) {
+    // 特判
+    if (headA == null || headB == null) {
+      return null;
+    }
+
+    ListNode head1 = headA;
+    ListNode head2 = headB;
+
+    while (head1 != head2) {
+      if (head1 != null) {
+        head1 = head1.next;
+      } else {
+        head1 = headB;
+      }
+      if (head2 != null) {
+        head2 = head2.next;
+      } else {
+        head2 = headA;
+      }
+    }
+    return head1;
   }
 }

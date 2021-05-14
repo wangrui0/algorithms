@@ -1,4 +1,4 @@
-package org.company.meituan.all.week01.doing;
+package org.company.meituan.all.week01.done;
 
 /**
  * <p>1143. 最长公共子序列
@@ -37,16 +37,44 @@ package org.company.meituan.all.week01.doing;
  *
  * <p>    1 <= text1.length, text2.length <= 1000
  * <p>    text1 和 text2 仅由小写英文字符组成。
- *
+ * https://leetcode-cn.com/problems/longest-common-subsequence/
  * <p>通过次数117,666
  * <p>提交次数188,521
  * <p>请问您在哪类招聘中遇到此题？
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class ACh028_1143_LongestCommonSubsequence最长公共子序列 {
+public class NCh028_1143_LongestCommonSubsequence最长公共子序列 {
 
+  /**
+   * <p> 方法一：动态规划
+   * <p>  复杂度分析
+   *
+   * <p>    时间复杂度：O(mn)，其中 m 和 n 分别是字符串 text1​ 和 text2​ 的长度。二维数组 dp 有 m+1 行和 n+1 列，需要对 dp 中的每个元素进行计算。
+   *
+   * <p>    空间复杂度：O(mn)，其中 m 和 n 分别是字符串 text1​ 和 text2​ 的长度。创建了 m+1 行 n+1 列的二维数组 dp。
+   *
+   * @param text1
+   * @param text2
+   * @return
+   */
   public int longestCommonSubsequence(String text1, String text2) {
-    return -1;
+    int m = text1.length(), n = text2.length();
+    int[][] dp = new int[m + 1][n + 1];
+    for (int i = 1; i <= m; i++) {
+      char c1 = text1.charAt(i - 1);
+      for (int j = 1; j <= n; j++) {
+        char c2 = text2.charAt(j - 1);
+        if (c1 == c2) {
+          dp[i][j] = dp[i - 1][j - 1] + 1;
+        } else {
+          dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+        }
+      }
+    }
+    return dp[m][n];
   }
+
 }
+
+

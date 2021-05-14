@@ -1,4 +1,4 @@
-package org.company.meituan.all.week01.todo;
+package org.company.meituan.all.week01.doing;
 
 /**
  * <p>剑指 Offer 40. 最小的k个数
