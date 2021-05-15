@@ -318,95 +318,139 @@ x
 Hsrc/main/java/org/leetcode/leet500/ch250/Ch0234PalindromeLinkedList.java,9\a\9a7c2fdd940c8b52411dcc405a030bb52599a8ba
 �
 _src/main/java/org/leetcode/leet1500/ch1300/Ch1290ConvertBinaryNumberInALinkedListToInteger.java,0\1\01660dd978240042d91dc6846f8784da5d6ed6de
-�
-Xsrc/main/java/org/company/meituan/all/leet25/Ch002_206ReverseLinkedList翻转链表.java,5\e\5e0d822366cdd2e76c60e1c095ddf72c3035b3f2
-�
-Vsrc/main/java/org/company/meituan/all/leet25/Ch003_141LinkedListCycle环形链表.java,b\f\bf32c2a7b97dd4a779b144d1023cf426c90b5315
-�
-bsrc/main/java/org/company/meituan/all/leet25/Ch004_88MergeSortedArray合并两个有序数组.java,c\a\caeab2398c245d006c4a4f9466b6bc7228ae6499
-�
-Ysrc/main/java/org/company/meituan/all/leet25/Ch006_20ValidParentheses有效的括号.java,d\8\d8cb841a4628499d2d2c89062629e3a9e08fc5b8
-�
-esrc/main/java/org/company/meituan/all/leet25/Ch008_21MergeTwoSortedLists合并两个有序链表.java,4\a\4a453faad91d9a832fca5861a60f3ba7c7249cde
-{
-Ksrc/main/java/org/company/meituan/all/leet25/Ch010_1TwoSum两数之和.java,9\8\98935f4ed1c9fedc09771b497285039320a361bd
-�
-psrc/main/java/org/company/meituan/all/leet25/Ch014_102BinaryTreeLevelOrderTraversal二叉树的层序遍历.java,e\c\ece8860fe0556eddcd3165c55368b4be5ac47350
-�
-�src/main/java/org/company/meituan/all/leet25/Ch016_offer_22LianBiaoZhongDaoShuDiKgeJieDianLcof剑指Offer22链表中倒数第k个节点.java,5\a\5ac517fadfd7e5f49f0f74ee29d7e1046adc0f8c
-�
-Zsrc/main/java/org/company/meituan/all/leet25/Ch017_142LinkedListCycleII环形链表II.java,3\a\3a0a46e45e6b3fcf1a5decc1e8f53e7fdb49de9f
-v
-Fsrc/main/java/org/company/meituan/all/leet25/Ch018_146LruCacheLRu.java,f\7\f7ee53b42692a40745fa3da8b3c2520840270393
-�
-Tsrc/main/java/org/company/meituan/all/leet25/KCh022_7ReverseInteger整数反转.java,3\d\3d4599651d024e4cbeb2ae77252f1ad37a17f6d1
-�
-rsrc/main/java/org/company/meituan/all/leet25/KCh023_124BinaryTreeMaximumPathSum二叉树中的最大路径和.java,6\6\6680dfee30f180280ac3eb5eebd5868c8885f8a9
-�
-Rsrc/main/java/org/company/meituan/all/leet25/KCh024_70ClimbingStairs爬楼梯.java,7\b\7b2281fca907bd6e328e0f4360f1319048560c68
-�
-lsrc/main/java/org/company/meituan/all/leet25/KCh025_151ReverseWordsInAString翻转字符串里的单词.java,3\e\3e159d39e66d6d69b49f661b2c58358008536c45
-e
-5src/main/java/org/company/meituan/all/leet25/LRU.java,a\6\a6d7514ee77b4f458645a048cb99e9c4a68d62bb
-f
-6src/main/java/org/company/meituan/all/leet25/LRU1.java,b\3\b3578a667e61aba35478ed2728aeda89651ef488
-f
-6src/main/java/org/company/meituan/all/leet25/LRU2.java,f\2\f2b5c20e08c66a379208b53b71d539424eba220e
-�
-psrc/main/java/org/company/meituan/all/leet25/NCh005_718MaximumLengthOfRepeatedSubarray最长重复子数组.java,c\d\cd6404d8804b6a4e76fa39dc22cc12053ce2e948
+�
+]src/main/java/org/company/meituan/all/week01/done/Ch002_206ReverseLinkedList翻转链表.java,c\0\c03e44a5c0a0ade077308848579444cde4904b42
+�
+[src/main/java/org/company/meituan/all/week01/done/Ch003_141LinkedListCycle环形链表.java,5\9\595f4d91ab673903e7918a69aaf6a3f5a23d442f
 �
-gsrc/main/java/org/company/meituan/all/leet25/NCh007_232ImplementQueueUsingStacks用栈实现队列.java,7\1\7124d4373087664f20225c746e05031c112faf41
-�
-Ysrc/main/java/org/company/meituan/all/leet25/NCh009_53MaximumSubarray最大子序和.java,7\0\7033a63a723d0a2bef243be8b2880f405abfd3e1
-�
-Tsrc/main/java/org/company/meituan/all/leet25/NCh011_704BinarySearch二分查找.java,d\3\d39094cdecba783d0fadf34640301ff232ae0780
-�
-Ssrc/main/java/org/company/meituan/all/leet25/NCh018_146LruCacheLRU缓存机制.java,8\c\8cb61bb32507d69991fd09ab82b295501598173f
-�
-�src/main/java/org/company/meituan/all/leet25/NKCh012_3LongestSubstringWithoutRepeatingCharacters无重复字符的最长子串.java,6\2\624c0fb58e59d4f77e876ae008f8856787718c49
-�
-Zsrc/main/java/org/company/meituan/all/leet50/Ch026_468ValidateIpAddress验证IP地址.java,1\f\1ffa26a7eed70d7e8f972d5c72a73b29062c149e
-�
-csrc/main/java/org/company/meituan/all/leet50/Ch027_160IntersectionOfTwoLinkedLists相交链表.java,0\3\03115f2770ac5dc5fc081846062c4f1528494b23
+gsrc/main/java/org/company/meituan/all/week01/done/Ch004_88MergeSortedArray合并两个有序数组.java,0\d\0dc5d8635d2b4080d817c6d5b2b90e10f8cc4fd3
+�
+^src/main/java/org/company/meituan/all/week01/done/Ch006_20ValidParentheses有效的括号.java,d\a\dab73018132983a7efecb2de7b1ce5258cec85c2
 �
-jsrc/main/java/org/company/meituan/all/leet50/Ch028_1143_LongestCommonSubsequence最长公共子序列.java,e\e\eec03f2099e552c060996f4cd5aa037175b8be3e
-�
-msrc/main/java/org/company/meituan/all/leet50/Ch029_300_LongestIncreasingSubsequence最长递增子序列.java,6\1\61c16d62e3a184efe44d8182c61cf8c6fff754f9
-{
-Ksrc/main/java/org/company/meituan/all/leet50/Ch030_15_3Sum三数之和.java,1\0\10863ca27cc1221b4ec21bea114653b7288164a3
-�
-Zsrc/main/java/org/company/meituan/all/leet50/Ch031_498DiagonalTraverse对角线遍历.java,9\c\9c51c11e829d00a63d4068a55ceba0766a68881c
-�
-Tsrc/main/java/org/company/meituan/all/leet50/Ch032_415AddStrings字符串相加.java,6\0\600f36ec137e20f5d081fc7b2e5d6a82a756deb9
-�
-vsrc/main/java/org/company/meituan/all/leet50/Ch033_19RemoveNthNodeFromEndOfList删除链表的倒数第N个结点.java,2\6\26412decb84639fc350d72950c24bd29920c838e
-�
-[src/main/java/org/company/meituan/all/leet50/Ch034_92ReverseLinkedListII反转链表II.java,2\1\2173de9f7e835ac8b73213736275af7071b20e84
-�
-rsrc/main/java/org/company/meituan/all/leet50/Ch035_offer_40_ZuiXiaoDeKgeShuLcof_剑指Offer40最小的k个数.java,e\d\ed3d755c00f366e16431a7048caa36accaa237d9
-�
-�src/main/java/org/company/meituan/all/leet50/Ch036_103_BinaryTreeZigzagLevelOrderTraversal二叉树的锯齿形层序遍历.java,9\9\9913682fa2597791a7d30690a26edf1e3b45b81b
-�
-[src/main/java/org/company/meituan/all/leet50/Ch037_226_InvertBinaryTree翻转二叉树.java,2\0\20995b9ebafa6237681deeaee9f1a36f00e425dd
-�
-Ssrc/main/java/org/company/meituan/all/leet50/Ch038_143_ReorderList重排链表.java,8\7\8702018d16d159388b1d1d3953ea54d4b19bd130
-�
-|src/main/java/org/company/meituan/all/leet50/Ch039_83RemoveDuplicatesFromSortedList删除排序链表中的重复元素.java,a\1\a17a426cb5b551cd9c5eb9ccb3633f7dc944c554
-�
-esrc/main/java/org/company/meituan/all/leet50/Ch040_25_ReverseNodesInKGroupK个一组翻转链表.java,7\e\7e591a3ad3a06ca4b53f6606ecd115b1ad7da2a1
-~
-Nsrc/main/java/org/company/meituan/all/leet25/AKCh001_912HeapSort堆排序.java,d\c\dc0b0b868e8d9aba5a988aa6c23456d933f332a3
-�
-Rsrc/main/java/org/company/meituan/all/leet25/AKCh001_912QuickSort快速排序.java,e\f\ef030bbee098d48a3525906d7bbdee7778fadf23
-�
-Qsrc/main/java/org/company/meituan/all/leet25/NKCh019_46Permutations全排列.java,7\b\7ba4a20d5684383932ad3c83965c3a653026e6b0
-�
-Tsrc/main/java/org/company/meituan/all/leet25/NKCh020_54SpiralMatrix螺旋矩阵.java,c\9\c986cd25a69b87587b75e8fb56770b5442dbb726
-�
-�src/main/java/org/company/meituan/all/leet25/KCh021_offer_10_II_QingWaTiaoTaiJieWenTiLcof剑指Offer10_II青蛙跳台阶问题.java,f\0\f0fddd45eec21187614f12b931334ccda16f43c9
-�
-csrc/main/java/org/company/meituan/all/leet25/NKCh015_8StringToIntegerAtoi字符串转换整数.java,2\2\22eaf6a940bb40d0b299ad50afff18e3529100f2
-�
-zsrc/main/java/org/company/meituan/all/leet25/KCh021_offer_10_I_FeiBoNaQiShuLieLcof剑指Offerr10_II斐波那契数列.java,e\4\e46daf3fd1a2deb05c9069d1852e632b46259576
+jsrc/main/java/org/company/meituan/all/week01/done/Ch008_21MergeTwoSortedLists合并两个有序链表.java,8\3\836d21e301d0c4bab8683775a38318dfc472b52d
+�
+Psrc/main/java/org/company/meituan/all/week01/done/Ch010_1TwoSum两数之和.java,7\2\720eda463f96a35ff62bf4308b21edf1f78b02e3
 �
-usrc/main/java/org/company/meituan/all/leet25/KCh013_215KthLargestElementInAnArray数组中的第K个最大元素.java,c\7\c7eb5cee3f96960f8b494ca7e53697bbf924257e
+usrc/main/java/org/company/meituan/all/week01/done/Ch014_102BinaryTreeLevelOrderTraversal二叉树的层序遍历.java,6\e\6ec9d671b45baf2014e420671347200441c8d380
+�
+�src/main/java/org/company/meituan/all/week01/done/Ch016_offer_22LianBiaoZhongDaoShuDiKgeJieDianLcof剑指Offer22链表中倒数第k个节点.java,b\0\b03b2eb4328a6411ade8640b7f7df5d1df235b70
+�
+_src/main/java/org/company/meituan/all/week01/done/Ch017_142LinkedListCycleII环形链表II.java,3\c\3cb3b2146e7419f1b61627855f324ecc590334e6
+{
+Ksrc/main/java/org/company/meituan/all/week01/done/Ch018_146LruCacheLRu.java,2\4\2499b877d4315d9c99d3208b4747f8b1867f2e53
+�
+~src/main/java/org/company/meituan/all/week01/done/Ch021_offer_10_I_FeiBoNaQiShuLieLcof剑指Offerr10_II斐波那契数列.java,2\9\2922b3842c9014dcdaa62a2075ef4c8d8bf734c1
+�
+Xsrc/main/java/org/company/meituan/all/week01/done/Ch022_7ReverseInteger整数反转.java,b\9\b93aa46d1a82d69ce886628c56252f997b21819c
+j
+:src/main/java/org/company/meituan/all/week01/done/LRU.java,4\6\460d707abf14fe26925d95de8591cb9023042066
+k
+;src/main/java/org/company/meituan/all/week01/done/LRU1.java,6\7\6772eb46eedc154258a4ca64b78d40c814b932af
+k
+;src/main/java/org/company/meituan/all/week01/done/LRU2.java,b\e\be290e54ee963e18b02cfb70954db5b042c5237a
+�
+Tsrc/main/java/org/company/meituan/all/week01/done/NCh001_912BucketSort桶排序.java,f\b\fbab01426380fbbe37c8230cd1a3ac9c8646d4f3
+�
+Rsrc/main/java/org/company/meituan/all/week01/done/NCh001_912HeapSort堆排序.java,4\3\43a31b8d687d40ba99e9378b8f443a40ca82632d
+�
+Vsrc/main/java/org/company/meituan/all/week01/done/NCh001_912MergeSort归并排序.java,f\d\fdb0fe0036903a0aa24295ea76df397aabde9a1b
+�
+Vsrc/main/java/org/company/meituan/all/week01/done/NCh001_912QuickSort快速排序.java,2\6\2611d1a1a051cad67f4ebdb14a52d608cbe43e2a
+�
+usrc/main/java/org/company/meituan/all/week01/done/NCh005_718MaximumLengthOfRepeatedSubarray最长重复子数组.java,b\b\bbae2c8891988c43d83db3164e13ca75427a8a6d
+�
+lsrc/main/java/org/company/meituan/all/week01/done/NCh007_232ImplementQueueUsingStacks用栈实现队列.java,e\a\ea59808796142b9f2e4ccfc2a6a2d5c1577f8605
+�
+^src/main/java/org/company/meituan/all/week01/done/NCh009_53MaximumSubarray最大子序和.java,5\5\55620ce0086e8efe953ad49ad2a95bf70d048ba9
+�
+Ysrc/main/java/org/company/meituan/all/week01/done/NCh011_704BinarySearch二分查找.java,6\8\6832365b05f54ba16a6587ac845d8c7046d595a3
+�
+�src/main/java/org/company/meituan/all/week01/done/NCh012_3LongestSubstringWithoutRepeatingCharacters无重复字符的最长子串.java,d\9\d9c96dcb9fd9a4835c83297897d337dc841c0d94
+�
+zsrc/main/java/org/company/meituan/all/week01/done/NCh013_215KthLargestElementInAnArray数组中的第K个最大元素.java,5\5\55c7f04e03a1162ef9c270a4d08ebc17ac1f9780
+�
+gsrc/main/java/org/company/meituan/all/week01/done/NCh015_8StringToIntegerAtoi字符串转换整数.java,9\0\905ba4c62e1de9ba24df8d7fd1699ff7957d0232
+�
+Xsrc/main/java/org/company/meituan/all/week01/done/NCh018_146LruCacheLRU缓存机制.java,8\8\88a411586cc25a44fbb4121d1103ee086eff92c8
+�
+Usrc/main/java/org/company/meituan/all/week01/done/NCh019_46Permutations全排列.java,0\5\05b339a0fe8c3b25b9ce9951d60c21eb6fb73ff0
+�
+Xsrc/main/java/org/company/meituan/all/week01/done/NCh020_54SpiralMatrix螺旋矩阵.java,a\2\a25b27a1b8c0e97d67a26085942827e439fbc308
+�
+�src/main/java/org/company/meituan/all/week01/done/NCh021_offer_10_II_QingWaTiaoTaiJieWenTiLcof剑指Offer10_II青蛙跳台阶问题.java,d\6\d6c0db6c379339f57099d1aa08b5bc615be6da24
+�
+wsrc/main/java/org/company/meituan/all/week01/done/NCh023_124BinaryTreeMaximumPathSum二叉树中的最大路径和.java,f\c\fcb00709b7480926e12b956bab132edaabe4a707
+�
+Wsrc/main/java/org/company/meituan/all/week01/done/NCh024_70ClimbingStairs爬楼梯.java,a\1\a119f141f1d27447555e918df3d846a7a79102e2
+�
+qsrc/main/java/org/company/meituan/all/week01/done/NCh025_151ReverseWordsInAString翻转字符串里的单词.java,c\8\c8ab69b49ad314e357c2a3bd73f4830d3c4fa9ef
+�
+�src/main/java/org/company/meituan/all/week01/todo/Ch036_103_BinaryTreeZigzagLevelOrderTraversal二叉树的锯齿形层序遍历.java,9\0\9045c08fa3a397d005258441dc9c4f5729011666
+�
+`src/main/java/org/company/meituan/all/week01/todo/Ch037_226_InvertBinaryTree翻转二叉树.java,e\0\e03eccb513018d6a6dc5a49832c5a1ee85429408
+�
+Xsrc/main/java/org/company/meituan/all/week01/todo/Ch038_143_ReorderList重排链表.java,9\1\91f0f5ddd14114a460241231eed1bfd215e6293e
+�
+�src/main/java/org/company/meituan/all/week01/todo/Ch039_83RemoveDuplicatesFromSortedList删除排序链表中的重复元素.java,1\a\1a97c8cd0a675be5497c5566e4f4e416ea8f1a04
+�
+jsrc/main/java/org/company/meituan/all/week01/todo/Ch040_25_ReverseNodesInKGroupK个一组翻转链表.java,3\6\362ea3a71674a1b039ecf290dc82a4f307d3f750
+�
+tsrc/main/java/org/company/meituan/all/week01/todo/Ch041_121BestTimeToBuyAndSellStock买卖股票的最佳时机.java,3\8\38c0f5582d6f7007f3f8c677cd56da36bc6e843d
+�
+[src/main/java/org/company/meituan/all/week01/todo/Ch042_169MajorityElement多数元素.java,d\d\dd4caa311bcd017ae1efbee2039aaf6a726a9dbf
+�
+dsrc/main/java/org/company/meituan/all/week01/todo/Ch043_136SingleNumber只出现一次的数字.java,e\9\e97e14e7c3e92de62d18b3d95d99a914430092ad
+�
+src/main/java/org/company/meituan/all/week01/todo/Ch044_236LowestCommonAncestorOfABinaryTree二叉树的最近公共祖先.java,e\c\ec7e105685a83e19a2c69eb475556445d0484984
+�
+ssrc/main/java/org/company/meituan/all/week01/todo/Ch045_144BinaryTreePreorderTraversal二叉树的前序遍历.java,8\8\88e913d27aa89765b10b1beb7c600ee6777ff9fe
+�
+ksrc/main/java/org/company/meituan/all/week01/todo/Ch046_5LongestPalindromicSubstring最长回文子串.java,9\4\94c962f3dd5fa76cea2d135483c0c18b0225e8d3
+|
+Lsrc/main/java/org/company/meituan/all/week01/todo/Ch047_78Subsets子集.java,c\9\c9af2cb8b4e488061a9c644355ed20705af589e2
+�
+�src/main/java/org/company/meituan/all/week01/todo/Ch048_82RemoveDuplicatesFromSortedListII删除排序链表中的重复元素II.java,c\8\c81290448556320b02299ff689c09888be478964
+�
+�src/main/java/org/company/meituan/all/week01/todo/Ch049_offer_21_DiaoZhengShuZuShunXuShiQiShuWeiYuOuShuQianMianLcof调整数组顺序使奇数位于偶数前面.java,8\4\84f3dd4c6db6d58bc7b29e61e6fa7a0b1dd49019
+�
+esrc/main/java/org/company/meituan/all/week01/todo/Ch050_14_LongestCommonPrefix最长公共前缀.java,1\a\1a2953d897c8df753b0c92c3a7d14223e279df12
+�
+fsrc/main/java/org/company/meituan/all/week01/todo/Ch051_543DiameterOfBinaryTree二叉树的直径.java,a\5\a5a70172ae55efd5d7d611ad331ba274e8b43697
+�
+rsrc/main/java/org/company/meituan/all/week01/todo/Ch052_94_BinaryTreeInorderTraversal二叉树的中序遍历.java,1\4\14bd46fd44e532fc330f65d2de57dd0086173bb2
+�
+`src/main/java/org/company/meituan/all/week01/done/NCh026_468ValidateIpAddress验证IP地址.java,1\e\1ee68f60e37023a6eb7b636cebe5c92106091e10
+�
+ssrc/main/java/org/company/meituan/all/week01/doing/Ch029_300_LongestIncreasingSubsequence最长递增子序列.java,2\e\2e73681f6d9ba9ebb74de17c94e5b219986e2cd4
+�
+Qsrc/main/java/org/company/meituan/all/week01/doing/Ch030_15_3Sum三数之和.java,d\0\d013631e62c93cace2332b0f2320e025a4e66a77
+�
+`src/main/java/org/company/meituan/all/week01/doing/Ch031_498DiagonalTraverse对角线遍历.java,8\c\8cde0cf4347cccd8a76dfeacbefe16e6f8656d78
+�
+Zsrc/main/java/org/company/meituan/all/week01/doing/Ch032_415AddStrings字符串相加.java,0\4\0491bad9f0076dce70a4e2555ad83e3403a029d9
+�
+|src/main/java/org/company/meituan/all/week01/doing/Ch033_19RemoveNthNodeFromEndOfList删除链表的倒数第N个结点.java,a\b\abf749dae83902e6ae937991cfe0dcd5e875aca5
+�
+asrc/main/java/org/company/meituan/all/week01/doing/Ch034_92ReverseLinkedListII反转链表II.java,f\5\f53cb7118a599b6fc6fbfd8b73ce8ce37810866c
+�
+xsrc/main/java/org/company/meituan/all/week01/doing/Ch035_offer_40_ZuiXiaoDeKgeShuLcof_剑指Offer40最小的k个数.java,d\4\d472eafdc1cc572e150d7f34a8fd2aa749824a5c
+�
+isrc/main/java/org/company/meituan/all/week01/done/NCh027_160IntersectionOfTwoLinkedLists相交链表.java,5\8\583621b28d2a781c000e4d803a7a81ba726877f9
+�
+psrc/main/java/org/company/meituan/all/week01/done/NCh028_1143_LongestCommonSubsequence最长公共子序列.java,4\6\46b63e7e8501da4b89b84de614182dff85d0509a
+�
+Xsrc/main/java/org/company/meituan/all/week01/todo/Ch053_2_AddTwoNumbers两数相加.java,a\0\a0ad483e7e1d5ccae839868f77cd0399379d9939
+�
+dsrc/main/java/org/company/meituan/all/week01/todo/Ch054_242ValidAnagram有效的字母异位词.java,b\5\b5aa5d887ef53131edb15fdc680bc2bdb43646d3
+�
+psrc/main/java/org/company/meituan/all/week01/todo/Ch055_104MaximumDepthOfBinaryTree二叉树的最大深度.java,6\f\6fa65745d787b07346f0b7b68bf7588538c9e7e8
+�
+�src/main/java/org/company/meituan/all/week01/todo/Ch056_offer_36ErChaSouSuoShuYuShuangXiangLianBiaoLcof剑指Offer36二叉搜索树与双向链表.java,d\6\d6cd940daee26664c6c73ab9162c9f2484379d7c
+�
+csrc/main/java/org/company/meituan/all/week01/todo/Ch057_offer_53MaximumSubarray最大子序和.java,0\f\0fbe59277d21f035b4b2c307a79c6345030d80ae
+�
+isrc/main/java/org/company/meituan/all/week01/todo/Ch058_239SlidingWindowMaximum滑动窗口最大值.java,d\c\dc7549152ce5efc9f5d7a2fa26c052a4ba20825e
+�
+Ysrc/main/java/org/company/meituan/all/week01/todo/Ch059_56MergeIntervals合并区间.java,9\0\901de339447872a4ebbe8dead84399253b5e3ec8
+�
+lsrc/main/java/org/company/meituan/all/week01/todo/Ch060_199BinaryTreeRightSideView二叉树的右视图.java,9\4\9498528cd51dc8bc7e5bb9ac342eff704939d554

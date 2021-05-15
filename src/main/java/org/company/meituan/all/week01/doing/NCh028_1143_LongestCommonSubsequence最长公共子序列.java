@@ -1,4 +1,4 @@
-package org.company.meituan.all.week01.done;
+package org.company.meituan.all.week01.doing;
 
 /**
  * <p>1143. 最长公共子序列
