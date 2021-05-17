@@ -1,4 +1,4 @@
-package org.company.meituan.all.week02.todo;
+package org.company.meituan.all.week02.doing;
 
 /**
  * https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/

@@ -108,9 +108,9 @@ import java.util.Map;
  * <p>@author: wangrui
  * <p>@date: 2021/5/7
  */
-public class NKCh015_8StringToIntegerAtoi字符串转换整数 {
+public class NCh015_8StringToIntegerAtoi字符串转换整数 {
 
-  public static int myAtoi_self(String s) {
+  public  int myAtoi_self(String s) {
     Boolean blankFlag = true;
     Boolean flag = true;
     int num = 0;
