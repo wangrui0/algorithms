@@ -1,4 +1,4 @@
-package org.company.meituan.all.week01.todo;
+package org.company.meituan.all.week02.todo;
 
 /**
  * https://leetcode-cn.com/problems/maximum-subarray/
