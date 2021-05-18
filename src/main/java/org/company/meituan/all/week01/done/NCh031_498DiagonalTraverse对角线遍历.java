@@ -1,4 +1,4 @@
-package org.company.meituan.all.week01.doing;
+package org.company.meituan.all.week01.done;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,7 +38,7 @@ import java.util.List;
  * <p>@author: wangrui
  * <p>@date: 2021/5/10
  */
-public class Ch031_498DiagonalTraverse对角线遍历 {
+public class NCh031_498DiagonalTraverse对角线遍历 {
     /**
      * <p>方法一：对角线迭代和翻转
      * <p>复杂度分析
