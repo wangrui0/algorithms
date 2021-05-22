@@ -425,4 +425,10 @@ fsrc/main/java/org/company/meituan/all/week01/done/NCh050_14_LongestCommonPrefix
 �
 �src/main/java/org/company/meituan/all/week01/done/Ch049_offer_21_DiaoZhengShuZuShunXuShiQiShuWeiYuOuShuQianMianLcof调整数组顺序使奇数位于偶数前面.java,c\0\c0c3d1158a48472996a460ebdeb534df75c4ca13
 �
-�src/main/java/org/company/meituan/all/week01/doing/Ch048_82RemoveDuplicatesFromSortedListII删除排序链表中的重复元素II.java,a\3\a303ec2c16507da5235b3610791b9287a3d24150
+�src/main/java/org/company/meituan/all/week01/done/NCh048_82RemoveDuplicatesFromSortedListII删除排序链表中的重复元素II.java,9\3\931e2d7ab16a0241b82c15e9607e7bce181cfbf6
+�
+Xsrc/main/java/org/company/meituan/all/week01/doing/NCh019_47Permutations全排列II.java,6\e\6e842401e448777ffde9b7939a8d6b4b8b27e11f
+}
+Msrc/main/java/org/company/meituan/all/week01/doing/Ch047_78Subsets子集.java,1\2\122a2c6b233521b8e4134c52bd9f42279b9a5519
+�
+Vsrc/main/java/org/company/meituan/all/week01/doing/NCh019_46Permutations全排列.java,e\6\e61243b6ad285887cb054ea15755adc05009a585
