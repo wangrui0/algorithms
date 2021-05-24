@@ -386,8 +386,6 @@ Wsrc/main/java/org/company/meituan/all/week01/done/NCh024_70ClimbingStairs爬楼
 qsrc/main/java/org/company/meituan/all/week01/done/NCh025_151ReverseWordsInAString翻转字符串里的单词.java,c\8\c8ab69b49ad314e357c2a3bd73f4830d3c4fa9ef
 �
 `src/main/java/org/company/meituan/all/week01/done/NCh026_468ValidateIpAddress验证IP地址.java,1\e\1ee68f60e37023a6eb7b636cebe5c92106091e10
-�
-xsrc/main/java/org/company/meituan/all/week01/doing/Ch035_offer_40_ZuiXiaoDeKgeShuLcof_剑指Offer40最小的k个数.java,d\4\d472eafdc1cc572e150d7f34a8fd2aa749824a5c
 �
 isrc/main/java/org/company/meituan/all/week01/done/NCh027_160IntersectionOfTwoLinkedLists相交链表.java,5\8\583621b28d2a781c000e4d803a7a81ba726877f9
 �
@@ -402,20 +400,14 @@ Qsrc/main/java/org/company/meituan/all/week01/done/NCh030_15_3Sum三数之和.ja
 usrc/main/java/org/company/meituan/all/week01/done/NCh041_121BestTimeToBuyAndSellStock买卖股票的最佳时机.java,6\c\6cbf111ff95a1b14efc354dcb76620bbf07d7da4
 �
 ksrc/main/java/org/company/meituan/all/week01/doing/Ch040_25_ReverseNodesInKGroupK个一组翻转链表.java,7\e\7e70ed279be347b4ace4aaed82cb4e8e82a27a91
-�
-�src/main/java/org/company/meituan/all/week01/doing/Ch036_103_BinaryTreeZigzagLevelOrderTraversal二叉树的锯齿形层序遍历.java,7\3\73930826b8145d4d73e2d9788dd9bedf8a82ec86
 �
 |src/main/java/org/company/meituan/all/week01/done/NCh033_19RemoveNthNodeFromEndOfList删除链表的倒数第N个结点.java,5\b\5b37f48b9a3dbca16a652fa54bd23bb3205c2af4
-�
-asrc/main/java/org/company/meituan/all/week01/doing/Ch037_226_InvertBinaryTree翻转二叉树.java,8\2\829ddaa51769393ddcc2213ab556b6292686a245
 �
 asrc/main/java/org/company/meituan/all/week01/done/NCh034_92ReverseLinkedListII反转链表II.java,b\4\b4005b13fcf5f2f664bc9a91678de4244fc7ac4c
 �
 �src/main/java/org/company/meituan/all/week01/done/NCh039_83RemoveDuplicatesFromSortedList删除排序链表中的重复元素.java,2\d\2dfd16c0caeac474b92200e81c86e25f50ddef7f
 �
 Ysrc/main/java/org/company/meituan/all/week01/done/NCh038_143_ReorderList重排链表.java,9\b\9b8da26e86202328b18976fd1f147cc86feafc3f
-�
-isrc/main/java/org/company/meituan/all/week02/todo/Ch058_239SlidingWindowMaximum滑动窗口最大值.java,f\4\f47c98a333a0f1088aaca01d294f6c6375c5817b
 �
 `src/main/java/org/company/meituan/all/week01/done/NCh031_498DiagonalTraverse对角线遍历.java,f\5\f5669f190316ed6a7fbd94289c31a0544d544384
 �
@@ -426,9 +418,11 @@ fsrc/main/java/org/company/meituan/all/week01/done/NCh050_14_LongestCommonPrefix
 �src/main/java/org/company/meituan/all/week01/done/Ch049_offer_21_DiaoZhengShuZuShunXuShiQiShuWeiYuOuShuQianMianLcof调整数组顺序使奇数位于偶数前面.java,c\0\c0c3d1158a48472996a460ebdeb534df75c4ca13
 �
 �src/main/java/org/company/meituan/all/week01/done/NCh048_82RemoveDuplicatesFromSortedListII删除排序链表中的重复元素II.java,9\3\931e2d7ab16a0241b82c15e9607e7bce181cfbf6
-�
-Xsrc/main/java/org/company/meituan/all/week01/doing/NCh019_47Permutations全排列II.java,6\e\6e842401e448777ffde9b7939a8d6b4b8b27e11f
+�
+Wsrc/main/java/org/company/meituan/all/week01/done/NCh019_47Permutations全排列II.java,8\6\8620515bb2d4f002a88723d6f474c476f5d85798
 }
-Msrc/main/java/org/company/meituan/all/week01/doing/Ch047_78Subsets子集.java,1\2\122a2c6b233521b8e4134c52bd9f42279b9a5519
-�
-Vsrc/main/java/org/company/meituan/all/week01/doing/NCh019_46Permutations全排列.java,e\6\e61243b6ad285887cb054ea15755adc05009a585
+Msrc/main/java/org/company/meituan/all/week01/done/NCh047_78Subsets子集.java,b\e\be85f7698eb2111125a4dadb7ce1480f1159ec49
+�
+dsrc/main/java/org/company/meituan/all/week01/done/Ch043_136SingleNumber只出现一次的数字.java,7\c\7c61afa44aa0b7dc105e9411d0a06b99ec9808c9
+�
+xsrc/main/java/org/company/meituan/all/week01/done/NCh035_offer_40_ZuiXiaoDeKgeShuLcof_剑指Offer40最小的k个数.java,9\6\9697f9b4c35e6ea4b2519762e6da397d310095e0
