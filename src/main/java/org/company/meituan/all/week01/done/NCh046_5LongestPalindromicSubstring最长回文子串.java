@@ -99,6 +99,7 @@ public class NCh046_5LongestPalindromicSubstring最长回文子串 {
   }
 
   /**
+   * 方法二：中心扩展算法
    * <p>复杂度分析
    *
    * <p>时间复杂度：O(n^2)，其中 n 是字符串的长度。长度为 1和 2的回文中心分别有 n 和 n-1 个，每个回文中心最多会向外扩展 O(n) 次。

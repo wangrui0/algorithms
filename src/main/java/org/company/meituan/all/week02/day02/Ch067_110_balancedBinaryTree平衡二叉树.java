@@ -1,4 +1,4 @@
-package org.company.meituan.all.week02.doing;
+package org.company.meituan.all.week02.day02;
 
 import org.TreeNode;
 
