@@ -1,4 +1,4 @@
-package org.company.meituan.all.week02.todo;
+package org.company.meituan.all.week02.day02;
 
 /**
  * <p>剑指 Offer 10- II. 青蛙跳台阶问题

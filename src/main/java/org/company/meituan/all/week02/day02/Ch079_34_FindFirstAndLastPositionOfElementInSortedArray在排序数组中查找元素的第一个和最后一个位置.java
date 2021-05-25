@@ -1,4 +1,4 @@
-package org.company.meituan.all.week02.todo;
+package org.company.meituan.all.week02.day02;
 
 /**
  * <p>34. 在排序数组中查找元素的第一个和最后一个位置
