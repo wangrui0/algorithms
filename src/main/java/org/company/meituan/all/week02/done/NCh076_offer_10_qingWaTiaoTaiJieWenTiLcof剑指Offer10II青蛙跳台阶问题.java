@@ -1,4 +1,4 @@
-package org.company.meituan.all.week02.day02;
+package org.company.meituan.all.week02.done;
 
 /**
  * <p>剑指 Offer 10- II. 青蛙跳台阶问题
@@ -31,8 +31,31 @@ package org.company.meituan.all.week02.day02;
  * <p>@Author: shenpei
  * <p>@Date: 2021/5/17 7:06 下午
  */
-public class Ch076_offer_10_qingWaTiaoTaiJieWenTiLcof剑指Offer10II青蛙跳台阶问题 {
-    public int numWays(int n) {
-        return -1;
+public class NCh076_offer_10_qingWaTiaoTaiJieWenTiLcof剑指Offer10II青蛙跳台阶问题 {
+
+  public int numWays(int n) {
+    int a = 1, b = 1, sum;
+    for (int i = 0; i < n; i++) {
+      sum = (a + b) % 1000000007;
+      a = b;
+      b = sum;
     }
+    return a;
+  }
+
+  /**
+   * a:第0级 b:第1级
+   *
+   * @param n
+   * @return
+   */
+  public int numWays2(int n) {
+    int a = 1, b = 1, sum;
+    for (int i = 2; i <= n; i++) {
+      sum = (a + b) % 1000000007;
+      a = b;
+      b = sum;
+    }
+    return b;
+  }
 }
