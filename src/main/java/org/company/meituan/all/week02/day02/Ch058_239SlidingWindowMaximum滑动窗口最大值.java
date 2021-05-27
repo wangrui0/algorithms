@@ -122,6 +122,7 @@ public class Ch058_239SlidingWindowMaximum滑动窗口最大值 {
       deque.offerLast(i);
     }
 
+
     int[] ans = new int[n - k + 1];
     ans[0] = nums[deque.peekFirst()];
     for (int i = k; i < n; ++i) {
